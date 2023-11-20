@@ -1,5 +1,3 @@
-const main$1 = "";
-const __uno = "";
 (function() {
   "inert" in HTMLElement.prototype || (Object.defineProperty(HTMLElement.prototype, "inert", { enumerable: true, get: function() {
     return this.hasAttribute("inert");
@@ -333,7 +331,7 @@ class NYCEventCard extends HTMLElement {
     <time datetime="" class="order-first text-xs"></time>
     </header>
 <div class="card__media">
-<img src="./img/poc-1/cards/${img}">
+<img src="${"/nyc-design-system/"}/images/poc-1/cards/${img}">
 </div>
     <div class="card__body flow" data-flow-space="s">
 <p class="card__description"><slot name="description"></slot></p>
@@ -475,7 +473,7 @@ class NYCEventCardList extends HTMLElement {
    * @returns {boolean} - True if date has past
    */
   isDatePast(date) {
-    const today = new Date();
+    const today = /* @__PURE__ */ new Date();
     return today < date;
   }
   /**
