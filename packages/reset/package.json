@@ -2,7 +2,6 @@
   "name": "@nycds/reset",
   "type": "module",
   "exports": {
-    ".": "./src/reset.css",
     "./css": "./src/reset.css"
   }
 }

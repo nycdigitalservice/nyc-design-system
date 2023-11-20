@@ -1,6 +1,6 @@
 {
   "name": "@nycds/alert",
   "exports": {
-    ".": "./src/alert.css"
+    "./css": "./src/alert.css"
   }
 }

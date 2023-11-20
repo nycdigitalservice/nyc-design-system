@@ -3,7 +3,9 @@ import { resolve } from 'path';
 import UnoCSS from 'unocss/vite';
 import postcssPresetEnv from 'postcss-preset-env';
 import postcss from 'rollup-plugin-postcss';
+import {ViteEjsPlugin} from "vite-plugin-ejs";
 
+console.log(import.meta.env)
 export default defineConfig({
   root: 'src',
   build: {
@@ -53,6 +55,13 @@ export default defineConfig({
     }
   },
   plugins: [
-    UnoCSS()
+    UnoCSS(),
+    ViteEjsPlugin((viteConfig) => {
+      console.log(viteConfig.env)
+      return {
+        // viteConfig is the current Vite resolved config
+        env: viteConfig.env,
+      }
+    }),
   ],
 });

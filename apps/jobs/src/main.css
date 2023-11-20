@@ -400,7 +400,7 @@ input:checked + .slider:before {
   left: 50%;
   transform: translate(-50%,-50%);
   z-index: 0;
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('./img/poc-2/hero-bg.png'), lightgray 50% / cover no-repeat;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/poc-2/hero-bg.png'), lightgray 50% / cover no-repeat;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
