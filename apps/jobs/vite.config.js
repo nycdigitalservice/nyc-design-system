@@ -5,54 +5,54 @@ import postcssPresetEnv from 'postcss-preset-env';
 import postcss from 'rollup-plugin-postcss';
 
 export default defineConfig({
-    root: 'src',
-    build: {
-        outDir: '../../../docs',
-        minify: false,
-        cssMinify: false,
-        cssCodeSplit: true,
-        modulePreload: false,
-      // lib: {
-      //   entry: [
-      //     path.resolve(__dirname, 'src/main.js'),
-      //     //path.resolve(__dirname, 'src/docs/docs.js')
-      //   ],
-      //   name: "NYCDS"
-      // },
-      rollupOptions: {
-        input: {
-          main: resolve(__dirname, 'src/index.html'),
-          hero: resolve(__dirname, 'src/hero-demo.html'),
+  root: 'src',
+  build: {
+    outDir: '../../../docs',
+    minify: false,
+    cssMinify: false,
+    cssCodeSplit: true,
+    modulePreload: false,
+    // lib: {
+    //   entry: [
+    //     path.resolve(__dirname, 'src/main.js'),
+    //     //path.resolve(__dirname, 'src/docs/docs.js')
+    //   ],
+    //   name: "NYCDS"
+    // },
+    rollupOptions: {
+      input: {
+        main: resolve(__dirname, 'src/index.html'),
+        hero: resolve(__dirname, 'src/hero-demo.html'),
+      },
+      output: {
+        assetFileNames: (assetInfo) => {
+          //if (assetInfo.name === 'docs.css') return 'dof-2023-docs.css';
+          //if (assetInfo.name === 'main.css') return 'dof-2023-styles.css';
+          return assetInfo.name;
         },
-        output: {
-          assetFileNames: (assetInfo) => {
-            //if (assetInfo.name === 'docs.css') return 'dof-2023-docs.css';
-            //if (assetInfo.name === 'main.css') return 'dof-2023-styles.css';
-            return assetInfo.name;
-                },
-            },
-            // plugins: [
-            //     postcss({
-            //         include: path.resolve(__dirname, 'src/docs/docs.css'),
-            //         extract: path.resolve(__dirname, 'dist/docs.css')
-            //     })
-            // ]
-        },
+      },
+      // plugins: [
+      //     postcss({
+      //         include: path.resolve(__dirname, 'src/docs/docs.css'),
+      //         extract: path.resolve(__dirname, 'dist/docs.css')
+      //     })
+      // ]
     },
-    css: {
-        postcss: {
-            plugins: [
-                postcssPresetEnv({
-                    stage: 2,
-                    features: {
-                        'nesting-rules': true,
-                        'custom-selectors': true
-                    }
-                }),
-            ]
-        }
-    },
-    plugins: [
-        UnoCSS()
-    ],
+  },
+  css: {
+    postcss: {
+      plugins: [
+        postcssPresetEnv({
+          stage: 2,
+          features: {
+            'nesting-rules': true,
+            'custom-selectors': true
+          }
+        }),
+      ]
+    }
+  },
+  plugins: [
+    UnoCSS()
+  ],
 });
