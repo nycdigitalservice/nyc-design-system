@@ -7,7 +7,7 @@ import postcss from 'rollup-plugin-postcss';
 export default defineConfig({
     root: 'src',
     build: {
-        outDir: '../dist',
+        outDir: '../../../docs',
         minify: false,
         cssMinify: false,
         cssCodeSplit: true,
