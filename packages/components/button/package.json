@@ -1,0 +1,16 @@
+{
+  "name": "@nycds/button",
+  "main": "src/js/index.js",
+  "type": "module",
+  "exports": {
+    ".": "./src/js/index.js",
+    "./css": "./src/css/button.css"
+  },
+  "scripts": {
+    "build": "esbuild src/js/index.js --bundle --outfile=dist/toggle-button.js"
+  },
+  "dependencies": {
+    "@nycds/utilities": "workspace:^",
+    "esbuild": "^0.19.1"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "@nycds/tag-filter",
+  "main": "src/index.js",
+  "dependencies": {
+    "@nycds/utilities": "workspace:^"
+  }
+}

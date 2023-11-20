@@ -1,0 +1,6 @@
+{
+  "name": "@nycds/form",
+  "exports": {
+    "./css": "./src/form.css"
+  }
+}

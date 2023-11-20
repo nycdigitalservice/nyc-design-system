@@ -1,0 +1,7 @@
+{
+  "name": "@nycds/variables",
+  "type": "module",
+  "exports": {
+    "./css": "./src/variables.css"
+  }
+}

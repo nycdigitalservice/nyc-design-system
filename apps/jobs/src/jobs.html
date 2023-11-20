@@ -1,0 +1,404 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,600;1,8..60,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./main.css">
+  </head>
+  <body>
+    <div class="background-primary">
+      <div class="container flex p-2 justify-between items-center">
+        <div>
+          <img src="img/logo.png" />
+        </div>
+        <div class="flex items-center">
+          <label class="switch me-3">
+            <input type="checkbox" id="theme-toggle">
+            <span class="slider"></span>
+          </label>
+          <img src="img/menu.png" class="mt-2">
+        </div>
+      </div>
+    </div>
+    <main class="u-reset bg-transparent" id="jobs-2023">
+      <header class="region">
+        <div class="container md:flex gap-9 p-4 bg-transparent">
+          <div class="md:w-1/2 flow flex flex-col">
+            <h1 class="block">NYC is<br><em class="inline">hiring</em> now</h1>
+            <p>There are three ways to get a job with the City:</p>
+            <ul>
+              <li>Find a job online</li>
+              <li>Attend a recruitment event</li>
+              <li>Take a civil service exam</li>
+            </ul>
+          </div>
+          <div class="md:w-1/2 mt-6 md:mt-0 flex flex-col justify-center">
+            <nyc-form>
+              <form
+                class="form"
+                data-variant="search"
+                action="https://a127-jobs.nyc.gov/index_new.html"
+                method="get"
+                type="external"
+              >
+                <div class="form-group">
+                  <label for="job-search-input" class="sr-only">Search open jobs</label>
+                  <input type="search" id="job-search-input" name="keyword" placeholder="Search open jobs">
+                  <nyc-clear-input-button
+                    data-target="job-search-input"
+                    id="city-jobs_action_job-search-clear-input"
+                  >
+                    <span class="sr-only">Clear input</span>
+                    <i class="i-ri:close-line text-lg"></i>
+                  </nyc-clear-input-button>
+                </div>
+                <button
+                  type="submit"
+                  class="button"
+                  data-variant="tertiary"
+                  id="city-jobs_submit_job-search"
+                >
+                  <span class="sr-only search-button-label">Search</span>
+                  <i class="i-ri:search-line"></i>
+                </button>
+              </form>
+            </nyc-form>
+          </div>
+        </div>
+      </header>
+      <section class="region">
+        <div class="container bg-light">
+          <div class="grid flow" data-layout="figure-split">
+            <h2>Work for a<br>better NYC</h2>
+            <p>Get the unmatched stability of a government career and make a real difference in your community. As a City employee, you'll get the chance to make a positive impact on New Yorkers' lives every day you go to work.</p>
+            <div class="figure">
+              <picture>
+                <source srcset="/assets/home/images/jobs/2023/work-for-better-nyc.webp" type="image/webp" />
+                <source srcset="/assets/home/images/jobs/2023/work-for-better-nyc.jpg" type="image/jpeg" />
+                <img src="/assets/home/images/jobs/2023/work-for-better-nyc.jpg" width="562" height="375" alt="City employees at a hiring event helping attendees apply for jobs" />
+              </picture>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="region flow bg-primary">
+        <div class="container flow">
+          <h2>Recruitment events</h2>
+          <p>Discover opportunities and learn about civil service. At some events, you can come with a resume and leave with a job.</p>
+          <div class="ie-only">
+            <a href="https://www.nyc.gov/site/dcas/agencies/office-of-citywide-recruitment.page" class="button" data-variant="primary">View recruitment events</a>
+          </div>
+        </div>
+        <div class="container--full-bleed-right">
+          <div class="full-bleed">
+            <nyc-csv data-src="/assets/dcas/data/hiring-events.csv">
+              <nyc-reel class="flow">
+                <nyc-event-card-list
+                  data-subscribe="nyc-csv-complete"
+                  aria-label="recruitment event cards"
+                >
+                  <a
+                    href="https://www.nyc.gov/site/dcas/agencies/office-of-citywide-recruitment.page"
+                    class="button"
+                    data-variant="primary"
+                    id="city-jobs_link_view-recruitment-events"
+                  >
+                    View recruitment events
+                    <i class="i-ri:external-link-line"></i>
+                  </a>
+                </nyc-event-card-list>
+              </nyc-reel>
+            </nyc-csv>
+          </div>
+        </div>
+      </section>
+      <section class="region">
+        <div class="container bg-light">
+          <div class="grid flow" data-layout="figure-split">
+            <h2>Civil service exams</h2>
+            <picture class="figure">
+              <source srcset="/assets/home/images/jobs/2023/civil-service-exams.webp" type="image/webp" />
+              <source srcset="/assets/home/images/jobs/2023/civil-service-exams.jpg" type="image/jpeg" />
+              <img src="/assets/home/images/jobs/2023/civil-service-exams.jpg" width="562" height="376" alt="Group of people sitting in the audience at an information session" />
+            </picture>
+            <div class="flow">
+              <p>Some City jobs may require you to take an exam, either before or after getting hired. These jobs are classified as competitive on the job board. Signing up for an upcoming exam is a great way to land a new job in your field.</p>
+              <a
+                href="https://www.nyc.gov/site/dcas/employment/apply-for-a-city-job.page"
+                class="button"
+                data-variant="primary"
+                id="city-jobs_link_about-civil-service-exams"
+              >
+                <span>About civil service exams</span>
+                <i class="i-ri:external-link-line"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="region">
+        <div class="container flow bg-light">
+          <div class="grid flow" data-layout="figure-split" data-split-direction="left">
+            <h2>Career programs</h2>
+            <picture class="figure">
+              <source srcset="/assets/home/images/jobs/2023/career-programs.webp" type="image/webp" />
+              <source srcset="/assets/home/images/jobs/2023/career-programs.jpg" type="image/jpeg" />
+              <img src="/assets/home/images/jobs/2023/career-programs.jpg" width="549" height="365" alt="Synchronized swim class at a NYC Parks & Recreation pool. Instructor's shirt reads 'Aquatic Specialist, City of New York, Parks & Recreation.'" />
+            </picture>
+            <div class="flow">
+              <p>The City can help you prepare for and connect to work.</p>
+              <p>What are you looking for?</p>
+              <nyc-form>
+                <form class="flow md:w-3/4" method="get" action="https://jobready.nyc.gov/programs/" data-action-setter="program-select" type="external">
+                  <div class="form-group">
+                    <label class="sr-only" for="program-select">Select programs</label>
+                    <div class="select">
+                      <select id="program-select" name="wnyc_ser[]" required>
+                        <option selected disabled value="">Select an option</option>
+                        <option value="" data-action-url="https://jobready.nyc.gov/guides/finding-work/">Help with finding work</option>
+                        <option value="364">Job training programs</option>
+                        <option value="369">High school diploma or equivalency (HSE or GED) prep</option>
+                        <option value="368">Help with learning English</option>
+                      </select>
+                      <i class="i-ri:arrow-down-s-line text-primary"></i>
+                    </div>
+                  </div>
+                  <button
+                    type="submit"
+                    class="button w-full"
+                    data-flow-space="s"
+                    data-variant="primary"
+                    id="city-jobs_submit_career-programs"
+                  >
+                    <span>View programs</span>
+                    <i class="i-ri:external-link-line"></i>
+                  </button>
+                </form>
+              </nyc-form>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="region bg-primary">
+        <div class="container">
+          <div class="flow">
+            <h2>Explore careers</h2>
+            <div class="flow flex flex-col md:w-2/5">
+              <p>See all open jobs at a specific agency:</p>
+              <nyc-form>
+                <form
+                  id="agency-select-form"
+                  action="https://a127-jobs.nyc.gov/index_new.html"
+                  method="get"
+                  class="flow"
+                  type="external"
+                  data-action-setter="agency-select"
+                >
+                  <div class="form-group">
+                    <label class="sr-only" for="agency-select">Select an agency</label>
+                    <div class="select">
+                      <select id="agency-select" name="agency" required=""><option selected="" disabled="" value="">Select an option</option><option value="008">Office of the Actuary (NYCOA)</option><option value="" data-action-url="https://www1.nyc.gov/site/oata/careers/careers.page">Office of Administrative Tax Appeals (OATA)</option><option value="820">Office of Administrative Trials &amp; Hearings (OATH)</option><option value="125">Department for the Aging (NYC Aging)</option><option value="011">Borough President - Bronx</option><option value="010">Borough President - Manhattan</option><option value="013">Borough President - Queens</option><option value="810">Department of Buildings (DOB)</option><option value="831">Business Integrity Commission (BIC)</option><option value="004">Campaign Finance Board (CFB)</option><option value="067">Administration for Children's Services (ACS)</option><option value="" data-action-url="https://cuny.jobs">City University of New York (CUNY)</option><option value="313">Office of Collective Bargaining (OCB)</option><option value="015">Office of the Comptroller</option><option value="" data-action-url="https://www.nyc.gov/site/marshals/applicants/applicants.page">Mayor's Committee on City Marshals</option><option value="030">Department of City Planning (DCP)</option><option value="868">Department of Citywide Administrative Services (DCAS)</option><option value="134">Civil Service Commission (CSC)</option><option value="054">Civilian Complaint Review Board (CCRB)</option><option value="312">Conflicts of Interest Board (COIB)</option><option value="082">Mayor's Office of Contract Services (MOCS)</option><option value="866">Department of Consumer and Worker Protection (DCWP)</option><option value="072">Department of Correction (DOC)</option><option value="073">Board of Correction (BOC)</option><option value="126">Department of Cultural Affairs (DCLA)</option><option value="850">Department of Design &amp; Construction (DDC)</option><option value="902">District Attorney - Bronx</option><option value="903">District Attorney - Brooklyn</option><option value="905">District Attorney - Staten Island</option><option value="" data-action-url="https://www.nycedc.com/careers">Economic Development Corporation (EDC)</option><option value="" data-action-url="https://schools.nyc.gov/careers">Department of Education (DOE)</option><option value="017">Office of Emergency Management (EM)</option><option value="" data-action-url="https://www.nycers.org/career-opportunities">Employees' Retirement System (NYCERS)</option><option value="826">Department of Environmental Protection (DEP)</option><option value="133">Equal Employment Practices Commission (EEPC)</option><option value="836">Department of Finance (DOF)</option><option value="127">Financial Information Services Agency (FISA)</option><option value="057">Fire Department (FDNY)</option><option value="257">NYC Fire Pension Fund</option><option value="" data-action-url="https://www.nychealthandhospitals.org/careers/">Health + Hospitals (HHC)</option><option value="816">Department of Health &amp; Mental Hygiene (DOHMH)</option><option value="071">Department of Homeless Services (DHS)</option><option value="996">New York City Housing Authority (NYCHA)</option><option value="" data-action-url="https://www.nychdc.com/Join%20Us">New York City Housing Development Corporation (HDC)</option><option value="806">Department of Housing Preservation &amp; Development (HPD)</option><option value="069">Department of Social Services/Human Resources Administration (DSS/HRA)</option><option value="226">Commission on Human Rights (CCHR)</option><option value="" data-action-url="https://www.ibo.nyc.ny.us/">Independent Budget Office (IBO)</option><option value="032">Department of Investigation (DOI)</option><option value="858">Office of Technology &amp; Innovation (OTI)</option><option value="214">Office of Labor Relations (OLR)</option><option value="136">Landmarks Preservation Commission (LPC)</option><option value="025">Law Department (LAW)</option><option value="019">Office of Management &amp; Budget (OMB)</option><option value="" data-action-url="https://www.bit.ly/nycmojobs">Mayor's Office (MO)</option><option value="846">Department of Parks &amp; Recreation (DPR)</option><option value="131">Office of Payroll Administration (OPA)</option><option value="" data-action-url="https://www1.nyc.gov/site/nypd/careers/careers.page">Police Department (NYPD)</option><option value="256">Police Pension Fund (PPF)</option><option value="781">Department of Probation (DOP)</option><option value="943">Public Administrator - Kings County</option><option value="941">Public Administrator - New York County</option><option value="942">Public Administrator - Bronx</option><option value="860">Department of Records &amp; Information Services (DORIS)</option><option value="827">Department of Sanitation (DSNY)</option><option value="801">Department of Small Business Services (SBS)</option><option value="" data-action-url="https://www1.nyc.gov/site/bsa/about/employment-opportunities.page">Board of Standards and Appeals (BSA)</option><option value="021">Tax Commission</option><option value="156">Taxi &amp; Limousine Commission (TLC)</option><option value="041">Teachers' Retirement System (TRS)</option><option value="841">Department of Transportation (DOT)</option><option value="063">Department of Veterans' Services (DVS)</option><option value="185">Municipal Water Finance Authority</option><option value="261">Department of Youth &amp; Community Development (DYCD)</option><option value="" data-action-url="https://nycsci.org/employment/">The Special Commissioner of Investigation</option></select>
+                      <i class="i-ri:arrow-down-s-line text-primary"></i>
+                    </div>
+                  </div>
+                  <button
+                    type="submit"
+                    class="mt-4 button w-full"
+                    data-variant="primary"
+                    data-flow-space="s"
+                    id="city-jobs_submit_agency-select-form"
+                  >
+                    <span>View agency jobs</span>
+                    <i class="i-ri:external-link-line"></i>
+                  </button>
+                </form>
+              </nyc-form>
+            </div>
+            <p>Or choose a category to see open positions:</p>
+            <div>
+              <ul role="list" id="job-categories" class="grid" data-layout="col-4">
+                <li>
+                  <a
+                    href="https://a127-jobs.nyc.gov/index_new.html?category=CAS"
+                    class="button"
+                    data-variant="secondary"
+                    id="city-jobs_link_administration-human-resources"
+                  >
+                    <span class="me-4 flex items-center"><i class="i-ri:contacts-line text-2xl"></i></span>
+                    <span class="flex-1">Administration &amp; Human Resources</span>
+                  </a>
+                </li>
+
+                <li>
+                  <a
+                    href="https://a127-jobs.nyc.gov/index_new.html?category=CIG"
+                    class="button"
+                    data-variant="secondary"
+                    id="city-jobs_link_communications-intergov-affairs"
+                  >
+                    <span class="me-4 flex items-center"><i class="i-ri:message-2-line text-2xl"></i></span>
+                    <span class="flex-1">Communications &amp; Intergovernmental Affairs</span>
+                  </a>
+                </li>
+
+                <li>
+                  <a
+                    href="https://a127-jobs.nyc.gov/index_new.html?category=CBS"
+                    class="button"
+                    data-variant="secondary"
+                    id="city-jobs_link_constituent-services-community-programs"
+                  >
+                    <span class="me-4 flex items-center"><i class="i-ri:community-line text-2xl"></i></span>
+                    <span class="flex-1">Constituent Services &amp; Community Programs</span>
+                  </a>
+                </li>
+
+                <li>
+                  <a
+                    href="https://a127-jobs.nyc.gov/index_new.html?category=EAP"
+                    class="button"
+                    data-variant="secondary"
+                    id="city-jobs_link_engineering-architecture-planning"
+                  >
+                    <span class="me-4 flex items-center"><i class="i-ri:building-2-line text-2xl"></i></span>
+                    <span class="flex-1">Engineering, Architecture &amp; Planning</span>
+                  </a>
+                </li>
+
+                <li>
+                  <a
+                    href="https://a127-jobs.nyc.gov/index_new.html?category=FAP"
+                    class="button"
+                    data-variant="secondary"
+                    id="city-jobs_link_finance-accounting-procurement"
+                  >
+                    <span class="me-4 flex items-center"><i class="i-ri:currency-line text-2xl"></i></span>
+                    <span class="flex-1">Finance, Accounting &amp; Procurement</span>
+                  </a>
+                </li>
+
+                <li>
+                  <a
+                    href="https://a127-jobs.nyc.gov/index_new.html?category=HLT"
+                    class="button"
+                    data-variant="secondary"
+                    id="city-jobs_link_health"
+                  >
+                    <span class="me-4 flex items-center"><i class="i-ri:hospital-line text-2xl"></i></span>
+                    <span class="flex-1">Health</span>
+                  </a>
+                </li>
+
+                <li>
+                  <a
+                    href="https://a127-jobs.nyc.gov/index_new.html?category=ITT"
+                    class="button"
+                    data-variant="secondary"
+                    id="city-jobs_link_technology-data-innovation"
+                  >
+                    <span class="me-4 flex items-center"><i class="i-ri:file-code-line text-2xl"></i></span>
+                    <span class="flex-1">Technology, Data &amp; Innovation</span>
+                  </a>
+                </li>
+
+                <li>
+                  <a
+                    href="https://a127-jobs.nyc.gov/index_new.html?category=LEG"
+                    class="button"
+                    data-variant="secondary"
+                    id="city-jobs_link_legal-affairs"
+                  >
+                    <span class="me-4 flex items-center"><i class="i-ri:scales-3-line text-2xl"></i></span>
+                    <span class="flex-1">Legal Affairs</span>
+                  </a>
+                </li>
+
+                <li>
+                  <a
+                    href="https://a127-jobs.nyc.gov/index_new.html?category=MOP"
+                    class="button"
+                    data-variant="secondary"
+                    id="city-jobs_link_building-operations-maintenance"
+                  >
+                    <span class="me-4 flex items-center"><i class="i-ri:home-gear-line text-2xl"></i></span>
+                    <span class="flex-1">Building Operations &amp; Maintenance</span>
+                  </a>
+                </li>
+
+                <li>
+                  <a
+                    href="https://a127-jobs.nyc.gov/index_new.html?category=POA"
+                    class="button"
+                    data-variant="secondary"
+                    id="city-jobs_link_policy-research-analysis"
+                  >
+                    <span class="me-4 flex items-center"><i class="i-ri:book-2-line text-2xl"></i></span>
+                    <span class="flex-1">Policy, Research &amp; Analysis</span>
+                  </a>
+                </li>
+
+                <li>
+                  <a
+                    href="https://a127-jobs.nyc.gov/index_new.html?category=PSI"
+                    class="button"
+                    data-variant="secondary"
+                    id="city-jobs_link_public-safety-inspections-enforcement"
+                  >
+                    <span class="me-4 flex items-center"><i class="i-ri:shield-star-line text-2xl"></i></span>
+                    <span class="flex-1">Public Safety, Inspections &amp; Enforcement</span>
+                  </a>
+                </li>
+
+                <li>
+                  <a
+                    href="https://a127-jobs.nyc.gov/index_new.html?category=SOC"
+                    class="button"
+                    data-variant="secondary"
+                    id="city-jobs_link_social-services"
+                  >
+                    <span class="me-4 flex items-center"><i class="i-ri:group-line text-2xl"></i></span>
+                    <span class="flex-1">Social Services</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="region">
+        <div class="container bg-light">
+          <div class="grid flow" data-layout="figure-split" data-split-direction="left">
+            <h2>Internships and fellowships</h2>
+            <picture class="figure">
+              <source srcset="/assets/home/images/jobs/2023/internships.webp" type="image/webp" />
+              <source srcset="/assets/home/images/jobs/2023/internships.jpg" type="image/jpeg" />
+              <img src="/assets/home/images/jobs/2023/internships.jpg" width="519" height="408" alt="Two people at a job fair having a conversation while others walk in background" />
+            </picture>
+            <div class="flow">
+              <p>There are hundreds of opportunities in NYC government for high school students, college students, and recent graduates.</p>
+              <a
+                href="https://www.nyc.gov/site/dcas/employment/internship-and-fellowships.page"
+                class="button"
+                data-variant="primary"
+                id="city-jobs_link_internships-fellowships"
+              >
+                <span>Find internships and fellowships</span>
+                <i class="i-ri:external-link-line"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="region container">
+        <a href="https://www.nyc.gov/jobs/feedback-form.page" class="color-primary">Submit questions or feedback about this site</a>
+      </section>
+      <div class="sun-wrapper">
+        <div id="sun"></div>
+      </div>
+    </main>
+    <script src="/assets/home/js/libs/papaparse.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js" integrity="sha512-dfX5uYVXzyU8+KHqj8bjo7UkOdg18PaOtpa48djpNbZHwExddghZ+ZmzWT06R5v6NSk3ZUfsH6FNEDepLx9hPQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

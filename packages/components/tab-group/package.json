@@ -1,0 +1,7 @@
+{
+  "name": "@nycds/tab-group",
+  "main": "src/index.js",
+  "dependencies": {
+    "@nycds/utilities": "workspace:^"
+  }
+}

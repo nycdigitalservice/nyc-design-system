@@ -1,0 +1,6 @@
+{
+  "name": "@nycds/alert",
+  "exports": {
+    ".": "./src/alert.css"
+  }
+}

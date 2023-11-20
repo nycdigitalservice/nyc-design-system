@@ -1,0 +1,8 @@
+{
+  "name": "@nycds/utilities",
+  "version": "0.0.1",
+  "author": "Michael Mausler",
+  "description": "Utility classes and functions",
+  "main": "src/js/index.js",
+  "license": "GPLv3"
+}

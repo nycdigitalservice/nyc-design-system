@@ -1,0 +1,11 @@
+{
+  "name": "@nycds/accordion",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "esbuild src/index.js --bundle --outfile=dist/nyc-accordion.js"
+  },
+  "dependencies": {
+    "@nycds/utilities": "workspace:^",
+    "esbuild": "^0.19.1"
+  }
+}
