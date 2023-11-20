@@ -8,7 +8,8 @@
   --nyc-sys-color-background: #D1E8F5;
   --nyc-sys-font-family-base: 'Noto Sans', sans-serif;
   --nyc-sys-font-family-secondary: 'Clash Grotesk', sans-serif;
-  --nyc-sys-color-primary: #262338;
+  --nyc-sys-color-primary: #000;
+  --nyc-sys-color-on-primary: #fff;
   --nyc-sys-background-light: #fff;
   --nyc-sys-color-on-light: var(--nyc-sys-color-text);
   --nyc-cmp-button-background: inherit;

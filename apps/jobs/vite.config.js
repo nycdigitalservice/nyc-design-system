@@ -1,5 +1,5 @@
 import { defineConfig } from 'vite';
-import path from 'path';
+import { resolve } from 'path';
 import UnoCSS from 'unocss/vite';
 import postcssPresetEnv from 'postcss-preset-env';
 import postcss from 'rollup-plugin-postcss';
@@ -12,16 +12,23 @@ export default defineConfig({
         cssMinify: false,
         cssCodeSplit: true,
         modulePreload: false,
-        lib: {
-            entry: [path.resolve(__dirname, 'src/main.js'), path.resolve(__dirname, 'src/docs/docs.js')],
-            name: "DOFDS"
+      // lib: {
+      //   entry: [
+      //     path.resolve(__dirname, 'src/main.js'),
+      //     //path.resolve(__dirname, 'src/docs/docs.js')
+      //   ],
+      //   name: "NYCDS"
+      // },
+      rollupOptions: {
+        input: {
+          main: resolve(__dirname, 'src/index.html'),
+          hero: resolve(__dirname, 'src/hero-demo.html'),
         },
-        rollupOptions: {
-            output: {
-                assetFileNames: (assetInfo) => {
-                    if (assetInfo.name === 'docs.css') return 'dof-2023-docs.css';
-                    if (assetInfo.name === 'main.css') return 'dof-2023-styles.css';
-                    return assetInfo.name;
+        output: {
+          assetFileNames: (assetInfo) => {
+            //if (assetInfo.name === 'docs.css') return 'dof-2023-docs.css';
+            //if (assetInfo.name === 'main.css') return 'dof-2023-styles.css';
+            return assetInfo.name;
                 },
             },
             // plugins: [
