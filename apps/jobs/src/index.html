@@ -14,12 +14,12 @@
           <svg xmlns="http://www.w3.org/2000/svg" width="101" height="32" viewBox="0 0 101 32" fill="none">
             <path d="M98.7012 13.976L100.8 12.0016V5.99769L94.4972 0H73.5028L67.2 5.99769V1.99924L65.1012 1.23874e-05H56.6996L54.6008 1.99924V5.99769L50.4033 10.0023L46.2057 5.99769V1.99924L44.1004 1.23874e-05H35.6988L33.6 1.99924L31.5012 1.23874e-05H23.0996L21.0008 1.99924V10.0023L10.5004 0H2.0988L0 1.99922V30.0008L2.0988 32H10.5004L12.6057 30.0008V22.0039L23.0996 32H31.5012L33.6 30.0008V14.0008L44.1004 24.0031V30.0008L46.2057 32H54.6008L56.6996 30.0008V24.0031L67.2 14.0008V26.0023L73.5028 32H94.4972L100.8 26.0023V20.0046L98.7012 17.9992H88.1943V20.0046H79.7992V12.0016H88.1943V13.976H98.7012Z" fill="white"/>
           </svg>
-          <nav class="text-white">
-            <a href="#">Services and Information</a>
-            <a href="#">Events</a>
-            <a href="#">Agencies and Officials</a>
-            <a href="#">Initiatives</a>
-          </nav>
+          <!-- <nav class="text-white ms-4">
+               <a href="#">Services and Information</a>
+               <a href="#">Events</a>
+               <a href="#">Agencies and Officials</a>
+               <a href="#">Initiatives</a>
+               </nav> -->
         </div>
             <div class="flex items-center">
               <label class="switch me-3">
@@ -44,7 +44,14 @@
       <section class="region">
         <div class="container">
           <h2>Popular topics</h2>
-          <img src="/images/poc-1/popular-service.png">
+          <ul id="popular-topics-list" class="grid list-none m-0 my-8 p-0" data-layout="col-3">
+            <li><a href="#">Noise</a></li>
+            <li><a href="#">Parking ticket or camera violation</a></li>
+            <li><a href="#">Illegal parking</a></li>
+            <li><a href="#">Cash assistance, food stamps, and EBT</a></li>
+            <li><a href="#">Apartment conditions complaint</a></li>
+            <li><a href="#">Affordable housing</a></li>
+          </ul>
           <a href="#" class="button" data-variant="primary">View all topics</a>
         </div>
       </section>
@@ -55,8 +62,12 @@
       </section>
       <section class="" style="background: linear-gradient(119deg, #D5D1FC 8.84%, #F2C145 46.34%, #FF986C 76.77%);">
         <div class="container flex gap-12">
-          <div class="md:w-2/6">
-            <img src="/images/poc-1/your-eligibility.png">
+          <div class="md:w-2/6 flow py-8 flex items-center">
+            <div class="flow">
+              <h2>Your eligibility for benefits</h2>
+              <p>You may be eligible for help with food, money, housing, or work.</p>
+              <a href="#" class="button" data-variant="primary">Take eligibility survey</a>
+            </div>
           </div>
           <div class="md:w-4/6">
             <img src="/images/poc-1/eligibility-photo.png" class="img-grow">
@@ -91,7 +102,7 @@
           </div>
         </div>
         <div class="container">
-          <img src="/images/poc-1/view-events.png">
+          <a href="#" class="button" data-variant="primary">View all events</a>
         </div>
       </section>
       <section class="region" style="background: var(--b-turqoise-25, #8FBCC5);">

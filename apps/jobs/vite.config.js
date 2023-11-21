@@ -57,7 +57,7 @@ export default defineConfig({
   plugins: [
     UnoCSS(),
     ViteEjsPlugin((viteConfig) => {
-      console.log(viteConfig.env)
+      //console.log(viteConfig.env)
       return {
         // viteConfig is the current Vite resolved config
         env: viteConfig.env,

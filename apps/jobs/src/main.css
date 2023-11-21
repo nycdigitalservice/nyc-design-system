@@ -21,9 +21,13 @@
   --nyc-cmp-sun-color-2: var(--nyc-ref-color-pink-100);
   --nyc-cmp-scene-gradient: linear-gradient(180deg, #FFE8A9 0%, #FFBDA0 100%);
   --nyc-cmp-scene-gradient: linear-gradient(141deg, var(--sun-gradient-color-1) 37.92%, var(--sun-gradient-color-2) 80.6%);
+  
   --nyc-sys-color-text: #000;
+  --nyc-sys-color-link: var(--nyc-sys-color-text);
   --nyc-sys-color-primary-dark: #000;
   --nyc-cmp-button-border-radius: 1.875rem;
+
+  --nyc-sys-font-size-base: 1.5rem;
 }
 
 [data-theme=dark] {
@@ -280,6 +284,23 @@ body, main {
 
 }
 
+[data-theme=dark] #sun {
+  --sun-gradient-color-1: #D1E8F5;
+  --sun-gradient-color-2:#8FBCC5;
+  animation: sun-grow-2 linear forwards;
+  animation-timeline: scroll(y root);
+  animation-range: 0vh 70vh;
+}
+
+[data-theme=dark] .button[data-variant=primary] {
+  --nyc-cmp-button-background: white;
+  --nyc-cmp-button-color: black;
+  &:hover {
+    --nyc-cmp-button-color-hover: inherit;
+    --nyc-cmp-button-background-hover: inherit;
+  }
+}
+
 /* POC 1 - Sun grow */
 
 @keyframes sun-grow {
@@ -294,6 +315,22 @@ body, main {
     left:-20%;
     --sun-gradient-color-1: #FCE9B3;
     --sun-gradient-color-2: #EDA587;    
+  }
+}
+
+/* background: linear-gradient(124deg, #D1E8F5 39.24%, #8FBCC5 56.71%); */
+@keyframes sun-grow-2 {
+  from {
+    width: 66%;
+    --sun-gradient-color-1: #D1E8F5;
+    --sun-gradient-color-2:#8FBCC5;
+  }
+  to {
+    width: 140%;
+    top:-35%;
+    left:-20%;
+    --sun-gradient-color-1:#D1E8F5;
+    --sun-gradient-color-2: #8FBCC5;    
   }
 }
 
@@ -400,7 +437,7 @@ input:checked + .slider:before {
   left: 50%;
   transform: translate(-50%,-50%);
   z-index: 0;
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/poc-2/hero-bg.png'), lightgray 50% / cover no-repeat;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/poc-2/hero-bg-sm.png'), lightgray 50% / cover no-repeat;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -437,4 +474,17 @@ input:checked + .slider:before {
   animation: fadeInAnimation ease 3s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
+}
+
+.background-primary {
+  --nyc-sys-color-text: white;
+  --nyc-sys-color-link: white;
+
+}
+
+#popular-topics-list {
+  & li {
+    border-top: 2px solid var(--nyc-sys-color-text);
+    padding: 1rem .5rem;
+  }
 }
