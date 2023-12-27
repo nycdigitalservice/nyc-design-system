@@ -25,6 +25,7 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'src/index.html'),
         hero: resolve(__dirname, 'src/hero-demo.html'),
+        parallax: resolve(__dirname, 'src/parallax.html'),
       },
       output: {
         assetFileNames: (assetInfo) => {
