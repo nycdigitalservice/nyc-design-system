@@ -1,3 +1,5 @@
 {
-  "name": "@nycds/global"
+  "name": "@nycds/global",
+  "version": "0.1.0",
+  "style": "src/index.css"
 }

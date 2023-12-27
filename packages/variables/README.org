@@ -209,6 +209,9 @@ component CSS properties and these reference System variables.
   --nyc-cmp-card-background-hover: var(--nyc-sys-color-primary-light, transparent);
 #+end_src
 
+** Property sets
+
+Property sets are 
 ** Custom selectors
 
 [[https://drafts.csswg.org/css-extensions/#custom-selectors][Custom selectors]] is a draft CSS specification that allows holding
@@ -220,7 +223,7 @@ multiple CSS selectors under a given name.
 
 ** Appendix :noexport:
 
-#+BEGIN_SRC css :tangle src/variables.css :noweb yes
+#+BEGIN_SRC css :tangle src/index.css :noweb yes
   /* CSS variables: Reference and System */
   :root {
     /* Reference variables */
@@ -228,6 +231,9 @@ multiple CSS selectors under a given name.
 
     /* System variables */
     <<sys-vars>>
+
+    /* Property sets */
+    <<property-sets>>
   }
 
   /* Custom selectors */

@@ -1,7 +1,7 @@
 {
   "name": "@nycds/variables",
+  "version": "0.1.0",
   "type": "module",
-  "exports": {
-    "./css": "./src/variables.css"
-  }
+  "style": "./src/index.css",
+  "main": "./src/index.css"
 }

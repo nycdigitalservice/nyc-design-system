@@ -1,6 +1,8 @@
 {
   "name": "@nycds/tab-group",
+  "version": "0.1.0",
   "main": "src/index.js",
+  "style": "src/index.css",
   "dependencies": {
     "@nycds/utilities": "workspace:^"
   }

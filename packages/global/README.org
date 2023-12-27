@@ -3,7 +3,7 @@
 As mentioned in the [[/#principles][Principles]], this library embraces the power of the
 CSS cascade to provide a set of base, global styling properties.
 
-#+begin_src css :tangle global.css
+#+begin_src css :tangle src/index.css
 html,
 body,
 div,
@@ -27,7 +27,7 @@ body {
 
 ** Typesetting
 
-#+begin_src css :tangle global.css
+#+begin_src css :tangle src/index.css
 h1,
 h2,
 h3 {
@@ -55,7 +55,7 @@ p {
 
 ** Elements
 
-#+begin_src css :tangle global.css
+#+begin_src css :tangle src/index.css
   a,
   a:link,
   button {
@@ -171,5 +171,4 @@ p {
   }
 #+end_src
 
-** 
 

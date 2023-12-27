@@ -1,6 +1,6 @@
 #+title: Tabs CSS
 
-#+begin_src css :tangle src/tab-group.css
+#+begin_src css :tangle src/index.css
   [role="tablist"] {
     padding: 0;
     display: flex;

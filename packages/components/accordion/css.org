@@ -1,6 +1,6 @@
 #+title: Accordion CSS
 
-#+begin_src css :tangle src/accordion.css
+#+begin_src css :tangle src/index.css
   nyc-accordion,
   .accordion {
     display: grid;

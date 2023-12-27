@@ -1,3 +1,5 @@
 {
-  "name": "@nycds/composition"
+  "name": "@nycds/composition",
+  "version": "0.1.0",
+  "style": "src/index.css"
 }

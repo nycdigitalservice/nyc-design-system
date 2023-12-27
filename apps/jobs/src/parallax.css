@@ -1,0 +1,115 @@
+:root {
+  --nyc-cmp-card-background-hover: #222;
+}
+
+body {
+  background: transparent;
+}
+
+h2 {
+  font-family: var(--nyc-sys-font-family-secondary);
+  font-size: 3.125rem;
+}
+
+main {
+  /* overflow: hidden; */
+}
+
+.hero {
+  background: black;
+  min-height: 94vh;
+}
+
+.bg-gradient-purple {
+  background: linear-gradient(179deg, #131627 15.45%, #4B184D 87.84%);
+}
+
+div.blur {
+  --nyc-blur: blur(110px);
+}
+
+.p-wrapper {
+  /* opacity: 0.75; */
+  
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  
+  & svg {
+    width: 100%;
+    position: relative;
+    z-index: 0;
+  }
+
+  & .noise {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    mix-blend-mode: soft-light;
+    opacity: .25;
+  }
+  /* &:before { */
+  /*   content: ''; */
+  /*   position: absolute; */
+  /*   width: 100%; */
+  /*   height: 100%; */
+  /*   top: 0; */
+  /*   left: 0; */
+  /*   background: url('./img/noise.png'); */
+  /*   opacity: .5; */
+  /*   background-size: cover; */
+  /*   z-index: 100; */
+  /*   mix-blend-mode: soft-light; */
+  /* } */
+}
+
+html {
+  timeline-scope: --scrollContainer1
+}
+
+#scroll-parent {
+  timeline-scope: --scrollContainer2
+}
+
+#scroll-container-1 {
+  view-timeline-name: --scrollContainer1;
+  /* animation: parallax-effect linear forwards; */
+  /* animation-timeline: --scrollContainer1; */
+}
+
+#scroll-container-2 {
+  view-timeline: --scrollContainer2;
+}
+
+#shell-1 {
+  position: relative;
+  top: -600px;
+  animation: parallax-effect linear forwards;
+  animation-timeline: --scrollContainer1;
+}
+
+#shell-2 {
+  position: relative;
+  top: -1200px;
+  animation: parallax-effect linear forwards;
+  animation-timeline: --scrollContainer2;
+}
+
+.region {
+  position: relative;
+  z-index: 100;
+}
+
+@keyframes parallax-effect {
+  from { transform: translateY(0px) }
+  to { transform: translateY(-600px) }
+}
+
+.rounded-xxl {
+  border-radius: 2.5rem
+}

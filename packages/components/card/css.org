@@ -261,7 +261,7 @@ To adjust the cards presentation based on its width, we use a
 ** Appendix :noexport:
 
 *** Tangle template
-#+begin_src css :noweb yes :tangle src/card.css
+#+begin_src css :noweb yes :tangle src/index.css
   <<card-base>>
   <<card-sections>>
   <<card-primary-action>>

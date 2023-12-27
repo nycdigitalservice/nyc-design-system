@@ -1,6 +1,8 @@
 {
   "name": "@nycds/accordion",
+  "version": "0.1.0",
   "main": "src/index.js",
+  "style": "src/index.css",
   "scripts": {
     "build": "esbuild src/index.js --bundle --outfile=dist/nyc-accordion.js"
   },

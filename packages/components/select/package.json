@@ -1,6 +1,8 @@
 {
   "name": "@nycds/select",
+  "version": "0.1.0",
+  "style": "./src/index.css",
   "exports": {
-    "./css": "./src/select.css"
+    "./css": "./src/index.css"
   }
 }

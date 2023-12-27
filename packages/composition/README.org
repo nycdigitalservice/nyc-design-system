@@ -1,5 +1,8 @@
 #+title: Composition
 
+#+name: class-prefix
+: 
+
 Composition classes can be used to control page layout and spacing
 between page items
 
@@ -8,8 +11,8 @@ between page items
 The =container= class *contains* elements to a *maximum size*, provides
 horizontal *padding*, and is *centered* by default
 
-#+BEGIN_SRC css :tangle composition.css
-  .container {
+#+BEGIN_SRC css :noweb-ref container :noweb yes
+  .<<class-prefix()>>container {
     --_gutter: var(--nyc-cmp-container-gutter, 1rem);
     --_max-w: var(--nyc-sys-dimension-page-max-width, 64rem);
     margin-inline: auto;
@@ -18,38 +21,53 @@ horizontal *padding*, and is *centered* by default
     container: container / inline-size;
   }
 #+END_SRC
+
 ** Region
 
 The =region= class supplies consistent vertical padding to sections of content
 
-#+BEGIN_SRC css :tangle composition.css
-  .region {
+#+name: region-space
+#+begin_src emacs-lisp
+
+  (format ".region[data-region-space]")
+#+end_src
+
+#+BEGIN_SRC css :noweb-ref region :noweb yes
+  .<<class-prefix()>>region {
     --_region-space: var(--nyc-sys-dimension-space-l-xl);
     padding-block-start: var(--_region-space);
     padding-block-end: var(--_region-space);
   }
 
-  .region[data-region-space="s"] {
+  .<<class-prefix()>>region[data-region-space="s"] {
     --_region-space: var(--nyc-sys-dimension-space-s);
   }
 
-  .region[data-region-space="m"] {
+  .<<class-prefix()>>region[data-region-space="m"] {
     --_region-space: var(--nyc-sys-dimension-space-m);
   }
 
-  .region[data-region-space="l"] {
+  .<<class-prefix()>>region[data-region-space="l"] {
     --_region-space: var(--nyc-sys-dimension-space-l);
   }
 
-  .region[data-region-space="xl"] {
+  .<<class-prefix()>>region[data-region-space="xl"] {
     --_region-space: var(--nyc-sys-dimension-space-xl);
   }
 
-  .region[data-region-space="s-m"] {
+  .<<class-prefix()>>region[data-region-space="2xl"] {
+    --_region-space: var(--nyc-sys-dimension-space-2xl);
+  }
+
+  .<<class-prefix()>>region[data-region-space="3xl"] {
+    --_region-space: var(--nyc-sys-dimension-space-3xl);
+  }
+
+  .<<class-prefix()>>region[data-region-space="s-m"] {
     --_region-space: var(--nyc-sys-dimension-space-s-m);
   }
 
-  .region[data-region-space="xs-s"] {
+  .<<class-prefix()>>region[data-region-space="xs-s"] {
     --_region-space: var(--nyc-sys-dimension-space-xs-s);
   }
 #+END_SRC
@@ -59,7 +77,7 @@ The =flow= class controls vertical space between child elements in a
 content block. The =data-flow-space= attribute can be used to adjust
 this spacing on a per-element level.
 
-#+begin_src css :tangle composition.css
+#+begin_src css :noweb-ref flow
    .flow > * {
      margin-block: 0;
    }
@@ -101,7 +119,7 @@ variables
 
 *** Base
 
-#+BEGIN_SRC css :tangle composition.css
+#+BEGIN_SRC css :noweb-ref grid
   .grid {
     --_gutter: var(--nyc-cmp-grid-gutter, 1rem);
     --_placement: var(--nyc-cmp-grid-placement, auto-fill);
@@ -162,7 +180,7 @@ side-by-side on desktop, regardless of its order in the
 markup. Especially useful if the markup order is =heading= -> =figure= ->
 =body=.
 
-#+begin_src css :tangle composition.css
+#+begin_src css :noweb-ref grid
   .grid[data-layout=figure-split] {
     grid-template-columns: 1fr;
     --_gutter: 0;
@@ -201,7 +219,7 @@ markup. Especially useful if the markup order is =heading= -> =figure= ->
 
 ** Sidebar
 
-#+BEGIN_SRC css :tangle composition.css
+#+BEGIN_SRC css :noweb-ref sidebar
   .with-sidebar {
     display: flex;
     flex-wrap: wrap;
@@ -221,7 +239,7 @@ markup. Especially useful if the markup order is =heading= -> =figure= ->
 
 ** Switcher
 
-#+begin_src css :tangle composition.css
+#+begin_src css :noweb-ref switcher
   .switcher {
     display: flex;
     flex-wrap: wrap;
@@ -257,3 +275,27 @@ markup. Especially useful if the markup order is =heading= -> =figure= ->
     }
   }
 #+end_src
+
+** Appendix :noexport:
+
+#+BEGIN_SRC css :tangle src/index.css :noweb yes
+  /* Composition classes */
+
+  /* Container */
+  <<container>>
+
+  /* Region */
+  <<region>>
+
+  /* Flow */
+  <<flow>>
+
+  /* Grid */
+  <<grid>>
+
+  /* Sidebar */
+  <<sidebar>>
+
+  /* Switcher */
+  <<switcher>>
+#+END_SRC

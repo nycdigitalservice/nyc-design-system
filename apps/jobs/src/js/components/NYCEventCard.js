@@ -20,9 +20,6 @@ export default class NYCEventCard extends HTMLElement {
     </a></h3>
     <time datetime="" class="order-first text-xs"></time>
     </header>
-<div class="card__media">
-<img src="${import.meta.env.BASE_URL}/images/poc-1/cards/${img}">
-</div>
     <div class="card__body flow" data-flow-space="s">
 <p class="card__description"><slot name="description"></slot></p>
     <p><slot name="department"></slot></p>
@@ -31,6 +28,11 @@ export default class NYCEventCard extends HTMLElement {
     </nyc-event-card>
     `;
 
+    /*
+      <div class="card__media">
+      <img src="${import.meta.env.BASE_URL}/images/poc-1/cards/${img}">
+      </div>
+    */
     const template = document.createElement('template');
     template.innerHTML = templateStr;
     return template;

@@ -1,4 +1,4 @@
-@import "@nycds/core/css";
+@import "@nycds/core";
 @import "@nycds/themes/theme.css";
 @import "components.css";
 
@@ -7,7 +7,7 @@
   --nyc-sys-color-background: #E1F1FA;
   --nyc-sys-color-background: #D1E8F5;
   --nyc-sys-font-family-base: 'Noto Sans', sans-serif;
-  --nyc-sys-font-family-secondary: 'Clash Grotesk', sans-serif;
+  --nyc-sys-font-family-secondary: 'Clash Display', sans-serif;
   --nyc-sys-color-primary: #000;
   --nyc-sys-color-on-primary: #fff;
   --nyc-sys-background-light: #fff;
@@ -232,7 +232,7 @@ body {
 }
 
 body, main {
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 
 .sun-wrapper {
@@ -292,7 +292,8 @@ body, main {
   animation-range: 0vh 70vh;
 }
 
-[data-theme=dark] .button[data-variant=primary] {
+[data-theme=dark] .button[data-variant=primary],
+[data-theme=dark] .button[data-variant=tertiary] {
   --nyc-cmp-button-background: white;
   --nyc-cmp-button-color: black;
   &:hover {

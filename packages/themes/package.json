@@ -1,3 +1,6 @@
 {
-  "name": "@nycds/themes"
+  "name": "@nycds/themes",
+  "version": "0.1.0",
+  "style": "theme.css",
+  "main": "theme.css"
 }

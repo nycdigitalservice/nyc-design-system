@@ -34,7 +34,7 @@ Escape is pressed or on mouse out.
 
 ** CSS
 
-#+begin_src css :tangle src/tooltip.css
+#+begin_src css :tangle src/index.css
   nyc-tooltip {
     --_p-inline: 1rem;
     --_p-block: 1rem;
@@ -86,7 +86,7 @@ Escape is pressed or on mouse out.
     }
 
     /* create a stacking context for elements with > nyc-tooltips */
-    @nest :has(> &) {
+    :has(> &) {
       position: relative;
 
       /* when those parent elements have focus, hover, etc */
@@ -137,7 +137,7 @@ Escape is pressed or on mouse out.
       --_x: calc(50% * var(--isRTL));
 
       @media (prefers-reduced-motion: no-preference) {
-        @nest :has(> &):not(:hover, :active) nyc-tooltip {
+        :has(> &):not(:hover, :active) nyc-tooltip {
           --_y: 3px;
         }
       }
@@ -156,7 +156,7 @@ Escape is pressed or on mouse out.
       --_y: 50%;
 
       @media (prefers-reduced-motion: no-preference) {
-        @nest :has(> &):not(:hover, :active) nyc-tooltip {
+        :has(> &):not(:hover, :active) nyc-tooltip {
           --_x: calc(var(--isRTL) * -3px * -1);
         }
       }
@@ -179,7 +179,7 @@ Escape is pressed or on mouse out.
       --_x: calc(50% * var(--isRTL));
 
       @media (prefers-reduced-motion: no-preference) {
-        @nest :has(> &):not(:hover, :active) nyc-tooltip {
+        :has(> &):not(:hover, :active) nyc-tooltip {
           --_y: -3px;
         }
       }
@@ -198,7 +198,7 @@ Escape is pressed or on mouse out.
       --_y: 50%;
 
       @media (prefers-reduced-motion: no-preference) {
-        @nest :has(> &):not(:hover, :active) nyc-tooltip {
+        :has(> &):not(:hover, :active) nyc-tooltip {
           --_x: calc(var(--isRTL) * 3px * -1);
         }
       }

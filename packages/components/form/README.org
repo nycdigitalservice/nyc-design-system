@@ -1,6 +1,6 @@
 #+title: Form
 
-#+begin_src css :tangle src/form.css
+#+begin_src css :tangle src/index.css
   .form-group {
       display: flex;
       flex-wrap: wrap;

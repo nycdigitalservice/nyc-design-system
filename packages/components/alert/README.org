@@ -23,7 +23,7 @@ content within a view. Further guidance on Alerts can be found on the
 
 ** CSS
 
-#+begin_src css :tangle src/alert.css
+#+begin_src css :tangle src/index.css
   .alert {
     --_accent-color: var(--nyc-cmp-alert-accent-color, hsla(208, 100%, 30%, 1));
     --_panel-background: var(--nyc-cmp-alert-panel-background-color, hsla(0, 0%, 93%, 1));
@@ -80,7 +80,7 @@ content within a view. Further guidance on Alerts can be found on the
 
 **** CSS
 
-#+begin_src css :tangle src/alert.css
+#+begin_src css :tangle src/index.css
   .alert[data-variant=news] {
       --space: .8em;
       --_accent-color: var(--nyc-sys-color-secondary);
@@ -99,7 +99,7 @@ content within a view. Further guidance on Alerts can be found on the
 
 ** Container queries
 
-#+begin_src css :tangle src/alert.css
+#+begin_src css :tangle src/index.css
 @container grid-parent (max-width: 657px) {
   .alert {
     padding-inline-start: 0;

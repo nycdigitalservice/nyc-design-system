@@ -38,7 +38,7 @@ Use these custom properties in your theme to override default styling
 The =button= CSS class implements the custom properties and other
 default styles.
 
-#+begin_src css :tangle src/css/button.css
+#+begin_src css :tangle src/css/index.css
   .button,
   .button:link,
   .button:visited {
@@ -99,7 +99,7 @@ default styles.
 
 When within a grid list, have the button fill the grid child
 
-#+begin_src css :tangle src/css/button.css
+#+begin_src css :tangle src/css/index.css
   .grid li > .button {
     display: flex;
     height: 100%;
@@ -108,7 +108,7 @@ When within a grid list, have the button fill the grid child
 
 ** Variants
 
-#+begin_src css :tangle src/css/button.css
+#+begin_src css :tangle src/css/index.css
   /* .button[data-variant] { */
   /*   &:hover { */
   /*     background: var(--_color); */
@@ -119,7 +119,7 @@ When within a grid list, have the button fill the grid child
 
 *** Primary
 
-#+begin_src css :tangle src/css/button.css
+#+begin_src css :tangle src/css/index.css
   .button[data-variant=primary] {
     --nyc-cmp-button-background: var(--nyc-sys-color-primary-dark);
     --nyc-cmp-button-color: var(--nyc-sys-color-on-primary);
@@ -135,7 +135,7 @@ When within a grid list, have the button fill the grid child
 
 *** Pill
 
-#+begin_src css :tangle src/css/button.css
+#+begin_src css :tangle src/css/index.css
   .button[data-variant=pill] {
     --nyc-cmp-button-border-radius: 2.25rem;
     --nyc-cmp-button-shadow: none;

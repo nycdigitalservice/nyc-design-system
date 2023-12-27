@@ -2,7 +2,7 @@
 
 ** CSS
 
-#+begin_src css :tangle src/select.css
+#+begin_src css :tangle src/index.css
   .select {
     position: relative;
 
