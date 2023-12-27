@@ -28,6 +28,11 @@ div.blur {
   --nyc-blur: blur(110px);
 }
 
+.region {
+  position: relative;
+  z-index: 100;
+}
+
 .p-wrapper {
   /* opacity: 0.75; */
   
@@ -80,46 +85,44 @@ div.blur {
 
 /*   z-index: 100; */
 
-html {
-  timeline-scope: --scrollContainer1
-}
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    timeline-scope: --scrollContainer1
+  }
 
-#scroll-parent {
-  timeline-scope: --scrollContainer2
-}
+  #scroll-parent {
+    timeline-scope: --scrollContainer2
+  }
 
-#scroll-container-1 {
-  view-timeline-name: --scrollContainer1;
-  /* animation: parallax-effect linear forwards; */
-  /* animation-timeline: --scrollContainer1; */
-}
+  #scroll-container-1 {
+    view-timeline-name: --scrollContainer1;
+    /* animation: parallax-effect linear forwards; */
+    /* animation-timeline: --scrollContainer1; */
+  }
 
-#scroll-container-2 {
-  view-timeline: --scrollContainer2;
-}
+  #scroll-container-2 {
+    view-timeline: --scrollContainer2;
+  }
 
-#shell-1 {
-  position: relative;
-  top: -600px;
-  animation: parallax-effect linear forwards;
-  animation-timeline: --scrollContainer1;
-}
+  #shell-1 {
+    position: relative;
+    top: -600px;
+    animation: parallax-effect linear forwards;
+    animation-timeline: --scrollContainer1;
+  }
 
-#shell-2 {
-  position: relative;
-  top: -1200px;
-  animation: parallax-effect linear forwards;
-  animation-timeline: --scrollContainer2;
-}
+  #shell-2 {
+    position: relative;
+    top: -1200px;
+    animation: parallax-effect linear forwards;
+    animation-timeline: --scrollContainer2;
+  }
 
-.region {
-  position: relative;
-  z-index: 100;
-}
 
-@keyframes parallax-effect {
-  from { transform: translateY(0px) }
-  to { transform: translateY(-600px) }
+  @keyframes parallax-effect {
+    from { transform: translateY(0px) }
+    to { transform: translateY(-600px) }
+  }
 }
 
 .rounded-xxl {

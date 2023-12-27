@@ -1,3 +1,4 @@
+import 'https://flackr.github.io/scroll-timeline/dist/scroll-timeline.js';
 import 'uno.css';
 // import './main.css';
 // import { buildHiringEvents } from './js/hiring-events.js';
