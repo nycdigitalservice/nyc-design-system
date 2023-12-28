@@ -323,26 +323,26 @@ header > nav a, header > nav button {
   --_region-space: var(--nyc-sys-dimension-space-xs-s);
 }
 /* Flow */
-.flow > * {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-.flow > * + *,
-.flow[data-flow-recursive] * + * {
+.flow {
   --_flow-space: var(--nyc-sys-dimension-space-m, 1em);
-  margin-top: max(1.50rem, min(calc(1.41rem + 0.43vw), 1.69rem));
-  margin-top: max(1.50rem, min(calc(1.41rem + 0.43vw), 1.69rem));
-  margin-top: var(--_flow-space);
 }
+.flow > * {
+     margin-top: 0;
+     margin-bottom: 0;
+   }
+.flow > * + *,
+   .flow[data-flow-recursive] * + * {
+     margin-top: var(--_flow-space);
+   }
 [data-flow-space=s] {
-  --_flow-space: var(--nyc-sys-dimension-space-s);
-}
+     --_flow-space: var(--nyc-sys-dimension-space-s);
+   }
 [data-flow-space=m] {
-  --_flow-space: var(--nyc-sys-dimension-space-m);
-}
+     --_flow-space: var(--nyc-sys-dimension-space-m);
+   }
 [data-flow-space=l] {
-  --_flow-space: var(--nyc-sys-dimension-space-l);
-}
+     --_flow-space: var(--nyc-sys-dimension-space-l);
+   }
 /* Grid */
 .grid {
   --_gutter: var(--nyc-cmp-grid-gutter, 1rem);

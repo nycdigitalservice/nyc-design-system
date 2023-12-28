@@ -1,5 +1,6 @@
 :root {
   --nyc-cmp-card-background-hover: #222;
+  --nyc-cmp-button-color: #fff;
 }
 
 body {
@@ -8,21 +9,23 @@ body {
 
 h2 {
   font-family: var(--nyc-sys-font-family-secondary);
-  font-size: 3.125rem;
-}
-
-h1 {
-  font-size: 100px;
-  font-family: var(--nyc-sys-font-family-secondary);
+  font-size: 2.5rem;
 }
 
 main {
   /* overflow: hidden; */
 }
 
+h1 {
+  font-size: 90px;
+  font-family: var(--nyc-sys-font-family-secondary);
+}
+
 .hero {
   background: black;
-  min-height: 88vh;
+  border-bottom-right-radius: 40px;
+  border-bottom-left-radius: 40px;
+  z-index: 10;
 }
 
 .bg-gradient-purple {
@@ -38,6 +41,37 @@ div.blur {
   z-index: 100;
 }
 
+.button__icon {
+  display: flex;
+  align-items: center;
+}
+
+[data-theme=dark] .button[data-variant=primary],
+[data-theme=dark] .button[data-variant=tertiary] {
+  --nyc-cmp-button-background:  #004FFF;
+  --nyc-cmp-button-color: #fff;
+  &:hover {
+    --nyc-cmp-button-color-hover: #fff;
+    --nyc-cmp-button-background-hover: inherit;
+  }
+}
+
+.button[data-variant=primary] {
+  --nyc-cmp-button-background:  #004FFF;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.button[data-variant=secondary] {
+  display: flex;
+  align-items: center;
+  --nyc-cmp-button-border-width: 0;
+  --nyc-cmp-button-background: transparent;
+  --nyc-cmp-button-background-hover: #555;
+  --nyc-cmp-button-color-hover: #fff;
+}
+
 .p-wrapper {
   /* opacity: 0.75; */
   
@@ -48,18 +82,14 @@ div.blur {
   height: 100%;
   width: 100%;
   overflow: hidden;
-  /* } */
-}
-
-.p-wrapper svg {
+  
+  & svg {
     width: 100%;
     position: relative;
     z-index: 0;
   }
 
-/*   mix-blend-mode: soft-light; */
-
-.p-wrapper .noise {
+  & .noise {
     position: absolute;
     top: 0;
     left: 0;
@@ -67,28 +97,20 @@ div.blur {
     mix-blend-mode: soft-light;
     opacity: .25;
   }
-
-/* &:before { */
-
-/*   content: ''; */
-
-/*   position: absolute; */
-
-/*   width: 100%; */
-
-/*   height: 100%; */
-
-/*   top: 0; */
-
-/*   left: 0; */
-
-/*   background: url('./img/noise.png'); */
-
-/*   opacity: .5; */
-
-/*   background-size: cover; */
-
-/*   z-index: 100; */
+  /* &:before { */
+  /*   content: ''; */
+  /*   position: absolute; */
+  /*   width: 100%; */
+  /*   height: 100%; */
+  /*   top: 0; */
+  /*   left: 0; */
+  /*   background: url('./img/noise.png'); */
+  /*   opacity: .5; */
+  /*   background-size: cover; */
+  /*   z-index: 100; */
+  /*   mix-blend-mode: soft-light; */
+  /* } */
+}
 
 @media (prefers-reduced-motion: no-preference) {
   html {
@@ -132,28 +154,4 @@ div.blur {
 
 .rounded-xxl {
   border-radius: 2.5rem
-}
-
-.bg-gradient-orange {
-  position: relative;
-}
-
-.bg-gradient-orange:after {
-    border-radius: 8px;
-    background: rgba(249, 181, 99, 0.50);
-    filter: blur(75px);
-    content:"";
-    position: absolute;
-    top: -5%;
-    left: 0;
-    width: 100%;
-    height: 90%;
-    z-index: -1;
-  }
-
-[data-theme=dark] .button[data-variant=primary] {
-  --nyc-cmp-button-background:  #004FFF;
-  --nyc-cmp-button-color:  #FFF;
-  --nyc-cmp-button-border-color: #004FFF;
-  --nyc-cmp-button-padding: .75rem 1.5rem;
 }

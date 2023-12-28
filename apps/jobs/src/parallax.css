@@ -11,13 +11,18 @@ h2 {
   font-size: 3.125rem;
 }
 
+h1 {
+  font-size: 100px;
+  font-family: var(--nyc-sys-font-family-secondary);
+}
+
 main {
   /* overflow: hidden; */
 }
 
 .hero {
   background: black;
-  min-height: 94vh;
+  min-height: 88vh;
 }
 
 .bg-gradient-purple {
@@ -115,4 +120,27 @@ div.blur {
 
 .rounded-xxl {
   border-radius: 2.5rem
+}
+
+.bg-gradient-orange {
+  position: relative;
+  &:after {
+    border-radius: 8px;
+    background: rgba(249, 181, 99, 0.50);
+    filter: blur(75px);
+    content:"";
+    position: absolute;
+    top: -5%;
+    left: 0;
+    width: 100%;
+    height: 90%;
+    z-index: -1;
+  }
+}
+
+[data-theme=dark] .button[data-variant=primary] {
+  --nyc-cmp-button-background:  #004FFF;
+  --nyc-cmp-button-color:  #FFF;
+  --nyc-cmp-button-border-color: #004FFF;
+  --nyc-cmp-button-padding: .75rem 1.5rem;
 }

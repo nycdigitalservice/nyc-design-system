@@ -78,27 +78,30 @@ content block. The =data-flow-space= attribute can be used to adjust
 this spacing on a per-element level.
 
 #+begin_src css :noweb-ref flow
-   .flow > * {
-     margin-block: 0;
-   }
+  .flow {
+    --_flow-space: var(--nyc-sys-dimension-space-m, 1em);
+  }
+  
+     .flow > * {
+       margin-block: 0;
+     }
 
-   .flow > * + *,
-   .flow[data-flow-recursive] * + * {
-     --_flow-space: var(--nyc-sys-dimension-space-m, 1em);
-     margin-block-start: var(--_flow-space);
-   }
+     .flow > * + *,
+     .flow[data-flow-recursive] * + * {
+       margin-block-start: var(--_flow-space);
+     }
 
-   [data-flow-space=s] {
-     --_flow-space: var(--nyc-sys-dimension-space-s);
-   }
+     [data-flow-space=s] {
+       --_flow-space: var(--nyc-sys-dimension-space-s);
+     }
 
-   [data-flow-space=m] {
-     --_flow-space: var(--nyc-sys-dimension-space-m);
-   }
+     [data-flow-space=m] {
+       --_flow-space: var(--nyc-sys-dimension-space-m);
+     }
 
-   [data-flow-space=l] {
-     --_flow-space: var(--nyc-sys-dimension-space-l);
-   }
+     [data-flow-space=l] {
+       --_flow-space: var(--nyc-sys-dimension-space-l);
+     }
 #+end_src
 
 ** Grid

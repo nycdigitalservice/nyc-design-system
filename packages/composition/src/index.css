@@ -50,27 +50,30 @@
 }
 
 /* Flow */
-.flow > * {
-  margin-block: 0;
-}
-
-.flow > * + *,
-.flow[data-flow-recursive] * + * {
+.flow {
   --_flow-space: var(--nyc-sys-dimension-space-m, 1em);
-  margin-block-start: var(--_flow-space);
 }
 
-[data-flow-space=s] {
-  --_flow-space: var(--nyc-sys-dimension-space-s);
-}
+   .flow > * {
+     margin-block: 0;
+   }
 
-[data-flow-space=m] {
-  --_flow-space: var(--nyc-sys-dimension-space-m);
-}
+   .flow > * + *,
+   .flow[data-flow-recursive] * + * {
+     margin-block-start: var(--_flow-space);
+   }
 
-[data-flow-space=l] {
-  --_flow-space: var(--nyc-sys-dimension-space-l);
-}
+   [data-flow-space=s] {
+     --_flow-space: var(--nyc-sys-dimension-space-s);
+   }
+
+   [data-flow-space=m] {
+     --_flow-space: var(--nyc-sys-dimension-space-m);
+   }
+
+   [data-flow-space=l] {
+     --_flow-space: var(--nyc-sys-dimension-space-l);
+   }
 
 /* Grid */
 .grid {
