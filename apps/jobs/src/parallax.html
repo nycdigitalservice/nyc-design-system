@@ -47,9 +47,9 @@
       <div class="relative z-10" id="scroll-parent">
         <div class="region" data-region-space="3xl" id="scroll-container-1">
           <section class="region">
-            <div class="container">
+            <div class="container flow" data-flow-space="l">
               <h2>Popular topics</h2>
-              <ul id="popular-topics-list" class="grid list-none m-0 my-8 p-0" data-layout="col-3">
+              <ul id="popular-topics-list" class="grid list-none p-0" data-layout="col-3">
                 <li><a href="#">Noise</a></li>
                 <li><a href="#">Parking ticket or camera violation</a></li>
                 <li><a href="#">Illegal parking</a></li>
@@ -60,7 +60,7 @@
               <a href="#" class="button" data-variant="primary">View all topics</a>
             </div>
           </section>
-          <section class="region flow" style="">
+          <section class="region flow" data-flow-space="l">
             <div class="container flow">
               <h2>Upcoming events</h2>
               <img src="/images/poc-1/location-changer.png">
@@ -68,7 +68,7 @@
             <div class="container--full-bleed-right">
               <div class="full-bleed bg-gradient-orange">
                 <nyc-csv data-src="<%= env.BASE_URL %>assets/dcas/data/hiring-events.csv">
-                  <nyc-reel class="flow">
+                  <nyc-reel class="flow" data-flow-space="l">
                     <nyc-event-card-list
                       data-subscribe="nyc-csv-complete"
                       aria-label="recruitment event cards"

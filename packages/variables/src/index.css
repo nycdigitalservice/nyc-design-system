@@ -71,6 +71,9 @@
   
   /* Custom pairs */
   --nyc-sys-dimension-space-s-l: clamp(1.00rem, calc(0.43rem + 2.84vw), 2.25rem);
+  
+  /* Flow */
+  --nyc-sys-dimension-flow-space: var(--nyc-sys-dimension-space-m);
   --nyc-ref-font-family-helvetica: "Helvetica Neue", Helvetica, Arial, sans-serif;
 
   /* System variables */
@@ -111,6 +114,9 @@
   --nyc-sys-font-family-secondary: var(--nyc-sys-font-family-base);
   --ON: initial;
   --OFF: ;
+
+  /* Property sets */
+  
 }
 
 /* Custom selectors */

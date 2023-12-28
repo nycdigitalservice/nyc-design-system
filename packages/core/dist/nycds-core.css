@@ -71,6 +71,9 @@
   
   /* Custom pairs */
   --nyc-sys-dimension-space-s-l: max(1.00rem, min(calc(0.43rem + 2.84vw), 2.25rem));
+  
+  /* Flow */
+  --nyc-sys-dimension-flow-space: var(--nyc-sys-dimension-space-m);
   --nyc-ref-font-family-helvetica: "Helvetica Neue", Helvetica, Arial, sans-serif;
 
   /* System variables */
@@ -111,6 +114,9 @@
   --nyc-sys-font-family-secondary: var(--nyc-sys-font-family-base);
   --ON: initial;
   --OFF: ;
+
+  /* Property sets */
+  
 }
 /* Custom selectors */
 html,
@@ -323,26 +329,38 @@ header > nav a, header > nav button {
   --_region-space: var(--nyc-sys-dimension-space-xs-s);
 }
 /* Flow */
+/* Set default flow space to prevent inheritance when nesting */
 .flow {
-  --_flow-space: var(--nyc-sys-dimension-space-m, 1em);
+  --nyc-sys-dimension-flow-space: var(--nyc-sys-dimension-space-m);
 }
 .flow > * {
-     margin-top: 0;
-     margin-bottom: 0;
-   }
+  margin-top: 0;
+  margin-bottom: 0;
+}
 .flow > * + *,
-   .flow[data-flow-recursive] * + * {
-     margin-top: var(--_flow-space);
-   }
-[data-flow-space=s] {
-     --_flow-space: var(--nyc-sys-dimension-space-s);
-   }
-[data-flow-space=m] {
-     --_flow-space: var(--nyc-sys-dimension-space-m);
-   }
-[data-flow-space=l] {
-     --_flow-space: var(--nyc-sys-dimension-space-l);
-   }
+.flow[data-flow-recursive] * + * {
+  margin-top: max(1.50rem, min(calc(1.41rem + 0.43vw), 1.69rem));
+  margin-top: max(1.50rem, min(calc(1.41rem + 0.43vw), 1.69rem));
+  margin-top: var(--nyc-sys-dimension-flow-space);
+}
+[data-flow-space="s"] {
+  --nyc-sys-dimension-flow-space: var(--nyc-sys-dimension-space-s);
+}
+[data-flow-space="m"] {
+  --nyc-sys-dimension-flow-space: var(--nyc-sys-dimension-space-m);
+}
+[data-flow-space="l"] {
+  --nyc-sys-dimension-flow-space: var(--nyc-sys-dimension-space-l);
+}
+[data-flow-space="xl"] {
+  --nyc-sys-dimension-flow-space: var(--nyc-sys-dimension-space-xl);
+}
+[data-flow-space="2xl"] {
+  --nyc-sys-dimension-flow-space: var(--nyc-sys-dimension-space-2xl);
+}
+[data-flow-space="3xl"] {
+  --nyc-sys-dimension-flow-space: var(--nyc-sys-dimension-space-3xl);
+}
 /* Grid */
 .grid {
   --_gutter: var(--nyc-cmp-grid-gutter, 1rem);

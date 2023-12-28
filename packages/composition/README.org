@@ -78,30 +78,43 @@ content block. The =data-flow-space= attribute can be used to adjust
 this spacing on a per-element level.
 
 #+begin_src css :noweb-ref flow
+  /* Set default flow space to prevent inheritance when nesting */
   .flow {
-    --_flow-space: var(--nyc-sys-dimension-space-m, 1em);
+    --nyc-sys-dimension-flow-space: var(--nyc-sys-dimension-space-m);
   }
-  
-     .flow > * {
-       margin-block: 0;
-     }
 
-     .flow > * + *,
-     .flow[data-flow-recursive] * + * {
-       margin-block-start: var(--_flow-space);
-     }
+  .flow > * {
+    margin-block: 0;
+  }
 
-     [data-flow-space=s] {
-       --_flow-space: var(--nyc-sys-dimension-space-s);
-     }
+  .flow > * + *,
+  .flow[data-flow-recursive] * + * {
+    margin-block-start: var(--nyc-sys-dimension-flow-space);
+  }
 
-     [data-flow-space=m] {
-       --_flow-space: var(--nyc-sys-dimension-space-m);
-     }
+  [data-flow-space="s"] {
+    --nyc-sys-dimension-flow-space: var(--nyc-sys-dimension-space-s);
+  }
 
-     [data-flow-space=l] {
-       --_flow-space: var(--nyc-sys-dimension-space-l);
-     }
+  [data-flow-space="m"] {
+    --nyc-sys-dimension-flow-space: var(--nyc-sys-dimension-space-m);
+  }
+
+  [data-flow-space="l"] {
+    --nyc-sys-dimension-flow-space: var(--nyc-sys-dimension-space-l);
+  }
+
+  [data-flow-space="xl"] {
+    --nyc-sys-dimension-flow-space: var(--nyc-sys-dimension-space-xl);
+  }
+
+  [data-flow-space="2xl"] {
+    --nyc-sys-dimension-flow-space: var(--nyc-sys-dimension-space-2xl);
+  }
+
+  [data-flow-space="3xl"] {
+    --nyc-sys-dimension-flow-space: var(--nyc-sys-dimension-space-3xl);
+  }
 #+end_src
 
 ** Grid
