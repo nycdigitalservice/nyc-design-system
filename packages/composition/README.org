@@ -1,8 +1,5 @@
 #+title: Composition
 
-#+name: class-prefix
-: 
-
 Composition classes can be used to control page layout and spacing
 between page items
 
@@ -12,9 +9,10 @@ The =container= class *contains* elements to a *maximum size*, provides
 horizontal *padding*, and is *centered* by default
 
 #+BEGIN_SRC css :noweb-ref container :noweb yes
-  .<<class-prefix()>>container {
+  .container {
     --_gutter: var(--nyc-cmp-container-gutter, 1rem);
     --_max-w: var(--nyc-sys-dimension-page-max-width, 64rem);
+
     margin-inline: auto;
     max-inline-size: calc(var(--_max-w) + var(--_gutter) * 2);
     padding-inline: var(--_gutter);
@@ -26,51 +24,27 @@ horizontal *padding*, and is *centered* by default
 
 The =region= class supplies consistent vertical padding to sections of content
 
+#+BEGIN_SRC css :noweb-ref region :noweb yes
+  .region {
+    --_region-space: var(--nyc-sys-dimension-space-l-xl);
+
+    padding-block: var(--_region-space);
+  }
+
+  <<region-space()>>
+#+END_SRC
+
 #+name: region-space
 #+begin_src emacs-lisp
-
-  (format ".region[data-region-space]")
+  (setq space-scale '("s" "m" "l" "xl" "2xl" "3xl"))
+  (mapconcat
+   (lambda (str)
+     (format-spec
+      ".region[data-region-space=\"%s\"] { --_region-space: var(--nyc-sys-dimension-space-%s); }\n"
+      (format-spec-make ?s str)))
+   space-scale)
 #+end_src
 
-#+BEGIN_SRC css :noweb-ref region :noweb yes
-  .<<class-prefix()>>region {
-    --_region-space: var(--nyc-sys-dimension-space-l-xl);
-    padding-block-start: var(--_region-space);
-    padding-block-end: var(--_region-space);
-  }
-
-  .<<class-prefix()>>region[data-region-space="s"] {
-    --_region-space: var(--nyc-sys-dimension-space-s);
-  }
-
-  .<<class-prefix()>>region[data-region-space="m"] {
-    --_region-space: var(--nyc-sys-dimension-space-m);
-  }
-
-  .<<class-prefix()>>region[data-region-space="l"] {
-    --_region-space: var(--nyc-sys-dimension-space-l);
-  }
-
-  .<<class-prefix()>>region[data-region-space="xl"] {
-    --_region-space: var(--nyc-sys-dimension-space-xl);
-  }
-
-  .<<class-prefix()>>region[data-region-space="2xl"] {
-    --_region-space: var(--nyc-sys-dimension-space-2xl);
-  }
-
-  .<<class-prefix()>>region[data-region-space="3xl"] {
-    --_region-space: var(--nyc-sys-dimension-space-3xl);
-  }
-
-  .<<class-prefix()>>region[data-region-space="s-m"] {
-    --_region-space: var(--nyc-sys-dimension-space-s-m);
-  }
-
-  .<<class-prefix()>>region[data-region-space="xs-s"] {
-    --_region-space: var(--nyc-sys-dimension-space-xs-s);
-  }
-#+END_SRC
 ** Flow
 
 The =flow= class controls vertical space between child elements in a
@@ -298,20 +272,26 @@ markup. Especially useful if the markup order is =heading= -> =figure= ->
   /* Composition classes */
 
   /* Container */
+
   <<container>>
 
   /* Region */
+
   <<region>>
 
   /* Flow */
+
   <<flow>>
 
   /* Grid */
+
   <<grid>>
 
   /* Sidebar */
+
   <<sidebar>>
 
   /* Switcher */
+
   <<switcher>>
 #+END_SRC

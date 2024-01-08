@@ -1,9 +1,11 @@
 /* Composition classes */
 
 /* Container */
+
 .container {
   --_gutter: var(--nyc-cmp-container-gutter, 1rem);
   --_max-w: var(--nyc-sys-dimension-page-max-width, 64rem);
+
   margin-inline: auto;
   max-inline-size: calc(var(--_max-w) + var(--_gutter) * 2);
   padding-inline: var(--_gutter);
@@ -11,45 +13,23 @@
 }
 
 /* Region */
+
 .region {
   --_region-space: var(--nyc-sys-dimension-space-l-xl);
-  padding-block-start: var(--_region-space);
-  padding-block-end: var(--_region-space);
+
+  padding-block: var(--_region-space);
 }
 
-.region[data-region-space="s"] {
-  --_region-space: var(--nyc-sys-dimension-space-s);
-}
+.region[data-region-space="s"] { --_region-space: var(--nyc-sys-dimension-space-s); }
+.region[data-region-space="m"] { --_region-space: var(--nyc-sys-dimension-space-m); }
+.region[data-region-space="l"] { --_region-space: var(--nyc-sys-dimension-space-l); }
+.region[data-region-space="xl"] { --_region-space: var(--nyc-sys-dimension-space-xl); }
+.region[data-region-space="2xl"] { --_region-space: var(--nyc-sys-dimension-space-2xl); }
+.region[data-region-space="3xl"] { --_region-space: var(--nyc-sys-dimension-space-3xl); }
 
-.region[data-region-space="m"] {
-  --_region-space: var(--nyc-sys-dimension-space-m);
-}
-
-.region[data-region-space="l"] {
-  --_region-space: var(--nyc-sys-dimension-space-l);
-}
-
-.region[data-region-space="xl"] {
-  --_region-space: var(--nyc-sys-dimension-space-xl);
-}
-
-.region[data-region-space="2xl"] {
-  --_region-space: var(--nyc-sys-dimension-space-2xl);
-}
-
-.region[data-region-space="3xl"] {
-  --_region-space: var(--nyc-sys-dimension-space-3xl);
-}
-
-.region[data-region-space="s-m"] {
-  --_region-space: var(--nyc-sys-dimension-space-s-m);
-}
-
-.region[data-region-space="xs-s"] {
-  --_region-space: var(--nyc-sys-dimension-space-xs-s);
-}
 
 /* Flow */
+
 /* Set default flow space to prevent inheritance when nesting */
 .flow {
   --nyc-sys-dimension-flow-space: var(--nyc-sys-dimension-space-m);
@@ -89,6 +69,7 @@
 }
 
 /* Grid */
+
 .grid {
   --_gutter: var(--nyc-cmp-grid-gutter, 1rem);
   --_placement: var(--nyc-cmp-grid-placement, auto-fill);
@@ -175,6 +156,7 @@
 }
 
 /* Sidebar */
+
 .with-sidebar {
   display: flex;
   flex-wrap: wrap;
@@ -192,6 +174,7 @@
 }
 
 /* Switcher */
+
 .switcher {
   display: flex;
   flex-wrap: wrap;

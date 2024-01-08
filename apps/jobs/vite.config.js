@@ -5,7 +5,6 @@ import postcssPresetEnv from 'postcss-preset-env';
 import postcss from 'rollup-plugin-postcss';
 import {ViteEjsPlugin} from "vite-plugin-ejs";
 
-console.log(import.meta.env)
 export default defineConfig({
   root: 'src',
   build: {
