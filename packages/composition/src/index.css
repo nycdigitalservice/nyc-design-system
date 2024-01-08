@@ -2,12 +2,13 @@
 
 /* Container */
 
-.container {
+.center {
   --_gutter: var(--nyc-cmp-container-gutter, 1rem);
   --_max-w: var(--nyc-sys-dimension-page-max-width, 64rem);
 
+  box-sizing: content-box;
   margin-inline: auto;
-  max-inline-size: calc(var(--_max-w) + var(--_gutter) * 2);
+  max-inline-size: var(--_max-w);
   padding-inline: var(--_gutter);
   container: container / inline-size;
 }
