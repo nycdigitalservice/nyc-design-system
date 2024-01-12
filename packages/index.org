@@ -1,5 +1,6 @@
 #+title: Packages
 
+- [[file:core/README.org][Core]]: The core library, imports all other packages
 - [[file:reset/README.org][Reset]]: A CSS reset utility
 - [[file:variables/README.org][Variables]]: CSS variables for Reference and System tiers, used in all
   following packages

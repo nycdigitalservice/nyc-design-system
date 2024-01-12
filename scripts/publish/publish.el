@@ -57,7 +57,7 @@
 (require 'use-package)
 
 ;; Require built-in dependencies
-(require 'vc-git)
+;; (require 'vc-git)
 (require 'ox-publish)
 (require 'subr-x)
 (require 'cl-lib)
@@ -128,7 +128,7 @@
       org-html-html5-fancy t
       org-html-self-link-headlines t
       org-export-with-toc nil
-      org-confirm-babel-evaluate #'nyc/org-confirm-babel-evaluate
+      org-confirm-babel-evaluate nil
       make-backup-files nil)
 
 (setq org-publish-project-alist

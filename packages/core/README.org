@@ -1,0 +1,4 @@
+#+title: Core library
+
+This package bundles the other packages into a core library that can
+be installed if you would like access to the whole design system.

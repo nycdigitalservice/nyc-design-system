@@ -9,9 +9,18 @@
     "type": "https",
     "url": "https://github.com/nycdigitalservice/nyc-design-system"
   },
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch:org": "node scripts/watch-org-files.js",
+    "build:org": "node scripts/docker-emacs-run.js tangle ./packages",
+    "build:docs": "node scripts/docker-emacs-run.js publish",
+    "build:image": "node scripts/docker-emacs-init.js"
+  },
   "devDependencies": {
     "@commitlint/cli": "^18.4.3",
     "@commitlint/config-conventional": "^18.4.3",
+    "chokidar": "^3.5.3",
     "esbuild": "^0.19.1",
     "husky": "^8.0.3",
     "npm-run-all": "^4.1.5",

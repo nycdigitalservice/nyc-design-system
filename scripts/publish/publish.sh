@@ -1,3 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
+EMACSCMD="emacs"
 
-/opt/homebrew/bin/emacs -Q --batch -l ./publish.el --funcall nyc/publish
+$EMACSCMD -nw -Q --batch -l ./publish.el --funcall nyc/publish

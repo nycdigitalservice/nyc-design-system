@@ -108,12 +108,15 @@
         article-dir))))
 
 
-(defun nyc/get-commit-hash ()
-  "Get the short hash of the latest commit in the current repository."
-  (string-trim-right
-   (with-output-to-string
-     (with-current-buffer standard-output
-       (vc-git-command t nil nil "rev-parse" "--short" "HEAD")))))
+;; (defun nyc/get-commit-hash ()
+;;   "Get the short hash of the latest commit in the current repository."
+;;   (string-trim-right
+;;    (with-output-to-string
+;;      (with-current-buffer standard-output
+;;        (vc-git-command t nil nil "rev-parse" "--short" "HEAD")))))
+
+
+;;    "<!-- Generated from " (nyc/get-commit-hash)  " on " (format-time-string "%Y-%m-%d @ %H:%M") " with " org-export-creator-string " -->\n"
 
 (cl-defun nyc/generate-page (title
                              content
@@ -125,7 +128,6 @@
                              (exclude-header)
                              (exclude-footer))
   (concat
-   "<!-- Generated from " (nyc/get-commit-hash)  " on " (format-time-string "%Y-%m-%d @ %H:%M") " with " org-export-creator-string " -->\n"
    "<!DOCTYPE html>"
    (sxml-to-xml
     `(html (@ (lang "en"))
@@ -167,7 +169,8 @@
   (nyc/generate-page (org-export-data (plist-get info :title) info)
                      contents
                      info
-                     :publish-date (org-export-data (org-export-get-date info "%B %e, %Y") info)))
+                     :publish-date (org-export-data
+                                    (org-export-get-date info "%B %e, %Y") info)))
 
 ;; TODO - point to directory for non-index.org links
 (defun nyc/org-html-link (link contents info)
@@ -227,9 +230,12 @@
          (container-class (and container (or (org-element-property :HTML_CONTAINER_CLASS headline) (when (equal level 2) "region flow")))))
     (when attributes
       (setq attributes
-            (format " %s" (org-html--make-attribute-string
-                           (org-export-read-attribute 'attr_html `(nil
-                                                                   (attr_html ,(split-string attributes))))))))
+            (format " %s"
+                    (org-html--make-attribute-string
+                     (org-export-read-attribute
+                      'attr_html
+                      `(nil
+                        (attr_html ,(split-string attributes))))))))
     (concat
      (when (and container (not (string= "" container)))
        (format "<%s%s>" container (if container-class (format " class=\"%s\"" container-class) "")))

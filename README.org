@@ -1,13 +1,13 @@
-#+title: DOF Design System
+#+title: NYC Design System
 
 ** About
 
-The DOF Design System provides a set of components that compose a CSS
-library, used to build pages for the Department of Finance's website
+The NYC Design System provides a set of components that compose a
+CSS/JS library, used to style pages for the City of New York's website
 redesign. It is an opinionated set of design decisions made to address
-issues facing the Department of Finance's current website. As such
-this library is not intended for general-purpose use, though it can be
-used as a reference for other design systems.
+issues facing the City of New York's current website. As such this
+library is not intended for general-purpose use, though it can be used
+as a reference for other design systems.
 
 This repository is structured in a monorepo style, with library files
 all living under the [[file:packages/index.org][packages]] directory. To ease the prototyping and
@@ -47,16 +47,23 @@ guidelines, and source code.
 If you would like to contribute to the library, please feel free to
 make a pull request.
 
+*** Org
+
+This project utilizes [[https://orgmode.org/index.html][Org Mode]], a plain text file format, to write
+code and documentation in a [[https://en.wikipedia.org/wiki/Literate_programming][literate programming]] style. This means the
+source of truth for most packages in this repository is in an =.org= file
+(typically =README.org=), not the =.css= or =.js= file. *Code written
+directly in =.css= or =.js= files may be overwritten by tangling =.org=
+files*.
+
 *** Requirements
 
 - [[https://pnpm.io/][pnpm]] package manager
-- [[https://www.gnu.org/software/emacs/][GNU Emacs]] (optional) - the emacs binary is used to build the
-  documentation website and extract source code from ~org~ files.
+- [[https://www.docker.com/products/docker-desktop/][Docker desktop]] - A docker image containing [[https://www.gnu.org/software/emacs/][GNU Emacs]] is used to
+  tangle code from =org= files and build the docs site.
 
-After cloning this repository, run =pnpm install= to fetch the
-required dependencies and =pnpm run dev= to start the
-development server.
+*** Getting started
 
-*** Building
-
-To build the library stylesheet run =pnpm run build=
+After cloning the repository, make sure Docker is available and run
+=pnpm run build:image= to build the Docker image. Run =pnpm run watch:org=
+to watch and tangle org files on save.
