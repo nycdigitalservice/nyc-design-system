@@ -4,11 +4,11 @@ class NYCReel extends HTMLElement {
 
     this.reelNav = `
         <div class="reel__nav">
-            <button type="button" class="button" data-variant="tertiary">
+            <button type="button" class="button" data-variant="primary">
                 <span class="sr-only">Scroll events left</span>
                 <i class="i-ri:arrow-left-line text-lg"></i>
             </button>
-            <button type="button" class="button" data-variant="tertiary">
+            <button type="button" class="button" data-variant="primary">
                 <span class="sr-only">Scroll events right</span>
                 <i class="i-ri:arrow-right-line text-lg"></i>
             </button>

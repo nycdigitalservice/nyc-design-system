@@ -11,7 +11,7 @@ horizontal *padding*, and is *centered* by default
 #+BEGIN_SRC css :noweb-ref container :noweb yes
   .center {
     --_gutter: var(--nyc-cmp-container-gutter, 1rem);
-    --_max-w: var(--nyc-sys-dimension-page-max-width, 64rem);
+    --_max-w: var(--nyc-sys-size-width-page-max, 64rem);
 
     box-sizing: content-box;
     margin-inline: auto;
@@ -27,7 +27,7 @@ The =region= class supplies consistent vertical padding to sections of content
 
 #+BEGIN_SRC css :noweb-ref region :noweb yes
   .region {
-    --_region-space: var(--nyc-sys-dimension-space-l-xl);
+    --_region-space: var(--nyc-cmp-region-space);
 
     padding-block: var(--_region-space);
   }
@@ -37,11 +37,11 @@ The =region= class supplies consistent vertical padding to sections of content
 
 #+name: region-space
 #+begin_src emacs-lisp
-  (setq space-scale '("s" "m" "l" "xl" "2xl" "3xl"))
+  (setq space-scale '("sm" "base" "lg" "xl" "2xl" "3xl" "4xl"))
   (mapconcat
    (lambda (str)
      (format-spec
-      ".region[data-region-space=\"%s\"] { --_region-space: var(--nyc-sys-dimension-space-%s); }\n"
+      ".region[data-region-space=\"%s\"] { --_region-space: var(--nyc-sys-space-%s); }\n"
       (format-spec-make ?s str)))
    space-scale)
 #+end_src
@@ -52,10 +52,10 @@ The =flow= class controls vertical space between child elements in a
 content block. The =data-flow-space= attribute can be used to adjust
 this spacing on a per-element level.
 
-#+begin_src css :noweb-ref flow
+#+begin_src css :noweb-ref flow :noweb yes
   /* Set default flow space to prevent inheritance when nesting */
   .flow {
-    --nyc-sys-dimension-flow-space: var(--nyc-sys-dimension-space-m);
+    --nyc-cmp-flow-space: var(--nyc-sys-space-lg);
   }
 
   .flow > * {
@@ -64,32 +64,20 @@ this spacing on a per-element level.
 
   .flow > * + *,
   .flow[data-flow-recursive] * + * {
-    margin-block-start: var(--nyc-sys-dimension-flow-space);
+    margin-block-start: var(--nyc-cmp-flow-space);
   }
+  
+  <<flow-space()>>
+#+end_src
 
-  [data-flow-space="s"] {
-    --nyc-sys-dimension-flow-space: var(--nyc-sys-dimension-space-s);
-  }
-
-  [data-flow-space="m"] {
-    --nyc-sys-dimension-flow-space: var(--nyc-sys-dimension-space-m);
-  }
-
-  [data-flow-space="l"] {
-    --nyc-sys-dimension-flow-space: var(--nyc-sys-dimension-space-l);
-  }
-
-  [data-flow-space="xl"] {
-    --nyc-sys-dimension-flow-space: var(--nyc-sys-dimension-space-xl);
-  }
-
-  [data-flow-space="2xl"] {
-    --nyc-sys-dimension-flow-space: var(--nyc-sys-dimension-space-2xl);
-  }
-
-  [data-flow-space="3xl"] {
-    --nyc-sys-dimension-flow-space: var(--nyc-sys-dimension-space-3xl);
-  }
+#+name: flow-space
+#+begin_src emacs-lisp
+  (mapconcat
+  (lambda (str)
+    (format-spec
+     "[data-flow-space=\"%s\"] { --nyc-cmp-flow-space: var(--nyc-sys-space-%s); }\n"
+     (format-spec-make ?s str)))
+  space-scale)
 #+end_src
 
 ** Grid

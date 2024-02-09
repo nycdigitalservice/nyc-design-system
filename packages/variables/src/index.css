@@ -1,123 +1,130 @@
-/* CSS variables: Reference and System */
+/**
+ * Do not edit directly
+ * Generated on Wed, 07 Feb 2024 17:21:03 GMT
+ */
+
 :root {
-  /* Reference variables */
-  --nyc-ref-color-blue-50: hsla(214, 54%, 95%, 1);
-  --nyc-ref-color-blue-100: hsla(207, 71%, 68%, 1);
-  --nyc-ref-color-blue-200: hsla(213, 53%, 50%, 1);
-  --nyc-ref-color-blue-250: hsla(213, 59%, 45%, 1);
-  --nyc-ref-color-blue-500: hsla(208, 100%, 30%, 1);
-  --nyc-ref-color-blue-700: hsla(210, 64%, 19%, 1);
-  --nyc-ref-color-orange-500: hsla(26, 92%, 58%, 1);
-  --nyc-ref-color-orange-700: hsla(25, 78%, 41%, 1);
-  --nyc-ref-color-neutral-0: hsla(0, 0%, 100%, 1);
-  --nyc-ref-color-neutral-100: hsla(0, 0%, 93%, 1);
-  --nyc-ref-color-neutral-200: hsla(0, 0%, 80%, 1);
-  --nyc-ref-color-neutral-300: hsla(0, 0%, 53%, 1);
-  --nyc-ref-color-neutral-400:  hsla(0, 0%, 40%, 1);
-  --nyc-ref-color-neutral-800: hsla(0, 0%, 20%, 1);
-  --nyc-ref-color-neutral-900: hsla(0, 0%, 0%, 1);
-  
-  --nyc-ref-shadow-400: 4px 4px 8px hsla(0, 0%, 0%, .2);
-  --nyc-ref-shadow-450: 0 4px 8px hsla(0, 0%, 0%, .2);
-  --nyc-ref-shadow-500: 0 4px 4px hsla(0, 0%, 0%, .25);
-  
-  --nyc-ref-gradient-blue-100: radial-gradient(
-    56.94% 119.67% at 78.96% 43.36%, #E6F4FF 0%, #BDE3FF 100%
-  );
-  /* warning: gradient uses a rotation that is not supported by
-     CSS and may not behave as expected */
-  /* Step -2: 11.11px → 11.52px */
-  --nyc-ref-dimension-size-step--2: clamp(0.69rem, calc(0.68rem + 0.06vw), 0.72rem);
-  
-  /* Step -1: 13.33px → 14.40px */
-  --nyc-ref-dimension-size-step--1: clamp(0.83rem, calc(0.80rem + 0.15vw), 0.90rem);
-  
-  /* Step 0: 16.00px → 18.00px */
-  --nyc-ref-dimension-size-step-0: clamp(1.00rem, calc(0.94rem + 0.28vw), 1.13rem);
-  
-  /* Step 1: 19.20px → 22.50px */
-  --nyc-ref-dimension-size-step-1: clamp(1.20rem, calc(1.11rem + 0.47vw), 1.41rem);
-  
-  /* Step 2: 23.04px → 28.13px */
-  --nyc-ref-dimension-size-step-2: clamp(1.44rem, calc(1.30rem + 0.72vw), 1.76rem);
-  
-  /* Step 3: 27.65px → 35.16px */
-  --nyc-ref-dimension-size-step-3: clamp(1.73rem, calc(1.51rem + 1.07vw), 2.20rem);
-  
-  /* Step 4: 33.18px → 43.95px */
-  --nyc-ref-dimension-size-step-4: clamp(2.07rem, calc(1.77rem + 1.53vw), 2.75rem);
-  
-  /* Step 5: 39.81px → 54.93px */
-  --nyc-ref-dimension-size-step-5: clamp(2.49rem, calc(2.06rem + 2.15vw), 3.43rem);
-  --nyc-sys-dimension-space-3xs: clamp(0.25rem, calc(0.22rem + 0.14vw), 0.31rem);
-  --nyc-sys-dimension-space-2xs: clamp(0.50rem, calc(0.47rem + 0.14vw), 0.56rem);
-  --nyc-sys-dimension-space-xs: clamp(0.75rem, calc(0.69rem + 0.28vw), 0.88rem);
-  --nyc-sys-dimension-space-s: clamp(1.00rem, calc(0.94rem + 0.28vw), 1.13rem);
-  --nyc-sys-dimension-space-m: clamp(1.50rem, calc(1.41rem + 0.43vw), 1.69rem);
-  --nyc-sys-dimension-space-l: clamp(2.00rem, calc(1.89rem + 0.57vw), 2.25rem);
-  --nyc-sys-dimension-space-xl: clamp(3.00rem, calc(2.83rem + 0.85vw), 3.38rem);
-  --nyc-sys-dimension-space-2xl: clamp(4.00rem, calc(3.77rem + 1.14vw), 4.50rem);
-  --nyc-sys-dimension-space-3xl: clamp(6.00rem, calc(5.66rem + 1.70vw), 6.75rem);
-  
-  /* One-up pairs */
-  --nyc-sys-dimension-space-3xs-2xs: clamp(0.25rem, calc(0.11rem + 0.71vw), 0.56rem);
-  --nyc-sys-dimension-space-2xs-xs: clamp(0.50rem, calc(0.33rem + 0.85vw), 0.88rem);
-  --nyc-sys-dimension-space-xs-s: clamp(0.75rem, calc(0.58rem + 0.85vw), 1.13rem);
-  --nyc-sys-dimension-space-s-m: clamp(1.00rem, calc(0.69rem + 1.56vw), 1.69rem);
-  --nyc-sys-dimension-space-m-l: clamp(1.50rem, calc(1.16rem + 1.70vw), 2.25rem);
-  --nyc-sys-dimension-space-l-xl: clamp(2.00rem, calc(1.38rem + 3.13vw), 3.38rem);
-  --nyc-sys-dimension-space-xl-2xl: clamp(3.00rem, calc(2.32rem + 3.41vw), 4.50rem);
-  --nyc-sys-dimension-space-2xl-3xl: clamp(4.00rem, calc(2.75rem + 6.25vw), 6.75rem);
-  
-  /* Custom pairs */
-  --nyc-sys-dimension-space-s-l: clamp(1.00rem, calc(0.43rem + 2.84vw), 2.25rem);
-  
-  /* Flow */
-  --nyc-sys-dimension-flow-space: var(--nyc-sys-dimension-space-m);
-  --nyc-ref-font-family-helvetica: "Helvetica Neue", Helvetica, Arial, sans-serif;
-
-  /* System variables */
-  --nyc-sys-color-primary: var(--nyc-ref-color-blue-500);
-  --nyc-sys-color-on-primary: var(--nyc-ref-color-neutral-0);
-  --nyc-sys-color-primary-lighter: var(--nyc-ref-color-blue-100);
-  --nyc-sys-color-on-primary-lighter: var(--nyc-ref-color-blue-700);
-  --nyc-sys-color-primary-lightest: var(--nyc-ref-color-blue-50);
-  --nyc-sys-color-primary-dark: var(--nyc-ref-color-blue-700);
-  --nyc-sys-color-secondary: var(--nyc-ref-color-orange-500);
-  --nyc-sys-color-text: var(--nyc-ref-color-neutral-800);
-  --nyc-sys-color-text-light: var(--nyc-ref-color-neutral-400);
-  --nyc-sys-color-link: var(--nyc-sys-color-primary, currentColor);
-  --nyc-sys-color-background: var(--nyc-ref-color-neutral-0);
-  --nyc-sys-color-border: var(--nyc-ref-color-neutral-100);
-  --nyc-sys-color-neutral-lightest: var(--nyc-ref-color-neutral-100);
-  --nyc-sys-color-neutral-light: var(--nyc-ref-color-neutral-200);
-  --nyc-sys-color-neutral: var(--nyc-ref-color-neutral-300);
-  --nyc-sys-color-accent: var(--nyc-sys-color-primary);
-  --nyc-sys-color-focus: var(--nyc-sys-color-primary-lighter);
-  --nyc-sys-gradient-primary-light: var(--nyc-ref-gradient-blue-100);
-  --nyc-sys-shadow-base: var(--nyc-ref-shadow-500);
-  --nyc-sys-shadow-weak: var(--nyc-ref-shadow-400);
-  --nyc-sys-shadow-focus: inset 0 0 0 .2rem var(--nyc-sys-color-primary-lighter);
-  --nyc-sys-dimension-page-max-width: 64rem;
-  
-  --nyc-sys-dimension-size-xs: var(--nyc-ref-dimension-size-step--2);
-  --nyc-sys-dimension-size-s: var(--nyc-ref-dimension-size-step--1);
-  --nyc-sys-dimension-size-m: var(--nyc-ref-dimension-size-step-0);
-  --nyc-sys-dimension-size-l: var(--nyc-ref-dimension-size-step-2);
-  --nyc-sys-dimension-size-xl: var(--nyc-ref-dimension-size-step-3);
-  --nyc-sys-dimension-size-xxl: var(--nyc-ref-dimension-size-step-4);
-  --nyc-sys-dimension-size-xxxl: var(--nyc-ref-dimension-size-step-5);
-  
-  --nyc-sys-line-height: 1.4;
-  --nyc-sys-font-size-base: var(--nyc-ref-dimension-size-step-0);
-  --nyc-sys-font-family-base: var(--nyc-ref-font-family-helvetica);
-  --nyc-sys-font-family-secondary: var(--nyc-sys-font-family-base);
-  --ON: initial;
-  --OFF: ;
-
-  /* Property sets */
-  
+  --nyc-sys-space-fluid-sm: clamp(0.5rem, 0.40476190476190477rem + 0.4761904761904762vw, 0.75rem);
+  --nyc-sys-space-fluid-lg: clamp(1rem, 0.8095238095238095rem + 0.9523809523809524vw, 1.5rem);
+  --nyc-sys-space-fluid-3xl: clamp(4rem, 3.619047619047619rem + 1.9047619047619049vw, 5rem);
+  --nyc-sys-size-heading-fluid-sm: clamp(1.125rem, 0.7916666666666666rem + 1.666666666666667vw, 2rem);
+  --nyc-sys-size-heading-fluid-base: clamp(2.5rem, 2.261904761904762rem + 1.1904761904761907vw, 3.125rem);
+  --nyc-sys-size-heading-fluid-lg: clamp(3.125rem, 1.9345238095238095rem + 5.9523809523809526vw, 6.25rem);
+  --nyc-sys-size-body-fluid-xl: clamp(1.125rem, 0.9821428571428571rem + 0.7142857142857143vw, 1.5rem);
+  --nyc-ref-length-7250: 1160px;
+  --nyc-ref-length-2750: 440px;
+  --nyc-ref-length-2250: 360px;
+  --nyc-ref-length-2000: 320px;
+  --nyc-ref-length-1500: 240px;
+  --nyc-ref-length-750: 120px;
+  --nyc-ref-length-625: 100px;
+  --nyc-ref-length-500: 80px;
+  --nyc-ref-length-400: 64px;
+  --nyc-ref-length-312: 50px;
+  --nyc-ref-length-250: 40px;
+  --nyc-ref-length-225: 36px;
+  --nyc-ref-length-200: 32px;
+  --nyc-ref-length-175: 28px;
+  --nyc-ref-length-150: 24px;
+  --nyc-ref-length-125: 20px;
+  --nyc-ref-length-112: 18px;
+  --nyc-ref-length-100: 16px;
+  --nyc-ref-length-88: 14px;
+  --nyc-ref-length-75: 12px;
+  --nyc-ref-length-50: 8px;
+  --nyc-ref-length-12: 2px;
+  --nyc-ref-type-family-clash: 'Clash Display', sans-serif;
+  --nyc-ref-type-family-noto: 'Noto Sans', sans-serif;
+  --nyc-ref-gradient-purple: linear-gradient(179deg, #131627 15.45%, #4B184D 87.84%);
+  --nyc-ref-gradient-orange-blue: linear-gradient(172deg, #FDE3C9 14.43%, #B2DFFF 79.83%, #B2DFFF 79.83%);
+  --nyc-ref-shadow-20: 4px 4px 12px 0px rgba(0, 0, 0, 0.20);
+  --nyc-ref-shadow-10: 0px 4px 12px 0px rgba(0, 0, 0, 0.20);
+  --nyc-ref-color-orange-100: #f9b563ff;
+  --nyc-ref-color-orange-10: #f68d29ff;
+  --nyc-ref-color-blue-100: #0094ffff;
+  --nyc-ref-color-blue-90: #166feeff;
+  --nyc-ref-color-blue-80: #004fffff;
+  --nyc-ref-color-blue-40: #051adbff;
+  --nyc-ref-color-blue-20: #0008a0ff;
+  --nyc-ref-color-blue-10: #050560ff;
+  --nyc-ref-color-gray-30-6: #22222299;
+  --nyc-ref-color-gray-100-6: #ffffff99;
+  --nyc-ref-color-gray-100: #ffffffff;
+  --nyc-ref-color-gray-90: #eeeeeeff;
+  --nyc-ref-color-gray-70: #ccccccff;
+  --nyc-ref-color-gray-50: #777777ff;
+  --nyc-ref-color-gray-30: #222222ff;
+  --nyc-ref-color-gray-10: #000000ff;
+  --nyc-cmp-button-font-size: var(--nyc-sys-size-body-fluid-xl);
+  --nyc-cmp-button-padding-block: var(--nyc-sys-space-fluid-sm);
+  --nyc-cmp-button-padding-inline: var(--nyc-sys-space-fluid-lg);
+  --nyc-cmp-region-space: var(--nyc-sys-space-fluid-3xl);
+  --nyc-sys-font-family-heading: var(--nyc-ref-type-family-clash);
+  --nyc-sys-font-family-body: var(--nyc-ref-type-family-noto);
+  --nyc-sys-gradient-background: var(--nyc-ref-gradient-orange-blue);
+  --nyc-sys-shadow-low: var(--nyc-ref-shadow-10);
+  --nyc-sys-shadow-base: var(--nyc-ref-shadow-20);
+  --nyc-sys-color-primary-hover: var(--nyc-ref-color-blue-20);
+  --nyc-sys-color-on-inactive: var(--nyc-ref-color-gray-30);
+  --nyc-sys-color-inactive: var(--nyc-ref-color-gray-70);
+  --nyc-sys-color-border-focus: var(--nyc-ref-color-blue-90);
+  --nyc-sys-color-border-base: var(--nyc-ref-color-gray-90);
+  --nyc-sys-color-on-surface-base: var(--nyc-ref-color-gray-10);
+  --nyc-sys-color-surface-inactive: var(--nyc-ref-color-gray-100-6);
+  --nyc-sys-color-surface-low: var(--nyc-ref-color-gray-90);
+  --nyc-sys-color-surface-base: var(--nyc-ref-color-gray-100);
+  --nyc-sys-color-base: var(--nyc-ref-color-gray-10);
+  --nyc-sys-color-success: var(--nyc-ref-color-blue-100);
+  --nyc-sys-color-on-disabled: var(--nyc-ref-color-gray-30);
+  --nyc-sys-color-disabled: var(--nyc-ref-color-gray-70);
+  --nyc-sys-color-on-secondary: var(--nyc-ref-color-gray-30);
+  --nyc-sys-color-secondary: var(--nyc-ref-color-orange-10);
+  --nyc-sys-color-on-primary: var(--nyc-ref-color-gray-100);
+  --nyc-sys-color-primary: var(--nyc-ref-color-blue-40);
+  --nyc-sys-color-text: var(--nyc-ref-color-gray-10);
+  --nyc-sys-color-background: var(--nyc-ref-color-gray-100);
+  --nyc-sys-space-4xl: var(--nyc-ref-length-750);
+  --nyc-sys-space-3xl: var(--nyc-ref-length-500);
+  --nyc-sys-space-2xl: var(--nyc-ref-length-400);
+  --nyc-sys-space-xl: var(--nyc-ref-length-250);
+  --nyc-sys-space-lg: var(--nyc-ref-length-150);
+  --nyc-sys-space-base: var(--nyc-ref-length-100);
+  --nyc-sys-space-sm: var(--nyc-ref-length-75);
+  --nyc-sys-space-xs: var(--nyc-ref-length-50);
+  --nyc-sys-radius-xl: var(--nyc-ref-length-250);
+  --nyc-sys-radius-lg: var(--nyc-ref-length-150);
+  --nyc-sys-radius-base: var(--nyc-ref-length-100);
+  --nyc-sys-radius-sm: var(--nyc-ref-length-50);
+  --nyc-sys-size-width-page-min: var(--nyc-ref-length-2000);
+  --nyc-sys-size-width-page-max: var(--nyc-ref-length-7250);
+  --nyc-sys-size-width-surface-sm: var(--nyc-ref-length-1500);
+  --nyc-sys-size-width-surface-lg: var(--nyc-ref-length-2750);
+  --nyc-sys-size-width-surface-base: var(--nyc-ref-length-2250);
+  --nyc-sys-size-line-height-body: var(--nyc-ref-length-150);
+  --nyc-sys-size-border-base: var(--nyc-ref-length-12);
+  --nyc-sys-size-heading-lg: var(--nyc-ref-length-625);
+  --nyc-sys-size-heading-base: var(--nyc-ref-length-312);
+  --nyc-sys-size-heading-sm: var(--nyc-ref-length-200);
+  --nyc-sys-size-body-xl: var(--nyc-ref-length-150);
+  --nyc-sys-size-body-lg: var(--nyc-ref-length-125);
+  --nyc-sys-size-body-base: var(--nyc-ref-length-112);
+  --nyc-sys-size-body-sm: var(--nyc-ref-length-100);
+  --nyc-cmp-button-border-radius: var(--nyc-sys-radius-xl);
+  --nyc-cmp-flow-space: var(--nyc-sys-space-lg);
+  --nyc-cmp-card-background-hover: var(--nyc-sys-color-surface-base);
+  --nyc-cmp-card-width-lg: var(--nyc-sys-size-width-surface-lg);
+  --nyc-cmp-card-width-base: var(--nyc-sys-size-width-surface-base);
+  --nyc-cmp-card-border-radius-hover: var(--nyc-sys-radius-sm);
+  --nyc-cmp-card-padding: var(--nyc-sys-space-lg);
+  --nyc-cmp-card-heading-size: var(--nyc-sys-size-heading-sm);
+  --nyc-cmp-card-color: var(--nyc-sys-color-on-surface-base);
+  --nyc-cmp-card-shadow: var(--nyc-sys-shadow-base);
+  --nyc-cmp-card-border-width: var(--nyc-sys-size-border-base);
+  --nyc-cmp-card-radius-base: var(--nyc-sys-radius-base);
+  --nyc-cmp-card-radius-lg-hover: var(--nyc-sys-radius-sm);
+  --nyc-cmp-card-radius-xl: var(--nyc-sys-radius-xl);
+  --nyc-cmp-card-radius-lg: var(--nyc-sys-radius-lg);
+  --nyc-cmp-card-border-color: var(--nyc-sys-color-border-base);
+  --nyc-cmp-card-body-size: var(--nyc-sys-size-body-base);
+  --nyc-cmp-card-background: var(--nyc-sys-color-surface-base);
 }
-
-/* Custom selectors */
-@custom-selector :--heading h1, h2, h3, h4, h5, h6;

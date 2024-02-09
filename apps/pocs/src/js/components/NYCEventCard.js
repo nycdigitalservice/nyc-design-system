@@ -7,23 +7,25 @@ export default class NYCEventCard extends HTMLElement {
     //const
     const img = event && event.image || '';
     const templateStr = `
-    <nyc-event-card class="flow card" data-flow-space="s">
+    <nyc-event-card class="flow card" data-flow-space="sm" data-variant="event">
     <header class="card__header flex flex-col">
     <h3>
     <a href="#" class="no-underline card__primary-action" target="_blank">
     <span>
-    <slot name="title"></slot>
+    <slot name="name"></slot>
     </span>
     <span class="card__primary-action__icon-wrapper">
     <i class="i-ri:arrow-right-line"></i>
     </span>
     </a></h3>
-    <time datetime="" class="order-first text-xs"></time>
+
     </header>
-    <div class="card__body flow" data-flow-space="s">
-<p class="card__description"><slot name="description"></slot></p>
-    <p><slot name="department"></slot></p>
-    <p><span><slot name="location"></slot></span><br><span><slot name="time"></slot></span></p>
+    <div class="card__body flow" data-flow-space="sm">
+    <p><slot name="shortdescription"></slot></p>
+<div class="card__event-details">
+    <time datetime="" class="order-first text-xs"></time>
+    <p><span><slot name="location"></slot></span></p>
+</div>
     </div>
     </nyc-event-card>
     `;
@@ -61,16 +63,16 @@ export default class NYCEventCard extends HTMLElement {
     // Set any primary action hrefs to the link
     clone.querySelectorAll('.card__primary-action').forEach(el => {
       if (el.tagName.toLowerCase() === 'a') {
-        el.href = event.link
+        el.href = '#'
       }
     });
 
-    const dateObj = this.strToDate(event.date);
+    const dateObj = this.strToDate(event.startdatetime);
     const dateFormatted = this.formatDate(dateObj);
 
     const timeEl = clone.querySelector('time');
     timeEl.innerText = dateFormatted;
-    timeEl.setAttribute('datetime', event.date);
+    timeEl.setAttribute('datetime', event.startdatetime);
 
     clone.querySelectorAll('slot').forEach(slot => {
       if (slot.parentNode && event[slot.name]) {
@@ -86,6 +88,8 @@ export default class NYCEventCard extends HTMLElement {
    * @returns {Object} - a Date object
    */
   strToDate(dateStr) {
+    // If we have a Datetime we should be good
+    if (dateStr.includes('T')) return new Date(dateStr);
     // Safari doesn't like dashes in date strings
     const dateStrClean = dateStr.includes('-') ? dateStr.replace(/-/g, '/') : dateStr;
     return new Date(dateStrClean);

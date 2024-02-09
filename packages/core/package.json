@@ -3,14 +3,16 @@
   "version": "0.1.0",
   "type": "module",
   "style": "./dist/nycds-core.css",
-  "main": "./dist/nycds-core.js",
+  "main": "./src/index.js",
   "license": "GPLv3",
   "scripts": {
     "dev:js": "esbuild src/index.js --bundle --outfile=dist/nycds-core.js --watch",
     "dev:css": "postcss src/index.css -o dist/nycds-core.css -w",
+    "dev:css-aem": "postcss src/aem/index.css -o dist/nycds-core-aem.css -w",
     "dev": "npm-run-all --parallel dev:*",
     "build:js": "esbuild src/index.js --bundle --outfile=dist/nycds-core.js",
     "build:css": "postcss src/index.css -o dist/nycds-core.css",
+    "build:css:aem": "postcss src/aem/index.css -o dist/nycds-core-aem.css",
     "build": "npm-run-all --parallel build:*"
   },
   "dependencies": {

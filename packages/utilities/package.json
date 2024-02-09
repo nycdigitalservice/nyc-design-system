@@ -1,6 +1,7 @@
 {
   "name": "@nycds/utilities",
   "version": "0.1.0",
+  "type": "module",
   "author": "Michael Mausler",
   "description": "Utility classes and functions",
   "main": "src/js/index.js",

@@ -1,0 +1,106 @@
+{
+  "cmp": {
+    "card": {
+      "background": {
+        "type": "color",
+        "value": "{sys.color.surface.base}"
+      },
+      "body-size": {
+        "type": "color",
+        "value": "{sys.size.body.base}"
+      },
+      "border-color": {
+        "type": "color",
+        "value": "{sys.color.border.base}"
+      },
+      "radius": {
+        "lg": {
+          "type": "color",
+          "value": "{sys.radius.lg}"
+        },
+        "xl": {
+          "type": "color",
+          "value": "{sys.radius.xl}"
+        },
+        "lg-hover": {
+          "type": "color",
+          "value": "{sys.radius.sm}"
+        },
+        "base": {
+          "type": "color",
+          "value": "{sys.radius.base}"
+        }
+      },
+      "border-width": {
+        "type": "color",
+        "value": "{sys.size.border.base}"
+      },
+      "shadow": {
+        "type": "color",
+        "value": "{sys.shadow.base}"
+      },
+      "color": {
+        "type": "color",
+        "value": "{sys.color.on-surface.base}"
+      },
+      "heading-size": {
+        "type": "color",
+        "value": "{sys.size.heading.sm}"
+      },
+      "padding": {
+        "type": "color",
+        "value": "{sys.space.lg}"
+      },
+      "border-radius-hover": {
+        "type": "color",
+        "value": "{sys.radius.sm}"
+      },
+      "width": {
+        "base": {
+          "type": "color",
+          "value": "{sys.size.width.surface.base}"
+        },
+        "lg": {
+          "type": "color",
+          "value": "{sys.size.width.surface.lg}"
+        }
+      },
+      "background-hover": {
+        "type": "color",
+        "value": "{sys.color.surface.base}"
+      }
+    },
+    "region": {
+      "space": {
+        "type": "color",
+        "value": "{sys.space.fluid.3xl}"
+      }
+    },
+    "flow": {
+      "space": {
+        "type": "color",
+        "value": "{sys.space.lg}"
+      }
+    },
+    "button": {
+      "border-radius": {
+        "type": "color",
+        "value": "{sys.radius.xl}"
+      },
+      "padding": {
+        "inline": {
+          "type": "color",
+          "value": "{sys.space.fluid.lg}"
+        },
+        "block": {
+          "type": "color",
+          "value": "{sys.space.fluid.sm}"
+        }
+      },
+      "font-size": {
+        "type": "color",
+        "value": "{sys.size.body.fluid.xl}"
+      }
+    }
+  }
+}

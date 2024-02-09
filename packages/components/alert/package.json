@@ -2,7 +2,5 @@
   "name": "@nycds/alert",
   "version": "0.1.0",
   "style": "./src/index.css",
-  "exports": {
-    "./css": "./src/index.css"
-  }
+  "main": "./src/index.css"
 }

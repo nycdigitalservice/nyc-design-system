@@ -1,4 +1,5 @@
 @import "@nycds/variables";
+@import "@nycds/variables/src/dark.css";
 @import "@nycds/global";
 @import "@nycds/composition";
 @import "@nycds/utilities";

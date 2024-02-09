@@ -183,3 +183,4 @@ card body
 
 - [[https://nycopportunity.github.io/standard/card][NYCO Opportunity Standard: Card]]
 - [[https://designsystem.digital.gov/components/card/][U.S. Web Design System: Card]]
+- [[https://inclusive-components.design/cards/][Inclusive Components: Card]]

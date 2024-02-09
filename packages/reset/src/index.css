@@ -16,10 +16,10 @@ html {
 }
 
 :where(.u-reset) {
-  font-family: var(--nyc-sys-font-family-base);
+  font-family: var(--nyc-sys-type-font-body);
   font-feature-settings: var(--nyc-sys-font-features, normal);
   font-weight: var(--nyc-sys-font-weight, 500);
-  line-height: var(--nyc-sys-line-height);
+  line-height: var(--nyc-sys-type-line-height);
   color: var(--nyc-sys-color-text);
   accent-color: var(--nyc-sys-color-accent)
 }

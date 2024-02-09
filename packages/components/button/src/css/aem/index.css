@@ -1,0 +1,10 @@
+@import '../mixins.css';
+
+.cmp-button,
+.cmp-button:link,
+.cmp-button:visited {
+  @mixin button {}
+}
+.cmp-button--primary .cmp-button {
+  @mixin button-primary {}
+}

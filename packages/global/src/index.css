@@ -11,9 +11,9 @@ footer {
 body {
   color: var(--nyc-sys-color-text);
   background: var(--nyc-sys-color-background);
-  font-size: var(--nyc-sys-font-size-base);
-  font-family: var(--nyc-sys-font-family-base);
-  line-height: 1.4;
+  font-size: var(--nyc-sys-size-body-base);
+  font-family: var(--nyc-sys-font-family-body);
+  line-height: var(--nyc-sys-size-line-height-body);
   letter-spacing: var(--nyc-ref-dimension-tracking);
   margin: 0;
 }
@@ -26,15 +26,15 @@ h3 {
 }
 
 h1 {
-  font-size: var(--nyc-sys-dimension-size-xxl);
+  font-size: var(--nyc-sys-size-heading-fluid-lg);
 }
 
 h2 {
-  font-size: var(--nyc-sys-dimension-size-xl);
+  font-size: var(--nyc-sys-size-heading-fluid-base);
 }
 
 h3 {
-  font-size: var(--nyc-sys-dimension-size-l);
+  font-size: var(--nyc-sys-size-heading-fluid-sm);
 }
 
 p {

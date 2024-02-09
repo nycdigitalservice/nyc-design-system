@@ -1,8 +1,6 @@
 {
   "name": "@nycds/card",
   "version": "0.1.0",
-  "style": "./src/index.css",
-  "exports": {
-    "./css": "./src/index.css"
-  }
+  "style": "src/index.css",
+  "main": "src/index.css"
 }

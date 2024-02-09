@@ -38,68 +38,84 @@ Use these custom properties in your theme to override default styling
 The =button= CSS class implements the custom properties and other
 default styles.
 
-#+begin_src css :tangle src/css/index.css
+#+begin_src css :noweb-ref mixins-base
+  @define-mixin button {
+      --_background: var(--nyc-cmp-button-background, hsla(0, 0%, 100%, 1));
+      --_background-hover: var(--nyc-cmp-button-background-hover, white);
+      --_border-color: var(--nyc-cmp-button-border-color, hsla(0, 0%, 93%, 1));
+      --_border-color-hover: var(--nyc-cmp-button-border-color-hover, currentColor);
+      --_border-width: var(--nyc-cmp-button-border-width, 2px);
+      --_border-radius: var(--nyc-cmp-button-border-radius, 0);
+      --_color: var(--nyc-cmp-button-color, currentColor);
+      --_color-hover: var(--nyc-cmp-button-color-hover, inherit);
+      --_font-weight: var(--nyc-cmp-button-font-weight, 500);
+      --_font-size: var(--nyc-cmp-button-font-size, 500);
+      --_shadow: var(--nyc-cmp-button-shadow, none);
+      --_padding-block: var(--nyc-cmp-button-padding-block, .75rem);
+      --_padding-inline: var(--nyc-cmp-button-padding-inline, .75rem);
+      --_outline-color: var(--nyc-cmp-button-outline-color, inherit);
+      appearance: none;
+      background-color: var(--_background);
+      border-color: var(--_border-color);
+      border-width: var(--_border-width);
+      border-style: solid;
+      border-radius: var(--_border-radius);
+      color: var(--_color);
+      padding: var(--_padding-block) var(--_padding-inline);
+      box-shadow: var(--_shadow);
+      text-decoration: none;
+      cursor: pointer;
+      font-weight: var(--_font-weight);
+      font-size: var(--_font-size);
+      display: inline-flex;
+      align-items: center;
+      transition: all 0.3s ease;
+
+      & > :first-child:not(i) {
+        flex-grow: 1;
+        width: max-content;
+      }
+
+      & > i:last-child {
+        flex-shrink: 0;
+        margin-block: auto;
+        font-size: 1.5rem;
+
+        margin-inline-start: .5em;
+      }
+
+      &:hover {
+        background: var(--_background-hover);
+        color: var(--_color-hover);
+        border-color: var(--_border-color-hover);
+        text-decoration: none;
+      }
+
+      &:focus {
+        outline-color: var(--_outline-color);
+      }
+  }
+#+end_src
+
+#+begin_src css :noweb-ref default-base
   .button,
   .button:link,
   .button:visited {
-    --_background: var(--nyc-cmp-button-background, hsla(0, 0%, 100%, 1));
-    --_background-hover: var(--nyc-cmp-button-background-hover, white);
-    --_border-color: var(--nyc-cmp-button-border-color, hsla(0, 0%, 93%, 1));
-    --_border-color-hover: var(--nyc-cmp-button-border-color-hover, currentColor);
-    --_border-width: var(--nyc-cmp-button-border-width, 2px);
-    --_border-radius: var(--nyc-cmp-button-border-radius, 0);
-    --_color: var(--nyc-cmp-button-color, currentColor);
-    --_color-hover: var(--nyc-cmp-button-color-hover, inherit);
-    --_font-weight: var(--nyc-cmp-button-font-weight, 500);
-    --_shadow: var(--nyc-cmp-button-shadow, none);
-    --_padding: var(--nyc-cmp-button-padding, .75rem);
-    --_outline-color: var(--nyc-cmp-button-outline-color, inherit);
-    appearance: none;
-    background-color: var(--_background);
-    border-color: var(--_border-color);
-    border-width: var(--_border-width);
-    border-style: solid;
-    border-radius: var(--_border-radius);
-    color: var(--_color);
-    padding: var(--_padding);
-    box-shadow: var(--_shadow);
-    text-decoration: none;
-    cursor: pointer;
-    font-weight: var(--_font-weight);
-    font-size: inherit;
-    display: inline-flex;
-    align-items: center;
-    transition: all 0.3s ease;
-
-    & > :first-child:not(i) {
-      flex-grow: 1;
-      width: max-content;
-    }
-
-    & > i:last-child {
-      flex-shrink: 0;
-      margin-block: auto;
-      font-size: 1.5rem;
-
-      margin-inline-start: .5em;
-    }
-
-    &:hover {
-      background: var(--_background-hover);
-      color: var(--_color-hover);
-      border-color: var(--_border-color-hover);
-      text-decoration: none;
-    }
-
-    &:focus {
-      outline-color: var(--_outline-color);
-    }
+    @mixin button {}
   }
   #+end_src
 
+#+begin_src css :noweb-ref aem-base
+  .cmp-button,
+  .cmp-button:link,
+  .cmp-button:visited {
+    @mixin button {}
+  }
+#+end_src
+
 When within a grid list, have the button fill the grid child
 
-#+begin_src css :tangle src/css/index.css
+#+begin_src css :noweb-ref default-base
   .grid li > .button {
     display: flex;
     height: 100%;
@@ -108,7 +124,7 @@ When within a grid list, have the button fill the grid child
 
 ** Variants
 
-#+begin_src css :tangle src/css/index.css
+#+begin_src css
   /* .button[data-variant] { */
   /*   &:hover { */
   /*     background: var(--_color); */
@@ -119,28 +135,29 @@ When within a grid list, have the button fill the grid child
 
 *** Primary
 
-#+begin_src css :tangle src/css/index.css
-  .button[data-variant=primary] {
-    --nyc-cmp-button-background: var(--nyc-sys-color-primary-dark);
+#+begin_src css :noweb-ref mixins-primary
+  @define-mixin button-primary {
+    --nyc-cmp-button-background: var(--nyc-sys-color-primary);
     --nyc-cmp-button-color: var(--nyc-sys-color-on-primary);
-    --nyc-cmp-button-border-color: var(--nyc-sys-color-primary-dark);
+    --nyc-cmp-button-border-color: var(--nyc-sys-color-primary);
     --nyc-cmp-button-shadow: none;
     &:hover {
       --nyc-cmp-button-color-hover: var(--nyc-cmp-button-color);
       --nyc-cmp-button-background-hover: var(--nyc-sys-color-primary);
       --nyc-cmp-button-border-color-hover: var(--nyc-sys-color-primary);
-    }
+    }    
   }
 #+end_src
 
-*** Pill
+#+begin_src css :noweb-ref default-primary
+  .button[data-variant=primary] {
+    @mixin button-primary {}
+  }
+#+end_src
 
-#+begin_src css :tangle src/css/index.css
-  .button[data-variant=pill] {
-    --nyc-cmp-button-border-radius: 2.25rem;
-    --nyc-cmp-button-shadow: none;
-    --nyc-cmp-button-font-weight: 500;
-    --nyc-cmp-button-border-width: 1px;
+#+begin_src css :noweb-ref aem-primary
+  .cmp-button--primary .cmp-button {
+    @mixin button-primary {}
   }
 #+end_src
 
@@ -154,32 +171,56 @@ toggles the visibility of another element.
 #+begin_src js :tangle src/js/toggle-button.js
   import { toggle } from '@nycds/utilities';
 
-  customElements.define(
-    'toggle-button',
-    class ToggleButton extends HTMLButtonElement {
-      connectedCallback() {
-        if (!this.hasAttribute('aria-controls')) {
-          console.error(
-            `ToggleButton: "aria-controls" must be set to the
-                        ID of the element you are toggling`
-          );
-          return;
-        }
-        if (!this.hasAttribute('aria-expanded')) {
-          console.error(
-            `ToggleButton: "aria-expanded" must be set to the
-             toggled elements initial visibility, either
-             "true" or "false"`
-          );
-          return;
-        }
-        this.addEventListener('click', this);
+  export default class ToggleButton extends HTMLButtonElement {
+    connectedCallback() {
+      if (!this.hasAttribute('aria-controls')) {
+        console.error(
+          `ToggleButton: "aria-controls" must be set to the
+                            ID of the element you are toggling`
+        );
+        return;
       }
-      handleEvent(e) { this['on' + e.type](e); }
-      onclick(e) {
-        toggle(this);
+      if (!this.hasAttribute('aria-expanded')) {
+        console.error(
+          `ToggleButton: "aria-expanded" must be set to the
+                 toggled elements initial visibility, either
+                 "true" or "false"`
+        );
+        return;
       }
-    },
-    { extends: 'button' }
-  )
+      this.addEventListener('click', this);
+    }
+    handleEvent(e) { this['on' + e.type](e); }
+    onclick(e) {
+      toggle(this);
+    }
+  }
+#+end_src
+
+#+begin_src js :tangle src/js/index.js
+  import ToggleButton from './toggle-button';
+  if (!customElements.get('nyc-toggle-button')) {
+    window.customElements.define('nyc-toggle-button', ToggleButton, { extends: 'button' });
+  }
+#+end_src
+
+** File exports :noexport
+
+#+begin_src css :noweb yes :tangle src/css/mixins.css
+  <<mixins-base>>
+  <<mixins-primary>>
+#+end_src
+
+#+begin_src css :noweb yes :tangle src/css/index.css
+  @import './mixins.css';
+  
+  <<default-base>>
+  <<default-primary>>
+#+end_src
+
+#+begin_src css :noweb yes :tangle src/css/aem/index.css
+  @import '../mixins.css';
+  
+  <<aem-base>>
+  <<aem-primary>>
 #+end_src

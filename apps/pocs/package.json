@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --base=/nyc-design-system/",
+    "build": "vite build",
     "preview": "vite preview",
     "docs:build": "vite build && node ./scripts/publish/publish.js",
     "docs:serve": "wds --watch --open --root-dir docs"
@@ -28,7 +28,6 @@
   "dependencies": {
     "@iconify-json/mi": "^1.1.5",
     "@nycds/core": "workspace:^",
-    "@nycds/themes": "workspace:^",
     "@nycds/utilities": "workspace:^"
   }
 }

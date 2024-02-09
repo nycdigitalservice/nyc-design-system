@@ -1,42 +1,42 @@
 @import "@nycds/core";
-@import "@nycds/themes/theme.css";
+/* @import "@nycds/themes/theme.css"; */
 @import "components.css";
 
-:root {
-  --nyc-sys-dimension-page-max-width: 75rem;
-  --nyc-sys-color-background: #E1F1FA;
-  --nyc-sys-color-background: #D1E8F5;
-  --nyc-sys-font-family-base: 'Noto Sans', sans-serif;
-  --nyc-sys-font-family-secondary: 'Clash Display', sans-serif;
-  --nyc-sys-color-primary: #000;
-  --nyc-sys-color-on-primary: #fff;
-  --nyc-sys-background-light: #fff;
-  --nyc-sys-color-on-light: var(--nyc-sys-color-text);
-  --nyc-cmp-button-background: inherit;
-  --nyc-ref-color-yellow-100: #FFF5DA;
-  --nyc-ref-color-yellow-300: #FCE9B3;
-  --nyc-ref-color-pink-100: #FFD3C0;
-  --nyc-ref-color-pink-300: #EDA587;
-  --nyc-cmp-sun-color-1: var(--nyc-ref-color-yellow-100);
-  --nyc-cmp-sun-color-2: var(--nyc-ref-color-pink-100);
-  --nyc-cmp-scene-gradient: linear-gradient(180deg, #FFE8A9 0%, #FFBDA0 100%);
-  --nyc-cmp-scene-gradient: linear-gradient(141deg, var(--sun-gradient-color-1) 37.92%, var(--sun-gradient-color-2) 80.6%);
+/* :root { */
+/*   --nyc-sys-dimension-page-max-width: 75rem; */
+/*   --nyc-sys-color-background: #E1F1FA; */
+/*   --nyc-sys-color-background: #D1E8F5; */
+/*   --nyc-sys-font-family-base: 'Noto Sans', sans-serif; */
+/*   --nyc-sys-font-family-secondary: 'Clash Display', sans-serif; */
+/*   --nyc-sys-color-primary: #000; */
+/*   --nyc-sys-color-on-primary: #fff; */
+/*   --nyc-sys-background-light: #fff; */
+/*   --nyc-sys-color-on-light: var(--nyc-sys-color-text); */
+/*   --nyc-cmp-button-background: inherit; */
+/*   --nyc-ref-color-yellow-100: #FFF5DA; */
+/*   --nyc-ref-color-yellow-300: #FCE9B3; */
+/*   --nyc-ref-color-pink-100: #FFD3C0; */
+/*   --nyc-ref-color-pink-300: #EDA587; */
+/*   --nyc-cmp-sun-color-1: var(--nyc-ref-color-yellow-100); */
+/*   --nyc-cmp-sun-color-2: var(--nyc-ref-color-pink-100); */
+/*   --nyc-cmp-scene-gradient: linear-gradient(180deg, #FFE8A9 0%, #FFBDA0 100%); */
+/*   --nyc-cmp-scene-gradient: linear-gradient(141deg, var(--sun-gradient-color-1) 37.92%, var(--sun-gradient-color-2) 80.6%); */
   
-  --nyc-sys-color-text: #000;
-  --nyc-sys-color-link: var(--nyc-sys-color-text);
-  --nyc-sys-color-primary-dark: #000;
-  --nyc-cmp-button-border-radius: 1.875rem;
+/*   --nyc-sys-color-text: #000; */
+/*   --nyc-sys-color-link: var(--nyc-sys-color-text); */
+/*   --nyc-sys-color-primary-dark: #000; */
+/*   --nyc-cmp-button-border-radius: 1.875rem; */
 
-  --nyc-sys-font-size-base: 1.5rem;
-}
+/*   --nyc-sys-font-size-base: 1.5rem; */
+/* } */
 
-[data-theme=dark] {
-  --nyc-sys-color-background: #111;
-  --nyc-sys-color-text: #fff;
-  --nyc-sys-background-light: var(--nyc-sys-color-primary);
-  --nyc-sys-color-on-light: var(--nyc-sys-color-text);
-  --nyc-cmp-scene-gradient: linear-gradient(180deg, rgba(0, 17, 75, 0.66) 0%, rgba(0, 91, 228, 0.66) 100%);
-}
+/* [data-theme=dark] { */
+/*   --nyc-sys-color-background: #111; */
+/*   --nyc-sys-color-text: #fff; */
+/*   --nyc-sys-background-light: var(--nyc-sys-color-primary); */
+/*   --nyc-sys-color-on-light: var(--nyc-sys-color-text); */
+/*   --nyc-cmp-scene-gradient: linear-gradient(180deg, rgba(0, 17, 75, 0.66) 0%, rgba(0, 91, 228, 0.66) 100%); */
+/* } */
 
 body {
   transition: all 0.3s ease;
@@ -65,7 +65,7 @@ body {
   --_max-item-size: var(--nyc-cmp-grid-max-item-size, 1fr);
   --_cols: var(--nyc-cmp-grid-cols, 1);
   --_item-shrink-ratio: var(--nyc-cmp-grid-item-shrink-ratio, .7);
-  --_max-w: calc(var(--nyc-sys-dimension-page-max-width) * 1.1 + ((var(--_cols) - 1) * (var(--_gutter) * 1)));
+  --_max-w: calc(var(--nyc-sys-size-width-page-max) * 1.1 + ((var(--_cols) - 1) * (var(--_gutter) * 1)));
 
   /* Setting container property breaks grid on Safari */
   /* container: grid-container / inline-size; */
@@ -92,7 +92,7 @@ body {
   --nyc-cmp-grid-min-item-size: calc((var(--_max-w) / var(--_cols)) * var(--_item-shrink-ratio));
   --nyc-cmp-grid-placement: auto-fit;
   /* --nyc-cmp-grid-item-shrink-ratio: 1; */
-  --nyc-cmp-grid-gutter: var(--nyc-sys-dimension-space-s);
+  --nyc-cmp-grid-gutter: var(--nyc-sys-space-sm);
 }
 
 .grid[data-layout="col-4"] {
@@ -292,15 +292,15 @@ body, main {
   animation-range: 0vh 70vh;
 }
 
-[data-theme=dark] .button[data-variant=primary],
-[data-theme=dark] .button[data-variant=tertiary] {
-  --nyc-cmp-button-background: white;
-  --nyc-cmp-button-color: black;
-  &:hover {
-    --nyc-cmp-button-color-hover: inherit;
-    --nyc-cmp-button-background-hover: inherit;
-  }
-}
+/* [data-theme=dark] .button[data-variant=primary], */
+/* [data-theme=dark] .button[data-variant=tertiary] { */
+/*   --nyc-cmp-button-background: white; */
+/*   --nyc-cmp-button-color: black; */
+/*   &:hover { */
+/*     --nyc-cmp-button-color-hover: inherit; */
+/*     --nyc-cmp-button-background-hover: inherit; */
+/*   } */
+/* } */
 
 /* POC 1 - Sun grow */
 
@@ -489,17 +489,20 @@ input:checked + .slider:before {
 
 }
 
-#popular-topics-list {
-  & li {
-    /* border-top: 2px solid var(--nyc-sys-color-text); */
-    /* padding: 1rem .5rem; */
-  }
-  a {
-    border-radius: 16px;
-    background: var(--Black, #000);
-    box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.20);
-    display: flex;
-    height: 100%;
-    padding: 1rem 1.5rem;
-  }
+.background-gradient {
+  background: var(--nyc-sys-gradient-background);
 }
+/* #popular-topics-list { */
+/*   & li { */
+/*     /\* border-top: 2px solid var(--nyc-sys-color-text); *\/ */
+/*     /\* padding: 1rem .5rem; *\/ */
+/*   } */
+/*   a { */
+/*     border-radius: 16px; */
+/*     background: var(--Black, #000); */
+/*     box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.20); */
+/*     display: flex; */
+/*     height: 100%; */
+/*     padding: 1rem 1.5rem; */
+/*   } */
+/* } */

@@ -580,36 +580,37 @@
   };
 
   // ../components/button/src/js/toggle-button.js
-  customElements.define(
-    "toggle-button",
-    class ToggleButton extends HTMLButtonElement {
-      connectedCallback() {
-        if (!this.hasAttribute("aria-controls")) {
-          console.error(
-            `ToggleButton: "aria-controls" must be set to the
-                      ID of the element you are toggling`
-          );
-          return;
-        }
-        if (!this.hasAttribute("aria-expanded")) {
-          console.error(
-            `ToggleButton: "aria-expanded" must be set to the
-           toggled elements initial visibility, either
-           "true" or "false"`
-          );
-          return;
-        }
-        this.addEventListener("click", this);
+  var ToggleButton = class extends HTMLButtonElement {
+    connectedCallback() {
+      if (!this.hasAttribute("aria-controls")) {
+        console.error(
+          `ToggleButton: "aria-controls" must be set to the
+                          ID of the element you are toggling`
+        );
+        return;
       }
-      handleEvent(e) {
-        this["on" + e.type](e);
+      if (!this.hasAttribute("aria-expanded")) {
+        console.error(
+          `ToggleButton: "aria-expanded" must be set to the
+               toggled elements initial visibility, either
+               "true" or "false"`
+        );
+        return;
       }
-      onclick(e) {
-        toggle_default(this);
-      }
-    },
-    { extends: "button" }
-  );
+      this.addEventListener("click", this);
+    }
+    handleEvent(e) {
+      this["on" + e.type](e);
+    }
+    onclick(e) {
+      toggle_default(this);
+    }
+  };
+
+  // ../components/button/src/js/index.js
+  if (!customElements.get("nyc-toggle-button")) {
+    window.customElements.define("nyc-toggle-button", ToggleButton, { extends: "button" });
+  }
 
   // ../components/accordion/src/accordion.js
   var Accordion = class {

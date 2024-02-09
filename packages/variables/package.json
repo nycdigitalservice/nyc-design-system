@@ -3,5 +3,11 @@
   "version": "0.1.0",
   "type": "module",
   "style": "./src/index.css",
-  "main": "./src/index.css"
+  "main": "./src/index.css",
+  "scripts": {
+    "build": "node ./scripts/make-theme-files.js && node ./scripts/build.js"
+  },
+  "devDependencies": {
+    "style-dictionary": "^3.9.2"
+  }
 }

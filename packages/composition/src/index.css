@@ -4,7 +4,7 @@
 
 .center {
   --_gutter: var(--nyc-cmp-container-gutter, 1rem);
-  --_max-w: var(--nyc-sys-dimension-page-max-width, 64rem);
+  --_max-w: var(--nyc-sys-size-width-page-max, 64rem);
 
   box-sizing: content-box;
   margin-inline: auto;
@@ -16,24 +16,25 @@
 /* Region */
 
 .region {
-  --_region-space: var(--nyc-sys-dimension-space-l-xl);
+  --_region-space: var(--nyc-cmp-region-space);
 
   padding-block: var(--_region-space);
 }
 
-.region[data-region-space="s"] { --_region-space: var(--nyc-sys-dimension-space-s); }
-.region[data-region-space="m"] { --_region-space: var(--nyc-sys-dimension-space-m); }
-.region[data-region-space="l"] { --_region-space: var(--nyc-sys-dimension-space-l); }
-.region[data-region-space="xl"] { --_region-space: var(--nyc-sys-dimension-space-xl); }
-.region[data-region-space="2xl"] { --_region-space: var(--nyc-sys-dimension-space-2xl); }
-.region[data-region-space="3xl"] { --_region-space: var(--nyc-sys-dimension-space-3xl); }
+.region[data-region-space="sm"] { --_region-space: var(--nyc-sys-space-sm); }
+.region[data-region-space="base"] { --_region-space: var(--nyc-sys-space-base); }
+.region[data-region-space="lg"] { --_region-space: var(--nyc-sys-space-lg); }
+.region[data-region-space="xl"] { --_region-space: var(--nyc-sys-space-xl); }
+.region[data-region-space="2xl"] { --_region-space: var(--nyc-sys-space-2xl); }
+.region[data-region-space="3xl"] { --_region-space: var(--nyc-sys-space-3xl); }
+.region[data-region-space="4xl"] { --_region-space: var(--nyc-sys-space-4xl); }
 
 
 /* Flow */
 
 /* Set default flow space to prevent inheritance when nesting */
 .flow {
-  --nyc-sys-dimension-flow-space: var(--nyc-sys-dimension-space-m);
+  --nyc-cmp-flow-space: var(--nyc-sys-space-lg);
 }
 
 .flow > * {
@@ -42,32 +43,17 @@
 
 .flow > * + *,
 .flow[data-flow-recursive] * + * {
-  margin-block-start: var(--nyc-sys-dimension-flow-space);
+  margin-block-start: var(--nyc-cmp-flow-space);
 }
 
-[data-flow-space="s"] {
-  --nyc-sys-dimension-flow-space: var(--nyc-sys-dimension-space-s);
-}
+[data-flow-space="sm"] { --nyc-cmp-flow-space: var(--nyc-sys-space-sm); }
+[data-flow-space="base"] { --nyc-cmp-flow-space: var(--nyc-sys-space-base); }
+[data-flow-space="lg"] { --nyc-cmp-flow-space: var(--nyc-sys-space-lg); }
+[data-flow-space="xl"] { --nyc-cmp-flow-space: var(--nyc-sys-space-xl); }
+[data-flow-space="2xl"] { --nyc-cmp-flow-space: var(--nyc-sys-space-2xl); }
+[data-flow-space="3xl"] { --nyc-cmp-flow-space: var(--nyc-sys-space-3xl); }
+[data-flow-space="4xl"] { --nyc-cmp-flow-space: var(--nyc-sys-space-4xl); }
 
-[data-flow-space="m"] {
-  --nyc-sys-dimension-flow-space: var(--nyc-sys-dimension-space-m);
-}
-
-[data-flow-space="l"] {
-  --nyc-sys-dimension-flow-space: var(--nyc-sys-dimension-space-l);
-}
-
-[data-flow-space="xl"] {
-  --nyc-sys-dimension-flow-space: var(--nyc-sys-dimension-space-xl);
-}
-
-[data-flow-space="2xl"] {
-  --nyc-sys-dimension-flow-space: var(--nyc-sys-dimension-space-2xl);
-}
-
-[data-flow-space="3xl"] {
-  --nyc-sys-dimension-flow-space: var(--nyc-sys-dimension-space-3xl);
-}
 
 /* Grid */
 

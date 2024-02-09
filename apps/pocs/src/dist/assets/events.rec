@@ -1,0 +1,93 @@
+%rec: Event
+%doc: Events occuring in the City of New York
+%key: Id
+%sort: Id
+%auto: Id
+# %typedef: Id_t int# %type: Id Id_t
+%typedef: Date_t date
+%type: StartDatetime Date_t
+%type: EndDatetime Date_t
+
+Id: 0
+Name: New York Botanical Garden Holiday Train Show
+ShortDescription: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia ante non dolor convallis scelerisque.
+LongDescription: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia ante non dolor convallis scelerisque. Donec feugiat tincidunt purus, quis luctus mauris. Etiam sed sollicitudin libero, a dictum nulla. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean elementum lacinia nibh sit amet blandit. Vivamus nec sapien erat. Vestibulum pretium urna eu massa pretium blandit.
+StartDatetime: 2024-03-16T13:00
+EndDatetime: 2024-03-16T16:00
+Location: New York Botanical Garden
+Address: 2900 Southern Boulevard, Bronx
+Borough: Bronx
+Tags: outdoor,kid-friendly
+AccessibilityInformation: null
+
+Id: 1
+Name: Chinese-American Planning Council Fresh Food Box Program
+ShortDescription: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia ante non dolor convallis scelerisque.
+LongDescription: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia ante non dolor convallis scelerisque. Donec feugiat tincidunt purus, quis luctus mauris. Etiam sed sollicitudin libero, a dictum nulla. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean elementum lacinia nibh sit amet blandit. Vivamus nec sapien erat. Vestibulum pretium urna eu massa pretium blandit.
+StartDatetime: 2024-03-26T13:00
+EndDatetime: 2024-03-26T16:00
+Location: New York Botanical Garden
+Address: 2900 Southern Boulevard, Bronx
+Borough: Bronx
+Tags: outdoor,kid-friendly
+AccessibilityInformation: null
+
+Id: 2
+Name: Chinese-American Planning Council Fresh Food Box Program
+ShortDescription: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia ante non dolor convallis scelerisque.
+LongDescription: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia ante non dolor convallis scelerisque. Donec feugiat tincidunt purus, quis luctus mauris. Etiam sed sollicitudin libero, a dictum nulla. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean elementum lacinia nibh sit amet blandit. Vivamus nec sapien erat. Vestibulum pretium urna eu massa pretium blandit.
+StartDatetime: 2024-04-16T13:00
+EndDatetime: 2024-04-16T16:00
+Location: New York Botanical Garden
+Address: 2900 Southern Boulevard, Bronx
+Borough: Bronx
+Tags: outdoor,kid-friendly
+AccessibilityInformation: null
+
+Id: 3
+Name: Chinese-American Planning Council Fresh Food Box Program
+ShortDescription: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia ante non dolor convallis scelerisque.
+LongDescription: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia ante non dolor convallis scelerisque. Donec feugiat tincidunt purus, quis luctus mauris. Etiam sed sollicitudin libero, a dictum nulla. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean elementum lacinia nibh sit amet blandit. Vivamus nec sapien erat. Vestibulum pretium urna eu massa pretium blandit.
+StartDatetime: 2024-04-26T13:00
+EndDatetime: 2024-04-26T16:00
+Location: New York Botanical Garden
+Address: 2900 Southern Boulevard, Bronx
+Borough: Bronx
+Tags: outdoor,kid-friendly
+AccessibilityInformation: null
+
+Id: 4
+Name: Chinese-American Planning Council Fresh Food Box Program
+ShortDescription: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia ante non dolor convallis scelerisque.
+LongDescription: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia ante non dolor convallis scelerisque. Donec feugiat tincidunt purus, quis luctus mauris. Etiam sed sollicitudin libero, a dictum nulla. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean elementum lacinia nibh sit amet blandit. Vivamus nec sapien erat. Vestibulum pretium urna eu massa pretium blandit.
+StartDatetime: 2024-04-27T13:00
+EndDatetime: 2024-04-27T16:00
+Location: New York Botanical Garden
+Address: 2900 Southern Boulevard, Bronx
+Borough: Bronx
+Tags: outdoor,kid-friendly
+AccessibilityInformation: null
+
+Id: 5
+Name: Chinese-American Planning Council Fresh Food Box Program
+ShortDescription: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia ante non dolor convallis scelerisque.
+LongDescription: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia ante non dolor convallis scelerisque. Donec feugiat tincidunt purus, quis luctus mauris. Etiam sed sollicitudin libero, a dictum nulla. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean elementum lacinia nibh sit amet blandit. Vivamus nec sapien erat. Vestibulum pretium urna eu massa pretium blandit.
+StartDatetime: 2024-05-16T13:00
+EndDatetime: 2024-05-16T16:00
+Location: New York Botanical Garden
+Address: 2900 Southern Boulevard, Bronx
+Borough: Bronx
+Tags: outdoor,kid-friendly
+AccessibilityInformation: null
+
+Id: 6
+Name: New York Botanical Garden Holiday Train Show
+ShortDescription: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia ante non dolor convallis scelerisque.
+LongDescription: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia ante non dolor convallis scelerisque. Donec feugiat tincidunt purus, quis luctus mauris. Etiam sed sollicitudin libero, a dictum nulla. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean elementum lacinia nibh sit amet blandit. Vivamus nec sapien erat. Vestibulum pretium urna eu massa pretium blandit.
+StartDatetime: 2024-05-17T13:00
+EndDatetime: 2024-05-17T16:00
+Location: New York Botanical Garden
+Address: 2900 Southern Boulevard, Bronx
+Borough: Bronx
+Tags: outdoor,kid-friendly
+AccessibilityInformation: null

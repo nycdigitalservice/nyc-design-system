@@ -1,0 +1,274 @@
+{
+  "sys": {
+    "size": {
+      "body": {
+        "sm": {
+          "type": "dimension",
+          "value": "{ref.length.100}"
+        },
+        "base": {
+          "type": "dimension",
+          "value": "{ref.length.112}"
+        },
+        "lg": {
+          "type": "dimension",
+          "value": "{ref.length.125}"
+        },
+        "xl": {
+          "type": "dimension",
+          "value": "{ref.length.150}"
+        },
+        "fluid": {
+          "xl": {
+            "type": "dimension",
+            "value": "clamp(1.125rem, 0.9821428571428571rem + 0.7142857142857143vw, 1.5rem)"
+          }
+        }
+      },
+      "heading": {
+        "sm": {
+          "type": "dimension",
+          "value": "{ref.length.200}"
+        },
+        "base": {
+          "type": "dimension",
+          "value": "{ref.length.312}"
+        },
+        "lg": {
+          "type": "dimension",
+          "value": "{ref.length.625}"
+        },
+        "fluid": {
+          "lg": {
+            "type": "dimension",
+            "value": "clamp(3.125rem, 1.9345238095238095rem + 5.9523809523809526vw, 6.25rem)"
+          },
+          "base": {
+            "type": "dimension",
+            "value": "clamp(2.5rem, 2.261904761904762rem + 1.1904761904761907vw, 3.125rem)"
+          },
+          "sm": {
+            "type": "dimension",
+            "value": "clamp(1.125rem, 0.7916666666666666rem + 1.666666666666667vw, 2rem)"
+          }
+        }
+      },
+      "border": {
+        "base": {
+          "type": "dimension",
+          "value": "{ref.length.12}"
+        }
+      },
+      "line-height": {
+        "body": {
+          "type": "dimension",
+          "value": "{ref.length.150}"
+        }
+      },
+      "width": {
+        "surface": {
+          "base": {
+            "type": "dimension",
+            "value": "{ref.length.2250}"
+          },
+          "lg": {
+            "type": "dimension",
+            "value": "{ref.length.2750}"
+          },
+          "sm": {
+            "type": "dimension",
+            "value": "{ref.length.1500}"
+          }
+        },
+        "page": {
+          "max": {
+            "type": "dimension",
+            "value": "{ref.length.7250}"
+          },
+          "min": {
+            "type": "dimension",
+            "value": "{ref.length.2000}"
+          }
+        }
+      }
+    },
+    "radius": {
+      "sm": {
+        "type": "dimension",
+        "value": "{ref.length.50}"
+      },
+      "base": {
+        "type": "dimension",
+        "value": "{ref.length.100}"
+      },
+      "lg": {
+        "type": "dimension",
+        "value": "{ref.length.150}"
+      },
+      "xl": {
+        "type": "dimension",
+        "value": "{ref.length.250}"
+      }
+    },
+    "space": {
+      "xs": {
+        "type": "dimension",
+        "value": "{ref.length.50}"
+      },
+      "sm": {
+        "type": "dimension",
+        "value": "{ref.length.75}"
+      },
+      "base": {
+        "type": "dimension",
+        "value": "{ref.length.100}"
+      },
+      "lg": {
+        "type": "dimension",
+        "value": "{ref.length.150}"
+      },
+      "xl": {
+        "type": "dimension",
+        "value": "{ref.length.250}"
+      },
+      "2xl": {
+        "type": "dimension",
+        "value": "{ref.length.400}"
+      },
+      "3xl": {
+        "type": "dimension",
+        "value": "{ref.length.500}"
+      },
+      "4xl": {
+        "type": "dimension",
+        "value": "{ref.length.750}"
+      },
+      "fluid": {
+        "3xl": {
+          "type": "dimension",
+          "value": "clamp(4rem, 3.619047619047619rem + 1.9047619047619049vw, 5rem)"
+        },
+        "lg": {
+          "type": "dimension",
+          "value": "clamp(1rem, 0.8095238095238095rem + 0.9523809523809524vw, 1.5rem)"
+        },
+        "sm": {
+          "type": "dimension",
+          "value": "clamp(0.5rem, 0.40476190476190477rem + 0.4761904761904762vw, 0.75rem)"
+        }
+      }
+    },
+    "color": {
+      "background": {
+        "type": "color",
+        "value": "{ref.color.gray.100}"
+      },
+      "text": {
+        "type": "color",
+        "value": "{ref.color.gray.10}"
+      },
+      "primary": {
+        "type": "color",
+        "value": "{ref.color.blue.40}"
+      },
+      "on-primary": {
+        "type": "color",
+        "value": "{ref.color.gray.100}"
+      },
+      "secondary": {
+        "type": "color",
+        "value": "{ref.color.orange.10}"
+      },
+      "on-secondary": {
+        "type": "color",
+        "value": "{ref.color.gray.30}"
+      },
+      "disabled": {
+        "type": "color",
+        "value": "{ref.color.gray.70}"
+      },
+      "on-disabled": {
+        "type": "color",
+        "value": "{ref.color.gray.30}"
+      },
+      "success": {
+        "type": "color",
+        "value": "{ref.color.blue.100}"
+      },
+      "base": {
+        "type": "color",
+        "value": "{ref.color.gray.10}"
+      },
+      "surface": {
+        "base": {
+          "type": "color",
+          "value": "{ref.color.gray.100}"
+        },
+        "low": {
+          "type": "color",
+          "value": "{ref.color.gray.90}"
+        },
+        "inactive": {
+          "type": "color",
+          "value": "{ref.color.gray.100_6}"
+        }
+      },
+      "on-surface": {
+        "base": {
+          "type": "color",
+          "value": "{ref.color.gray.10}"
+        }
+      },
+      "border": {
+        "base": {
+          "type": "color",
+          "value": "{ref.color.gray.90}"
+        },
+        "focus": {
+          "type": "color",
+          "value": "{ref.color.blue.90}"
+        }
+      },
+      "inactive": {
+        "type": "color",
+        "value": "{ref.color.gray.70}"
+      },
+      "on-inactive": {
+        "type": "color",
+        "value": "{ref.color.gray.30}"
+      },
+      "primary-hover": {
+        "type": "color",
+        "value": "{ref.color.blue.20}"
+      }
+    },
+    "shadow": {
+      "base": {
+        "type": "string",
+        "value": "{ref.shadow.20}"
+      },
+      "low": {
+        "type": "string",
+        "value": "{ref.shadow.10}"
+      }
+    },
+    "gradient": {
+      "background": {
+        "type": "string",
+        "value": "{ref.gradient.orange-blue}"
+      }
+    },
+    "font": {
+      "family": {
+        "body": {
+          "type": "string",
+          "value": "{ref.type.family.noto}"
+        },
+        "heading": {
+          "type": "string",
+          "value": "{ref.type.family.clash}"
+        }
+      }
+    }
+  }
+}

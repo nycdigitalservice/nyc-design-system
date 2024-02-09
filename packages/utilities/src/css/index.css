@@ -33,6 +33,10 @@
   background-color: var(--nyc-sys-color-primary-lightest);
 }
 
+.background-gradient {
+  background: var(--nyc-sys-gradient-background);
+}
+
 .background-gradient-primary-light {
   background: var(--nyc-sys-gradient-primary-light);
 }

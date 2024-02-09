@@ -14,18 +14,20 @@
 
 #+name: card-variables
 #+begin_src css
-    --_background: var(--nyc-cmp-card-background, white);
-    --_background-hover: var(--nyc-cmp-card-background-hover, white);
-    --_shadow: var(--nyc-cmp-card-shadow, none);
-    --_color: var(--nyc-cmp-card-color, inherit);
-    --_color-hover: var(--nyc-cmp-card-color-hover, inherit);
-    --_body-color: var(--nyc-cmp-card-body-color, inherit);
-    --_border-color: var(--nyc-cmp-card-border-color, hsla(0, 0%, 93%, 1));
-    --_border-width: var(--nyc-cmp-card-border-width, 1px);
-    --_border: var(--nyc-cmp-card-border, 1px solid var(--_border-color));
-    --_border-hover: var(--nyc-cmp-card-border-hover, 1px solid (--_border-color));
-    --_heading-font-size: var(--nyc-cmp-card-heading-font-size, 1.125rem);
-    --_body-font-size: var(--nyc-cmp-card-body-font-size, 1rem);
+  --_background: var(--nyc-cmp-card-background, white);
+  --_background-hover: var(--nyc-cmp-card-background-hover, white);
+  --_shadow: var(--nyc-cmp-card-shadow, none);
+  --_color: var(--nyc-cmp-card-color, inherit);
+  --_color-hover: var(--nyc-cmp-card-color-hover, inherit);
+  --_body-color: var(--nyc-cmp-card-body-color, inherit);
+  --_border-color: var(--nyc-cmp-card-border-color, hsla(0, 0%, 93%, 1));
+  --_border-width: var(--nyc-cmp-card-border-width, 1px);
+  --_border-radius: var(--nyc-cmp-card-radius-base, 4px);
+  --_border: var(--nyc-cmp-card-border, var(--_border-width) solid var(--_border-color));
+  --_border-hover: var(--nyc-cmp-card-border-hover, var(--_border-width) solid (--_border-color));
+  --_heading-font-size: var(--nyc-cmp-card-heading-font-size, 1.125rem);
+  --_body-font-size: var(--nyc-cmp-card-body-size, 1rem);
+  --_padding: var(--nyc-cmp-card-padding, 1rem);
 #+end_src
 
 ** Base
@@ -47,7 +49,7 @@ We start by defining the Cards layout and style properties
     color: var(--_color);
 
     border: var(--_border-width) solid var(--_border-color);
-    border-radius: 4px;
+    border-radius: var(--_border-radius);
     box-shadow: var(--_shadow);
 
     transition: all .3s ease;
@@ -78,13 +80,18 @@ sections
 
 #+begin_src css :noweb-ref card-sections
   .card__header {
-    padding: 1rem;
+    padding: var(--_padding);
+    /* padding-block-end: 0; */
     display: flex;
     flex: 1;
     & :--heading {
       flex: 1;
       font-size: var(--_heading-font-size);
     }
+  }
+
+  .card:not(:has(.card__body)) .card__header {
+    padding-block: var(--nyc-sys-space-base);
   }
 #+end_src
 
@@ -105,7 +112,7 @@ sections
 #+begin_src css :noweb-ref card-sections
   .card__body {
     flex-grow: 1;
-    padding: 1rem;
+    padding: var(--_padding);
     padding-top: 0;
     color: var(--_body-color);
     font-size: var(--_body-font-size);
@@ -122,6 +129,7 @@ the entirety of the card clickable.
   .card__primary-action,
   .card__primary-action:link {
     display: flex;
+    align-items: flex-start;
     color: currentColor;
     text-decoration: none;
     &:before {
@@ -131,10 +139,15 @@ the entirety of the card clickable.
       left: 0; /* 2 */
       right: 0; /* 2 */
       bottom: 0; /* 2 */
-      z-index: 1; /* 3 */
+      Z-index: 1; /* 3 */
     }
     & > :first-child {
       flex: 1;
+      display: -webkit-box;
+      -webkit-line-clamp: 3; /* number of lines to show */
+      line-clamp: 3; 
+      -webkit-box-orient: vertical;
+      overflow: hidden;
     }
     &:focus {
       text-decoration: underline;
@@ -221,7 +234,7 @@ To adjust the cards presentation based on its width, we use a
 #+end_src
 
 ** Variants
-*** Large Card
+*** Large card
 
 #+name: card-variant-large
 #+begin_src css :noweb-ref variants
@@ -253,6 +266,64 @@ To adjust the cards presentation based on its width, we use a
         margin-block-start: auto;
         margin-inline-start: auto;
       }
+    }
+
+  }
+#+end_src
+
+*** Event card
+
+#+name: card-variant-event
+#+begin_src css :noweb-ref variants
+  nyc-event-card,
+  .card[data-variant="event"] {
+    --_border-radius: var(--nyc-cmp-card-radius-lg);
+    max-width: var(--nyc-cmp-card-width-lg);
+    width: 100%;
+    min-height: 22.5rem;
+    &:hover {
+        --_border-radius: var(--nyc-cmp-card-radius-lg-hover);
+    }
+
+    & .card__body {
+      display: flex;
+      flex-flow: column;
+    }
+  }
+
+  .card__event-details {
+    margin-block-start: auto;
+  }
+#+end_src
+
+*** Feature card
+
+#+name: card-variant-feature
+#+begin_src css :noweb-ref variants
+  .card[data-variant="feature"] {
+    --_border-radius: var(--nyc-cmp-card-radius-xl);
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+      "heading figure"
+      "body figure";
+    row-gap: 0;
+    padding: var(--_padding);
+
+    & .card__header {
+      grid-area: heading;
+    }
+
+    & .card__media {
+      grid-area: figure;
+      overflow: hidden;
+      border-radius: var(--nyc-sys-radius-base);
+    }
+
+    & .card__body {
+      grid-area: body;
     }
 
   }

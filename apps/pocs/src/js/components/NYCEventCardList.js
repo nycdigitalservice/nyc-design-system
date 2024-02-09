@@ -26,18 +26,19 @@ class NYCEventCardList extends HTMLElement {
     if (evt.type === 'nyc-csv-complete') {
       try {
         const { data } = evt.detail;
-          console.log(data);
-          const dataLowerized = data.map(this.lowerize) // make keys lowercase
-          const upcomingEvents = this.filterPastEvents(dataLowerized);
+        console.log(data);
+        const dataLowerized = data.map(this.lowerize) // make keys lowercase
 
-          if (upcomingEvents.length > 0){
-              const eventsEls = upcomingEvents.map(this.buildCardEl)
+        const upcomingEvents = this.filterPastEvents(dataLowerized);
+        console.log(upcomingEvents);
+        if (upcomingEvents.length > 0){
+          const eventsEls = upcomingEvents.map(this.buildCardEl)
 
-              this.innerHTML = '';
-              this.append(...eventsEls);
-          } else {
-              this.innerHTML = '<p>There are no recruitment events scheduled at this time.</p>'
-          }
+          this.innerHTML = '';
+          this.append(...eventsEls);
+        } else {
+          this.innerHTML = '<p>There are no recruitment events scheduled at this time.</p>'
+        }
       } catch (err) {
         console.error(err);
       }
@@ -63,8 +64,10 @@ class NYCEventCardList extends HTMLElement {
    * @returns {...AgencyEvent} An array of AgencyEvent objects
    */
   filterPastEvents(events) {
+    const dateFieldName = this.dataset.dateFieldName || 'date';
+    // console.log(events, dateFieldName)
     return events.map(event => {
-      const dateObj = this.strToDate(event.date);
+      const dateObj = this.strToDate(event[dateFieldName]);
       return {
         event,
         dateObj,
@@ -102,7 +105,9 @@ class NYCEventCardList extends HTMLElement {
    * @returns {Object} - a Date object
    */
   strToDate(dateStr) {
+    if (dateStr.includes('T')) return new Date(dateStr);
     const dateStrClean = dateStr.includes('-') ? dateStr.replace(/-/g, '/') : dateStr;
+    //console.log(dateStrClean, new Date(dateStr))
     return new Date(dateStrClean);
   }
 }

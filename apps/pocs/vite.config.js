@@ -8,7 +8,8 @@ import {ViteEjsPlugin} from "vite-plugin-ejs";
 export default defineConfig({
   root: 'src',
   build: {
-    outDir: '../../../docs',
+    //outDir: '../../../docs',
+    outDir: './dist',
     minify: false,
     cssMinify: false,
     cssCodeSplit: true,
