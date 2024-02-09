@@ -9,7 +9,8 @@ export default defineConfig({
   root: 'src',
   build: {
     //outDir: '../../../docs',
-    outDir: './dist',
+    outDir: '../dist',
+    emptyOutDir: true,
     minify: false,
     cssMinify: false,
     cssCodeSplit: true,
