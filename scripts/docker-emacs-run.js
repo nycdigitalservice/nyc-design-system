@@ -8,8 +8,11 @@ const userArgs = args.slice(2);
 
 const userCommand = userArgs[0];
 
-// console.log(userArgs, userCommand);
-// process.exit();
+const flags = userArgs.slice(1);
+
+// console.log(userArgs, userCommand, flags);
+
+let envVars = '';
 
 if (userCommand && userCommand.length > 0) {
   if (userCommand === "publish") {
@@ -23,10 +26,17 @@ if (userCommand && userCommand.length > 0) {
     const volumeStr = v => ` -v ${v}`;
     
     volumes = `${volumes}${include.map(volumeStr).join('')}`
+
+    if (flags.includes('--prod')) {
+      envVars = ' -e "CI=true"'
+    }
   }
 }
 
-const cmd = `docker run --rm --name nyc-tangle-container ${volumes} nyc-emacs ${userArgs.join(' ')}`;
+const cmd = `docker run --rm --name nyc-tangle-container ${volumes} ${envVars} nyc-emacs ${userArgs.join(' ')}`;
+
+// console.log(cmd)
+// process.exit();
 
 exec(cmd, (error, stdout, stderr) => {
   if (error) {
