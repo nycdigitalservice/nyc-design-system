@@ -1,0 +1,5 @@
+@import '../mixins.css';
+
+.cmp-navigation--primary .cmp-navigation {
+  @mixin navigation-primary
+}

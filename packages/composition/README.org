@@ -106,7 +106,7 @@ variables
     --_max-item-size: var(--nyc-cmp-grid-max-item-size, 1fr);
     --_cols: var(--nyc-cmp-grid-cols, 1);
     --_item-shrink-ratio: var(--nyc-cmp-grid-item-shrink-ratio, .7);
-    --_max-w: calc(var(--nyc-sys-dimension-page-max-width) + ((var(--_cols) - 1) * var(--_gutter)));
+    --_max-w: calc(var(--nyc-sys-size-width-page-max) * 1.1 + ((var(--_cols) - 1) * (var(--_gutter) * 1)));
 
     /* Setting container property breaks grid on Safari */
     /* container: grid-container / inline-size; */
@@ -127,10 +127,10 @@ variables
   .grid[data-layout^="col-"] {
     --nyc-cmp-grid-min-item-size: calc((var(--_max-w) / var(--_cols)) * var(--_item-shrink-ratio));
     --nyc-cmp-grid-placement: auto-fit;
+    --nyc-cmp-grid-gutter: var(--nyc-sys-space-sm);
   }
 
   .grid[data-layout="col-4"] {
-    --nyc-cmp-grid-gutter: var(--nyc-sys-dimension-space-s);
     --nyc-cmp-grid-cols: 4;
   }
 
@@ -162,12 +162,13 @@ markup. Especially useful if the markup order is =heading= -> =figure= ->
 #+begin_src css :noweb-ref grid
   .grid[data-layout=figure-split] {
     grid-template-columns: 1fr;
+    grid-auto-rows: auto;
     --_gutter: 0;
   }
 
   @media (min-width: 768px) {
     .grid[data-layout=figure-split] {
-      --_gutter: var(--nyc-sys-dimension-space-s-m);
+      --_gutter: var(--nyc-sys-space-fluid-lg);
       grid-template-columns: repeat(2, 1fr);
       grid-template-rows: auto 1fr;
       grid-template-areas:
@@ -181,6 +182,7 @@ markup. Especially useful if the markup order is =heading= -> =figure= ->
 
       & .figure {
         grid-area: figure;
+        margin-block-start: 0;
       }
 
       & > * {

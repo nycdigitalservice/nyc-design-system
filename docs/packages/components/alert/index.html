@@ -1,0 +1,103 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta author="Michael Mausler - NYC"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><link rel="icon" type="image/png" href="/img/favicon.png"/><link rel="stylesheet" href="http://localhost:8000/assets/nycds-docs.css"/><title>Alert - NYC</title></head><body class="u-reset"><header class="background-primary"><nav class="p-2 flex"><a href="http://localhost:8000" class="mr-auto flex"><img class="logo" height="50" src="http://localhost:8000/assets/img/nyc-logo.svg" alt="City of New York logo"/></a><button is="nyc-toggle-button" id="main-menu-control" class="font-bold p-2" aria-controls="main-menu" aria-expanded="false"><i class="i-ri:menu-line mr-2"></i>Menu</button></nav></header><aside id="main-menu" class="background-primary-lightest" aria-labelledby="main-menu-control" hidden=""><div class="center grid p-4"><nav class="flex flex-col"><span class="p-2 border-b-2 border-current border-solid">Packages</span><a class="p-2" href="http://localhost:8000/packages/reset/">Reset</a><a class="p-2" href="http://localhost:8000/packages/variables/">Variables</a><a class="p-2" href="http://localhost:8000/packages/global/">Global</a><a class="p-2" href="http://localhost:8000/packages/composition/">Composition</a><a class="p-2" href="http://localhost:8000/packages/icons/">Icons</a></nav><nav class="flex flex-col"><span class="p-2 border-b-2 border-current border-solid">Components</span><a class="p-2" href="http://localhost:8000/packages/components/accordion/">Accordion</a><a class="p-2" href="http://localhost:8000/packages/components/alert/">Alert</a><a class="p-2" href="http://localhost:8000/packages/components/button/">Button</a><a class="p-2" href="http://localhost:8000/packages/components/card/">Card</a><a class="p-2" href="http://localhost:8000/packages/components/tooltip/">Tooltip</a></nav><nav class="flex flex-col"><span class="p-2 border-b-2 border-current border-solid">Guides</span><a class="p-2" href="http://localhost:8000/guides/navigation-page.html">Building a Navigation Page</a></nav></div></aside><main class="center"><div class="region flow"><h1 class="site-post-title">Alert</h1><div id="content" class="flow"><p>
+Alerts contain contextually relevant messages for the user. They may
+be used to indicate a successful or unsuccessful interaction, provide
+feedback for form inputs, or display time-sensitive information about
+content within a view. Further guidance on Alerts can be found on the
+<a href="https://designsystem.digital.gov/components/alert/">U.S. Web Design System (USWDS) site</a>.
+</p>
+
+<section class="region flow"><h2><a id="example" class="anchor" href="#example"><i class="i-ri:anchor-line"></i></a>Example</h2><div class="example-wrapper">
+<article class="alert flow">
+  <h3><i class="i-ri:information-fill"></i><span>Information</span></h3>
+  <p>Learn how to protect your property from fraud.</p>
+  <a href="#">Learn more <span class="i-ri:arrow-right-line"></span></a>
+</article>
+</div>
+
+<nyc-accordion class='code-view'><h3>Inspect code</h3><div><pre><code class="language-html">&lt;article class="alert flow"&gt;
+  &lt;h3&gt;&lt;i class="i-ri:information-fill"&gt;&lt;/i&gt;&lt;span&gt;Information&lt;/span&gt;&lt;/h3&gt;
+  &lt;p&gt;Learn how to protect your property from fraud.&lt;/p&gt;
+  &lt;a href="#"&gt;Learn more &lt;span class="i-ri:arrow-right-line"&gt;&lt;/span&gt;&lt;/a&gt;
+&lt;/article&gt;</code></pre></div></nyc-accordion>
+</section>
+
+<section class="region flow"><h2><a id="css" class="anchor" href="#css"><i class="i-ri:anchor-line"></i></a>CSS</h2><nyc-accordion class='code-view'><h3>Inspect code</h3><div><pre><code class="language-css">.alert {
+  --_accent-color: var(--nyc-cmp-alert-accent-color, hsla(208, 100%, 30%, 1));
+  --_panel-background: var(--nyc-cmp-alert-panel-background-color, hsla(0, 0%, 93%, 1));
+  background: var(--_panel-background);
+  border-radius: .3125rem;
+  margin-inline-start: var(--nyc-sys-dimension-space-s-m);
+  margin-inline-start: 1.125rem;
+  padding: .75rem 1rem;
+  position: relative;
+  &::before {
+    content: '';
+    width: .625rem;
+    height: 100%;
+    background: var(--_accent-color);
+    position: absolute;
+    top: 0;
+    left: calc(var(--nyc-sys-dimension-space-s-m) * -1);
+    left: -1.125rem;
+    display: flex;
+    border-radius: 5px;
+  }
+
+  & :--heading {
+    font-size: var(--nyc-sys-font-size-base);
+    & i {
+      color: var(--_accent-color);
+      font-size: 1.5rem;
+      margin-inline-end: .5rem;
+    }
+  }
+}</code></pre></div></nyc-accordion>
+</section>
+
+<section class="region flow"><h2><a id="variants" class="anchor" href="#variants"><i class="i-ri:anchor-line"></i></a>Variants</h2><h3><a id="news" class="anchor" href="#news"><i class="i-ri:anchor-line"></i></a>News</h3><h4><a id="example" class="anchor" href="#example"><i class="i-ri:anchor-line"></i></a>Example</h4><div class="example-wrapper">
+<article class="alert flow" data-variant="news">
+  <h3>Deed fraud alert</h3>
+  <time datetime="2023-01-01">January 1, 2023</time>
+
+  <p>Learn how to protect your property from fraud.</p>
+  <a href="#">Learn more <span class="i-ri:arrow-right-line"></span></a>
+</article>
+</div>
+
+<nyc-accordion class='code-view'><h3>Inspect code</h3><div><pre><code class="language-html">&lt;article class="alert flow" data-variant="news"&gt;
+  &lt;h3&gt;Deed fraud alert&lt;/h3&gt;
+  &lt;time datetime="2023-01-01"&gt;January 1, 2023&lt;/time&gt;
+
+  &lt;p&gt;Learn how to protect your property from fraud.&lt;/p&gt;
+  &lt;a href="#"&gt;Learn more &lt;span class="i-ri:arrow-right-line"&gt;&lt;/span&gt;&lt;/a&gt;
+&lt;/article&gt;</code></pre></div></nyc-accordion>
+
+<h4><a id="css" class="anchor" href="#css"><i class="i-ri:anchor-line"></i></a>CSS</h4><nyc-accordion class='code-view'><h3>Inspect code</h3><div><pre><code class="language-css">.alert[data-variant=news] {
+    --space: .8em;
+    --_accent-color: var(--nyc-sys-color-secondary);
+    display: flex;
+    flex-direction: column;
+
+    & time {
+        order: -1;
+        --space: 0;
+        margin-block-start: 0;
+        margin-block-end: .8em;
+        font-weight: 400;
+    }
+}</code></pre></div></nyc-accordion>
+</section>
+
+<section class="region flow"><h2><a id="container-queries" class="anchor" href="#container-queries"><i class="i-ri:anchor-line"></i></a>Container queries</h2><nyc-accordion class='code-view'><h3>Inspect code</h3><div><pre><code class="language-css">@container grid-parent (max-width: 657px) {
+  .alert {
+    padding-inline-start: 0;
+    padding-block-start: var(--nyc-sys-dimension-space-s-m);
+    &::before {
+      top: 0;
+      width: 100%;
+      height: 5px;
+    }
+  }
+}</code></pre></div></nyc-accordion>
+</section>
+</div></div></main><footer class="site-footer"><div class="center"><div class="row"><div class="column"><p>© 2024 City of New York</p></div></div></div></footer><script src="http://localhost:8000/assets/nycds-docs.js"></script></body></html>

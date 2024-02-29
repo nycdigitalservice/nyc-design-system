@@ -1,0 +1,233 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta author="Michael Mausler - NYC"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><link rel="icon" type="image/png" href="/img/favicon.png"/><link rel="stylesheet" href="http://localhost:8000/assets/nycds-docs.css"/><title>Button - NYC</title></head><body class="u-reset"><header class="background-primary"><nav class="p-2 flex"><a href="http://localhost:8000" class="mr-auto flex"><img class="logo" height="50" src="http://localhost:8000/assets/img/nyc-logo.svg" alt="City of New York logo"/></a><button is="nyc-toggle-button" id="main-menu-control" class="font-bold p-2" aria-controls="main-menu" aria-expanded="false"><i class="i-ri:menu-line mr-2"></i>Menu</button></nav></header><aside id="main-menu" class="background-primary-lightest" aria-labelledby="main-menu-control" hidden=""><div class="center grid p-4"><nav class="flex flex-col"><span class="p-2 border-b-2 border-current border-solid">Packages</span><a class="p-2" href="http://localhost:8000/packages/reset/">Reset</a><a class="p-2" href="http://localhost:8000/packages/variables/">Variables</a><a class="p-2" href="http://localhost:8000/packages/global/">Global</a><a class="p-2" href="http://localhost:8000/packages/composition/">Composition</a><a class="p-2" href="http://localhost:8000/packages/icons/">Icons</a></nav><nav class="flex flex-col"><span class="p-2 border-b-2 border-current border-solid">Components</span><a class="p-2" href="http://localhost:8000/packages/components/accordion/">Accordion</a><a class="p-2" href="http://localhost:8000/packages/components/alert/">Alert</a><a class="p-2" href="http://localhost:8000/packages/components/button/">Button</a><a class="p-2" href="http://localhost:8000/packages/components/card/">Card</a><a class="p-2" href="http://localhost:8000/packages/components/tooltip/">Tooltip</a></nav><nav class="flex flex-col"><span class="p-2 border-b-2 border-current border-solid">Guides</span><a class="p-2" href="http://localhost:8000/guides/navigation-page.html">Building a Navigation Page</a></nav></div></aside><main class="center"><div class="region flow"><h1 class="site-post-title">Button</h1><div id="content" class="flow"><p>
+A button draws attention to important actions with a large selectable
+surface.
+</p>
+
+<section class="region flow"><h2><a id="examples" class="anchor" href="#examples"><i class="i-ri:anchor-line"></i></a>Examples</h2><div class="example-wrapper example-list">
+<a href="#" class="button">Default button</a>
+<a href="#" class="button" data-variant="primary">Primary button</a>
+<a href="#" class="button">
+  <span>Button with icon</span>
+  <i class="i-ri:arrow-right-line"></i>
+</a>
+</div>
+
+<nyc-accordion class='code-view'><h3>Inspect code</h3><div><pre><code class="language-html">&lt;a href="#" class="button"&gt;Default button&lt;/a&gt;
+&lt;a href="#" class="button" data-variant="primary"&gt;Primary button&lt;/a&gt;
+&lt;a href="#" class="button"&gt;
+  &lt;span&gt;Button with icon&lt;/span&gt;
+  &lt;i class="i-ri:arrow-right-line"&gt;&lt;/i&gt;
+&lt;/a&gt;</code></pre></div></nyc-accordion>
+</section>
+
+<section class="region flow"><h2><a id="custom-properties" class="anchor" href="#custom-properties"><i class="i-ri:anchor-line"></i></a>Custom properties</h2><p>
+Use these custom properties in your theme to override default styling
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Property</th>
+<th scope="col" class="org-left">Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">&#x2013;nyc-cmp-button-color</td>
+<td class="org-left">currentColor</td>
+</tr>
+
+<tr>
+<td class="org-left">&#x2013;nyc-cmp-button-background</td>
+<td class="org-left">white</td>
+</tr>
+
+<tr>
+<td class="org-left">&#x2013;nyc-cmp-button-border-width</td>
+<td class="org-left">2px</td>
+</tr>
+
+<tr>
+<td class="org-left">&#x2013;nyc-cmp-button-border-color</td>
+<td class="org-left">grey</td>
+</tr>
+
+<tr>
+<td class="org-left">&#x2013;nyc-cmp-button-shadow</td>
+<td class="org-left">none</td>
+</tr>
+
+<tr>
+<td class="org-left">&#x2013;nyc-cmp-button-padding</td>
+<td class="org-left">.75rem</td>
+</tr>
+</tbody>
+</table>
+</section>
+
+<section class="region flow"><h2><a id="base-styles" class="anchor" href="#base-styles"><i class="i-ri:anchor-line"></i></a>Base styles</h2><p>
+The <code>button</code> CSS class implements the custom properties and other
+default styles.
+</p>
+
+<h3><a id="mixin" class="anchor" href="#mixin"><i class="i-ri:anchor-line"></i></a>Mixin</h3><nyc-accordion class='code-view'><h3>Inspect code</h3><div><pre><code class="language-css">@define-mixin button {
+    --_background: var(--nyc-cmp-button-background, hsl(0 0% 100%));
+    --_background-hover: var(--nyc-cmp-button-background-hover, hsl(0 0% 100%));
+    --_border-color: var(--nyc-cmp-button-border-color, hsl(0 0% 93%));
+    --_border-color-hover: var(--nyc-cmp-button-border-color-hover, currentColor);
+    --_border-width: var(--nyc-cmp-button-border-width, 2px);
+    --_border-radius: var(--nyc-cmp-button-border-radius, 0);
+    --_color: var(--nyc-cmp-button-color, hsl(0 0% 0%));
+    --_color-hover: var(--nyc-cmp-button-color-hover, inherit);
+    --_font-weight: var(--nyc-cmp-button-font-weight, 500);
+    --_font-size: var(--nyc-cmp-button-font-size, 500);
+    --_shadow: var(--nyc-cmp-button-shadow, none);
+    --_padding-block: var(--nyc-cmp-button-padding-block, .75rem);
+    --_padding-inline: var(--nyc-cmp-button-padding-inline, .75rem);
+    --_outline-color: var(--nyc-cmp-button-outline-color, inherit);
+    --_gap: var(--nyc-cmp-button-gap, .5rem);
+    appearance: none;
+    background-color: var(--_background);
+    border-color: var(--_border-color);
+    border-width: var(--_border-width);
+    border-style: solid;
+    border-radius: var(--_border-radius);
+    color: var(--_color);
+    padding: var(--_padding-block) var(--_padding-inline);
+    box-shadow: var(--_shadow);
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: var(--_font-weight);
+    font-size: var(--_font-size);
+    line-height: inherit;
+    display: inline-flex;
+    gap: var(--_gap);
+    align-items: center;
+    transition: all 0.3s ease;
+
+    /* & > :first-child:not(i) { */
+    /*   flex-grow: 1; */
+    /*   width: max-content; */
+    /* } */
+
+    /* & > i:last-child { */
+    /*   flex-shrink: 0; */
+    /*   margin-block: auto; */
+    /*   font-size: 1.5rem; */
+
+    /*   margin-inline-start: .5em; */
+    /* } */
+
+    &:hover {
+      background: var(--_background-hover);
+      color: var(--_color-hover);
+      border-color: var(--_border-color-hover);
+      text-decoration: none;
+    }
+
+    &:focus {
+      outline-color: var(--_outline-color);
+    }
+}</code></pre></div></nyc-accordion>
+
+<h3><a id="default-class" class="anchor" href="#default-class"><i class="i-ri:anchor-line"></i></a>Default class</h3><nyc-accordion class='code-view'><h3>Inspect code</h3><div><pre><code class="language-css">.button,
+.button:link,
+.button:visited {
+  @mixin button
+}</code></pre></div></nyc-accordion>
+
+<h3><a id="aem-class" class="anchor" href="#aem-class"><i class="i-ri:anchor-line"></i></a>AEM class</h3><nyc-accordion class='code-view'><h3>Inspect code</h3><div><pre><code class="language-css">.cmp-button,
+.cmp-button:link,
+.cmp-button:visited {
+  @mixin button
+}</code></pre></div></nyc-accordion>
+</section>
+
+<section class="region flow"><h2><a id="variants" class="anchor" href="#variants"><i class="i-ri:anchor-line"></i></a>Variants</h2><h3><a id="primary" class="anchor" href="#primary"><i class="i-ri:anchor-line"></i></a>Primary</h3><h4><a id="mixin" class="anchor" href="#mixin"><i class="i-ri:anchor-line"></i></a>Mixin</h4><nyc-accordion class='code-view'><h3>Inspect code</h3><div><pre><code class="language-css">@define-mixin button-primary {
+  --nyc-cmp-button-background: var(--nyc-sys-color-primary);
+  --nyc-cmp-button-color: var(--nyc-sys-color-on-primary);
+  --nyc-cmp-button-border-color: var(--nyc-sys-color-primary);
+  --nyc-cmp-button-shadow: none;
+  &:hover {
+    --nyc-cmp-button-color-hover: var(--nyc-cmp-button-color);
+    --nyc-cmp-button-background-hover: var(--nyc-sys-color-primary);
+    --nyc-cmp-button-border-color-hover: var(--nyc-sys-color-primary);
+  }    
+}</code></pre></div></nyc-accordion>
+
+<h4><a id="default-class" class="anchor" href="#default-class"><i class="i-ri:anchor-line"></i></a>Default class</h4><nyc-accordion class='code-view'><h3>Inspect code</h3><div><pre><code class="language-css">.button[data-variant=primary] {
+  @mixin button-primary
+}</code></pre></div></nyc-accordion>
+
+<h4><a id="aem-class" class="anchor" href="#aem-class"><i class="i-ri:anchor-line"></i></a>AEM class</h4><nyc-accordion class='code-view'><h3>Inspect code</h3><div><pre><code class="language-css">.cmp-button--primary .cmp-button {
+  @mixin button-primary
+}</code></pre></div></nyc-accordion>
+
+<h3><a id="sizes" class="anchor" href="#sizes"><i class="i-ri:anchor-line"></i></a>Sizes</h3><h4><a id="mixin" class="anchor" href="#mixin"><i class="i-ri:anchor-line"></i></a>Mixin</h4><nyc-accordion class='code-view'><h3>Inspect code</h3><div><pre><code class="language-css">@define-mixin button-sm {
+  --nyc-cmp-button-border-radius: var(--nyc-sys-radius-lg);
+  --nyc-cmp-button-padding-block: var(--nyc-sys-space-xs);
+  --nyc-cmp-button-padding-inline: var(--nyc-sys-space-sm);
+  --nyc-cmp-button-font-size: var(--nyc-sys-size-body-base);
+  --nyc-cmp-button-font-weight: 600;
+}</code></pre></div></nyc-accordion>
+
+<h4><a id="default-class" class="anchor" href="#default-class"><i class="i-ri:anchor-line"></i></a>Default class</h4><nyc-accordion class='code-view'><h3>Inspect code</h3><div><pre><code class="language-css">.button[data-size=sm] {
+  @mixin button-sm
+}</code></pre></div></nyc-accordion>
+
+<h4><a id="aem-class" class="anchor" href="#aem-class"><i class="i-ri:anchor-line"></i></a>AEM class</h4><nyc-accordion class='code-view'><h3>Inspect code</h3><div><pre><code class="language-css">.cmp-button--sm .cmp-button {
+  @mixin button-sm
+}</code></pre></div></nyc-accordion>
+</section>
+
+<section class="region flow"><h2><a id="javascript" class="anchor" href="#javascript"><i class="i-ri:anchor-line"></i></a>Javascript</h2><h3><a id="toggle-button-class" class="anchor" href="#toggle-button-class"><i class="i-ri:anchor-line"></i></a>Toggle Button Class</h3><p>
+The Toggle Button is a <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_custom_elements#types_of_custom_element">Customized Built-in Button Element</a> that when
+clicked toggles the visibility of another element.
+</p>
+
+<nyc-accordion class='code-view'><h3>Inspect code</h3><div><pre><code class="language-js">import { toggle } from '@nycds/utilities';
+
+export default class ToggleButton extends HTMLButtonElement {
+  connectedCallback() {
+    if (!this.hasAttribute('aria-controls')) {
+      console.error(
+        `ToggleButton: "aria-controls" must be set to the
+                          ID of the element you are toggling`
+      );
+      return;
+    }
+    if (!this.hasAttribute('aria-expanded')) {
+      console.error(
+        `ToggleButton: "aria-expanded" must be set to the
+               toggled elements initial visibility, either
+               "true" or "false"`
+      );
+      return;
+    }
+    this.addEventListener('click', this);
+  }
+  handleEvent(e) { this['on' + e.type](e); }
+  onclick(e) {
+    toggle(this);
+  }
+}</code></pre></div></nyc-accordion>
+
+<h3><a id="define-custom-element" class="anchor" href="#define-custom-element"><i class="i-ri:anchor-line"></i></a>Define custom element</h3><p>
+To provide the button for use we import the <code>ToggleButton</code> class and
+define the <code>nyc-toggle-button</code> custom element. Note the use of <code>extends</code>
+here to create a <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_custom_elements#types_of_custom_element">customized built-in element</a>.
+</p>
+
+<nyc-accordion class='code-view'><h3>Inspect code</h3><div><pre><code class="language-js">import ToggleButton from './toggle-button';
+if (!customElements.get('nyc-toggle-button')) {
+  window.customElements.define('nyc-toggle-button', ToggleButton, { extends: 'button' });
+}</code></pre></div></nyc-accordion>
+</section>
+</div></div></main><footer class="site-footer"><div class="center"><div class="row"><div class="column"><p>© 2024 City of New York</p></div></div></div></footer><script src="http://localhost:8000/assets/nycds-docs.js"></script></body></html>

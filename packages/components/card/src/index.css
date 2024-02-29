@@ -10,7 +10,7 @@
   --_border-radius: var(--nyc-cmp-card-radius-base, 4px);
   --_border: var(--nyc-cmp-card-border, var(--_border-width) solid var(--_border-color));
   --_border-hover: var(--nyc-cmp-card-border-hover, var(--_border-width) solid (--_border-color));
-  --_heading-font-size: var(--nyc-cmp-card-heading-font-size, 1.125rem);
+  --_heading-font-size: var(--nyc-cmp-card-heading-size, 1.125rem);
   --_body-font-size: var(--nyc-cmp-card-body-size, 1rem);
   --_padding: var(--nyc-cmp-card-padding, 1rem);
 
@@ -175,6 +175,9 @@ nyc-event-card,
     grid-area: body;
   }
 
+}
+.card[data-variant="topic"] {
+  --nyc-cmp-card-heading-size: var(--nyc-sys-size-body-fluid-xl);
 }
 /* @container grid-container (max-width: 768px) { */
 /*   .card { */

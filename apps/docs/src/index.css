@@ -1,0 +1,178 @@
+@import "highlight.js/styles/github-dark.css";
+@import "@nycds/core";
+@unocss all;
+@custom-selector :--heading h1, h2, h3, h4, h5, h6;
+
+:root {
+  --nyc-ref-dimension-measure: 70ch;
+  --nyc-code-text: var(--nyc-sys-color-primary-lightest);
+  --nyc-code-text-base: var(--nyc-sys-color-primary-lightest);
+  --nyc-code-text-keyword: var(--nyc-sys-color-primary-lighter);
+  --nyc-code-text-javascript: var(--nyc-sys-color-primary-lightest);
+  --nyc-code-text-css: var(--nyc-sys-color-primary-lightest);
+  --nyc-code-text-comment: var(--nyc-sys-color-primary);
+  --nyc-code-text-string: var(--nyc-ref-color-orange-500);
+  --nyc-code-text-symbol: var(--nyc-ref-color-orange-500);
+  --nyc-code-text-code: var(--nyc-ref-color-orange-500);
+  --nyc-code-link: var(--nyc-sys-color-primary-lightest);
+  --nyc-code-background: var(--nyc-sys-color-primary-dark);
+}
+
+.region {
+  --nyc-sys-dimension-region-space: var(--nyc-sys-dimension-space-s-m);
+}
+
+:--heading {
+  display: flex;
+  position: relative;
+
+  & .anchor {
+    font-size: .8em;
+    position: absolute;
+    left: -1.2em;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    transition: opacity .3s ease;
+  }
+
+  &:hover .anchor {
+    opacity: 1;
+  }
+}
+
+summary {
+  padding-block: .75rem;
+}
+
+.example-wrapper {
+  padding: var(--nyc-sys-space-base);
+  border: 2px solid var(--nyc-sys-color-border-base);
+  background: linear-gradient(45deg, #f9f9fa 25%, transparent 25%),
+              linear-gradient(135deg, #f9f9fa 25%, transparent 25%),
+              linear-gradient(45deg, transparent 75%, #f9f9fa 75%),
+              linear-gradient(135deg, transparent 75%, #f9f9fa 75%);
+  background-position: 0 0, 10px 0, 10px -10px, 0 10px;
+  background-size: 20px 20px;
+  
+  & + nyc-accordion {
+    margin-top: 0;
+  }
+}
+
+.example-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;  
+}
+
+nyc-accordion.code-view {
+  & .accordion__group > [id^=panel] {
+    padding: 0;
+  }
+}
+
+table {
+  background: var(--nyc-sys-color-neutral-lightest);
+  padding: .75rem;
+  display: flex;
+  flex-direction: column;
+
+  & th {
+    text-align: left;
+  }
+
+  & tr {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+    gap: .8rem;
+  }
+
+  & thead tr {
+    text-align: left;
+    border-bottom: 1px solid var(--nyc-sys-color-neutral);
+    padding-block-end: .75rem;
+  }
+
+  & tbody tr {
+    border-bottom: 1px solid var(--nyc-sys-color-neutral-light);
+    padding-block-end: .5rem;
+
+    &:first-child {
+      padding-block-start: .75rem;
+    }
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
+/* section > :not(.example-wrapper) .accordion__group > [id^=panel] { */
+/*   padding: 0; */
+/* } */
+
+/* .hljs, .hljs-copy-wrapper { */
+/*   background: var(--nyc-code-background); */
+/*   color: var(--nyc-code-text); */
+/* } */
+
+/* .hljs-copy-wrapper { */
+/*   padding: 1rem; */
+/*   width: calc(var(--nyc-sys-dimension-page-max-width) - var(--nyc-cmp-container-gutter) * 2); */
+/*   width: 100%; */
+/*   max-inline-size: var(--nyc-sys-dimension-page-max-width); */
+/*   overflow-x: auto; */
+/*   display: flex; */
+/* } */
+
+/* .hljs { */
+/*   flex: 0 0 auto; */
+/*   width: max-content; */
+/*   display: block; */
+/* } */
+
+/* .hljs-tag, .hljs-name { */
+/*   color: var(--nyc-sys-color-primary-lighter); */
+/* } */
+
+/* .hljs-attr {} */
+
+/* .hljs-string {} */
+
+/* .hljs-number {} */
+
+/* .hljs-built_in, .hljs-class, .hljs-type {} */
+
+/* .hljs-selector-attr, .hljs-selector-class {} */
+
+/* .language-css .hljs-built_in {} */
+
+/* .css { */
+/*   color: var(--nyc-code-text-css)!important */
+/* } */
+
+/* .javascript { */
+/*   color: var(--nyc-code-text-javascript)!important */
+/* } */
+
+/* .hljs-attr,.hljs-name { */
+/*   color: var(--nyc-code-text)!important */
+/* } */
+
+/* .hljs-comment { */
+/*   color: var(--nyc-code-text-comment)!important */
+/* } */
+
+/* .hljs-attribute,.hljs-built_in,.hljs-doctag,.hljs-keyword,.hljs-meta-keyword,.hljs-name,.hljs-selector-tag { */
+/*   color: var(--nyc-code-text-keyword)!important */
+/* } */
+
+/* .hljs-deletion,.hljs-number,.hljs-quote,.hljs-selector-class,.hljs-selector-id,.hljs-string,.hljs-subst,.hljs-template-tag,.hljs-type { */
+/*   color: var(--nyc-code-text-string)!important */
+/* } */
+
+/* .hljs-link,.hljs-regexp,.hljs-selector-attr,.hljs-selector-pseudo,.hljs-symbol,.hljs-template-variable,.hljs-variable { */
+/*   color: var(--nyc-code-text-symbol)!important */
+/* } */

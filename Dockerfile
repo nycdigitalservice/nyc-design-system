@@ -4,10 +4,10 @@ RUN apk add --no-cache bash emacs-nox
 
 WORKDIR /root
 
-COPY ./scripts ./scripts
+COPY ./scripts/docker-emacs.sh ./docker-emacs.sh
 
-RUN chmod +x ./scripts/docker-emacs.sh
+RUN chmod +x ./docker-emacs.sh
 
-ENTRYPOINT ["./scripts/docker-emacs.sh"]
+ENTRYPOINT ["./docker-emacs.sh"]
 
 # CMD ["tangle", "./packages"]

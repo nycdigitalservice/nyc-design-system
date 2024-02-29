@@ -106,6 +106,10 @@
       "purple": {
         "type": "string",
         "value": "linear-gradient(179deg, #131627 15.45%, #4B184D 87.84%)"
+      },
+      "rainbow": {
+        "type": "string",
+        "value": "conic-gradient(from 175deg at 50% 50%, #6C95FF 17.627713680267334deg, #FFA149 101.25deg, #BB64FF 226.87499284744263deg, #70BAFF 325.17677307128906deg)"
       }
     },
     "type": {
@@ -121,6 +125,10 @@
       }
     },
     "length": {
+      "9": {
+        "type": "dimension",
+        "value": 1.5
+      },
       "12": {
         "type": "dimension",
         "value": 2
@@ -128,6 +136,10 @@
       "50": {
         "type": "dimension",
         "value": 8
+      },
+      "62": {
+        "type": "dimension",
+        "value": 10
       },
       "75": {
         "type": "dimension",

@@ -1,0 +1,296 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta author="Michael Mausler - NYC"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><link rel="icon" type="image/png" href="/img/favicon.png"/><link rel="stylesheet" href="http://localhost:8000/assets/nycds-docs.css"/><title>Composition - NYC</title></head><body class="u-reset"><header class="background-primary"><nav class="p-2 flex"><a href="http://localhost:8000" class="mr-auto flex"><img class="logo" height="50" src="http://localhost:8000/assets/img/nyc-logo.svg" alt="City of New York logo"/></a><button is="nyc-toggle-button" id="main-menu-control" class="font-bold p-2" aria-controls="main-menu" aria-expanded="false"><i class="i-ri:menu-line mr-2"></i>Menu</button></nav></header><aside id="main-menu" class="background-primary-lightest" aria-labelledby="main-menu-control" hidden=""><div class="center grid p-4"><nav class="flex flex-col"><span class="p-2 border-b-2 border-current border-solid">Packages</span><a class="p-2" href="http://localhost:8000/packages/reset/">Reset</a><a class="p-2" href="http://localhost:8000/packages/variables/">Variables</a><a class="p-2" href="http://localhost:8000/packages/global/">Global</a><a class="p-2" href="http://localhost:8000/packages/composition/">Composition</a><a class="p-2" href="http://localhost:8000/packages/icons/">Icons</a></nav><nav class="flex flex-col"><span class="p-2 border-b-2 border-current border-solid">Components</span><a class="p-2" href="http://localhost:8000/packages/components/accordion/">Accordion</a><a class="p-2" href="http://localhost:8000/packages/components/alert/">Alert</a><a class="p-2" href="http://localhost:8000/packages/components/button/">Button</a><a class="p-2" href="http://localhost:8000/packages/components/card/">Card</a><a class="p-2" href="http://localhost:8000/packages/components/tooltip/">Tooltip</a></nav><nav class="flex flex-col"><span class="p-2 border-b-2 border-current border-solid">Guides</span><a class="p-2" href="http://localhost:8000/guides/navigation-page.html">Building a Navigation Page</a></nav></div></aside><main class="center"><div class="region flow"><h1 class="site-post-title">Composition</h1><div id="content" class="flow"><p>
+Composition classes can be used to control page layout and spacing
+between page items
+</p>
+
+<section class="region flow"><h2><a id="container" class="anchor" href="#container"><i class="i-ri:anchor-line"></i></a>Container</h2><p>
+The <code>container</code> class <b>contains</b> elements to a <b>maximum size</b>, provides
+horizontal <b>padding</b>, and is <b>centered</b> by default
+</p>
+
+<nyc-accordion class='code-view'><h3>Inspect code</h3><div><pre><code class="language-css">.center {
+  --_gutter: var(--nyc-cmp-container-gutter, 1rem);
+  --_max-w: var(--nyc-sys-size-width-page-max, 64rem);
+
+  box-sizing: content-box;
+  margin-inline: auto;
+  max-inline-size: var(--_max-w);
+  padding-inline: var(--_gutter);
+  container: container / inline-size;
+}</code></pre></div></nyc-accordion>
+</section>
+
+<section class="region flow"><h2><a id="region" class="anchor" href="#region"><i class="i-ri:anchor-line"></i></a>Region</h2><p>
+The <code>region</code> class supplies consistent vertical padding to sections of content
+</p>
+
+<nyc-accordion class='code-view'><h3>Inspect code</h3><div><pre><code class="language-css">.region {
+  --_region-space: var(--nyc-cmp-region-space);
+
+  padding-block: var(--_region-space);
+}
+
+.region[data-region-space="sm"] { --_region-space: var(--nyc-sys-space-sm); }
+.region[data-region-space="base"] { --_region-space: var(--nyc-sys-space-base); }
+.region[data-region-space="lg"] { --_region-space: var(--nyc-sys-space-lg); }
+.region[data-region-space="xl"] { --_region-space: var(--nyc-sys-space-xl); }
+.region[data-region-space="2xl"] { --_region-space: var(--nyc-sys-space-2xl); }
+.region[data-region-space="3xl"] { --_region-space: var(--nyc-sys-space-3xl); }
+.region[data-region-space="4xl"] { --_region-space: var(--nyc-sys-space-4xl); }</code></pre></div></nyc-accordion>
+
+<nyc-accordion class='code-view'><h3>Inspect code</h3><div><pre><code class="language-emacs-lisp">(setq space-scale '("sm" "base" "lg" "xl" "2xl" "3xl" "4xl"))
+(mapconcat
+ (lambda (str)
+   (format-spec
+    ".region[data-region-space=\"%s\"] { --_region-space: var(--nyc-sys-space-%s); }\n"
+    (format-spec-make ?s str)))
+ space-scale)</code></pre></div></nyc-accordion>
+</section>
+
+<section class="region flow"><h2><a id="flow" class="anchor" href="#flow"><i class="i-ri:anchor-line"></i></a>Flow</h2><p>
+The <code>flow</code> class controls vertical space between child elements in a
+content block. The <code>data-flow-space</code> attribute can be used to adjust
+this spacing on a per-element level.
+</p>
+
+<nyc-accordion class='code-view'><h3>Inspect code</h3><div><pre><code class="language-css">/* Set default flow space to prevent inheritance when nesting */
+.flow {
+  --nyc-cmp-flow-space: var(--nyc-sys-space-lg);
+}
+
+.flow > * {
+  margin-block: 0;
+}
+
+.flow > * + *,
+.flow[data-flow-recursive] * + * {
+  margin-block-start: var(--nyc-cmp-flow-space);
+}
+
+[data-flow-space="sm"] { --nyc-cmp-flow-space: var(--nyc-sys-space-sm); }
+[data-flow-space="base"] { --nyc-cmp-flow-space: var(--nyc-sys-space-base); }
+[data-flow-space="lg"] { --nyc-cmp-flow-space: var(--nyc-sys-space-lg); }
+[data-flow-space="xl"] { --nyc-cmp-flow-space: var(--nyc-sys-space-xl); }
+[data-flow-space="2xl"] { --nyc-cmp-flow-space: var(--nyc-sys-space-2xl); }
+[data-flow-space="3xl"] { --nyc-cmp-flow-space: var(--nyc-sys-space-3xl); }
+[data-flow-space="4xl"] { --nyc-cmp-flow-space: var(--nyc-sys-space-4xl); }</code></pre></div></nyc-accordion>
+
+<nyc-accordion class='code-view'><h3>Inspect code</h3><div><pre><code class="language-emacs-lisp">(mapconcat
+(lambda (str)
+  (format-spec
+   "[data-flow-space=\"%s\"] { --nyc-cmp-flow-space: var(--nyc-sys-space-%s); }\n"
+   (format-spec-make ?s str)))
+space-scale)</code></pre></div></nyc-accordion>
+</section>
+
+<section class="region flow"><h2><a id="grid" class="anchor" href="#grid"><i class="i-ri:anchor-line"></i></a>Grid</h2><p>
+The <code>grid</code> class creates CSS grid layouts that are customizable via CSS
+variables
+</p>
+
+<h3><a id="custom-properties" class="anchor" href="#custom-properties"><i class="i-ri:anchor-line"></i></a>Custom properties</h3><table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Property</th>
+<th scope="col" class="org-left">Description</th>
+<th scope="col" class="org-left">Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">&#x2013;nyc-cmp-grid-gutter</td>
+<td class="org-left">Used to set the <code>gap</code> property</td>
+<td class="org-left">1rem</td>
+</tr>
+
+<tr>
+<td class="org-left">&#x2013;nyc-cmp-grid-placement</td>
+<td class="org-left">How to place items in the grid, can be <code>auto-fit</code>, <code>auto-fill</code>, or a fixed integer</td>
+<td class="org-left">auto-fill</td>
+</tr>
+
+<tr>
+<td class="org-left">&#x2013;nyc-cmp-grid-min-item-size</td>
+<td class="org-left">What is the minimum size a grid item can reach before layout breaks?</td>
+<td class="org-left">16rem</td>
+</tr>
+
+<tr>
+<td class="org-left">&#x2013;nyc-cmp-grid-max-item-size</td>
+<td class="org-left">What is the maximum size a grid item can reach before layout breaks?</td>
+<td class="org-left">1fr</td>
+</tr>
+
+<tr>
+<td class="org-left">&#x2013;nyc-cmp-grid-cols</td>
+<td class="org-left">How many columns should be in a row?</td>
+<td class="org-left">1</td>
+</tr>
+
+<tr>
+<td class="org-left">&#x2013;nyc-cmp-grid-item-shrink-ratio</td>
+<td class="org-left">If not setting a fixed min size, by what percentage can the item shrink before layout breaks?</td>
+<td class="org-left">.7</td>
+</tr>
+</tbody>
+</table>
+
+<h3><a id="base" class="anchor" href="#base"><i class="i-ri:anchor-line"></i></a>Base</h3><nyc-accordion class='code-view'><h3>Inspect code</h3><div><pre><code class="language-css">.grid {
+  --_gutter: var(--nyc-cmp-grid-gutter, 1rem);
+  --_placement: var(--nyc-cmp-grid-placement, auto-fill);
+  --_min-item-size: var(--nyc-cmp-grid-min-item-size, 16rem);
+  --_max-item-size: var(--nyc-cmp-grid-max-item-size, 1fr);
+  --_cols: var(--nyc-cmp-grid-cols, 1);
+  --_item-shrink-ratio: var(--nyc-cmp-grid-item-shrink-ratio, .7);
+  --_max-w: calc(var(--nyc-sys-size-width-page-max) * 1.1 + ((var(--_cols) - 1) * (var(--_gutter) * 1)));
+
+  /* Setting container property breaks grid on Safari */
+  /* container: grid-container / inline-size; */
+  display: grid;
+  gap: var(--_gutter);
+  grid-auto-rows: 1fr
+}
+
+@supports (width: min(250px, 100%)) {
+  .grid {
+    grid-template-columns: repeat(
+      var(--_placement),
+      minmax(var(--_min-item-size), var(--_max-item-size))
+    );
+  }
+}
+
+.grid[data-layout^="col-"] {
+  --nyc-cmp-grid-min-item-size: calc((var(--_max-w) / var(--_cols)) * var(--_item-shrink-ratio));
+  --nyc-cmp-grid-placement: auto-fit;
+  --nyc-cmp-grid-gutter: var(--nyc-sys-space-sm);
+}
+
+.grid[data-layout="col-4"] {
+  --nyc-cmp-grid-cols: 4;
+}
+
+.grid[data-layout="col-3"] {
+  --nyc-cmp-grid-cols: 3;
+}
+
+.grid[data-layout="col-2"] {
+  --nyc-cmp-grid-cols: 2;
+}
+
+/* TODO: address max hard-coded value */
+@container container (max-width: 806px) {
+  .grid[data-layout="col-4"] {
+    --nyc-cmp-grid-cols: 2;
+    --nyc-cmp-grid-item-shrink-ratio: .5;
+  }
+}</code></pre></div></nyc-accordion>
+
+<h3><a id="figure-split-layout" class="anchor" href="#figure-split-layout"><i class="i-ri:anchor-line"></i></a>Figure split layout</h3><p>
+Given you have three (or more) elements that are stacked on mobile,
+the figure split layout allows you to position the <code>.figure</code> element
+side-by-side on desktop, regardless of its order in the
+markup. Especially useful if the markup order is <code>heading</code> -&gt; <code>figure</code> -&gt;
+<code>body</code>.
+</p>
+
+<nyc-accordion class='code-view'><h3>Inspect code</h3><div><pre><code class="language-css">.grid[data-layout=figure-split] {
+  grid-template-columns: 1fr;
+  grid-auto-rows: auto;
+  --_gutter: 0;
+}
+
+@media (min-width: 768px) {
+  .grid[data-layout=figure-split] {
+    --_gutter: var(--nyc-sys-space-fluid-lg);
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+    "heading figure"
+    "body figure";
+    row-gap: 0;
+
+    & :--heading {
+      grid-area: heading;
+    }
+
+    & .figure {
+      grid-area: figure;
+      margin-block-start: 0;
+    }
+
+    & > * {
+      grid-area: body;
+    }
+
+    &[data-split-direction=left] {
+      grid-template-areas:
+      "figure heading"
+      "figure body";
+    }
+  }
+}</code></pre></div></nyc-accordion>
+</section>
+
+<section class="region flow"><h2><a id="sidebar" class="anchor" href="#sidebar"><i class="i-ri:anchor-line"></i></a>Sidebar</h2><nyc-accordion class='code-view'><h3>Inspect code</h3><div><pre><code class="language-css">.with-sidebar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s1);
+}
+
+.with-sidebar > :first-child {
+  flex-grow: 1;
+}
+
+.with-sidebar > :last-child {
+  flex-basis: 0;
+  flex-grow: 999;
+  min-inline-size: 50%;
+}</code></pre></div></nyc-accordion>
+</section>
+
+<section class="region flow"><h2><a id="switcher" class="anchor" href="#switcher"><i class="i-ri:anchor-line"></i></a>Switcher</h2><nyc-accordion class='code-view'><h3>Inspect code</h3><div><pre><code class="language-css">.switcher {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--nyc-sys-dimension-space-s-m);
+  container: switcher / inline-size;
+}
+
+.switcher > * {
+  flex-grow: 1;
+  flex-basis: calc(( 40rem - 100%) * 999);
+}
+
+.switcher > :nth-last-child(n+ 4),
+.switcher > :nth-last-child(n+ 4) ~ * {
+  flex-basis: 100%;
+}
+
+.switcher[data-layout="col-1-3-2"] {
+  & > :nth-child(2) {
+    order: 3;
+  }
+
+  & > :nth-child(3) {
+    flex-grow: 2;
+  }
+}
+
+@container switcher (max-width: 40rem) {
+  .switchert[data-layout="col-1-3-2"] {
+    & > :nth-child(2) {
+      order: initial;
+    }
+  }
+}</code></pre></div></nyc-accordion>
+</section>
+</div></div></main><footer class="site-footer"><div class="center"><div class="row"><div class="column"><p>© 2024 City of New York</p></div></div></div></footer><script src="http://localhost:8000/assets/nycds-docs.js"></script></body></html>

@@ -1,6 +1,8 @@
 @import "@nycds/variables";
 @import "@nycds/variables/src/dark.css";
 @import "@nycds/global";
+@import "@nycds/icons";
+@import "@nycds/navigation";
 @import "@nycds/composition";
 @import "@nycds/utilities";
 @import "@nycds/reset";

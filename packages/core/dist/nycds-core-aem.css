@@ -1,9 +1,11 @@
 /**
  * Do not edit directly
- * Generated on Wed, 07 Feb 2024 17:21:03 GMT
+ * Generated on Sat, 24 Feb 2024 20:59:31 GMT
  */
 
 :root {
+  --nyc-cmp-navigation-primary-padding-block: 0;
+  --nyc-cmp-navigation-primary-padding-inline: 0;
   --nyc-sys-space-fluid-sm: clamp(0.5rem, 0.40476190476190477rem + 0.4761904761904762vw, 0.75rem);
   --nyc-sys-space-fluid-lg: clamp(1rem, 0.8095238095238095rem + 0.9523809523809524vw, 1.5rem);
   --nyc-sys-space-fluid-3xl: clamp(4rem, 3.619047619047619rem + 1.9047619047619049vw, 5rem);
@@ -31,10 +33,13 @@
   --nyc-ref-length-100: 16px;
   --nyc-ref-length-88: 14px;
   --nyc-ref-length-75: 12px;
+  --nyc-ref-length-62: 10px;
   --nyc-ref-length-50: 8px;
   --nyc-ref-length-12: 2px;
+  --nyc-ref-length-9: 1.5px;
   --nyc-ref-type-family-clash: 'Clash Display', sans-serif;
   --nyc-ref-type-family-noto: 'Noto Sans', sans-serif;
+  --nyc-ref-gradient-rainbow: conic-gradient(from 175deg at 50% 50%, #6C95FF 17.627713680267334deg, #FFA149 101.25deg, #BB64FF 226.87499284744263deg, #70BAFF 325.17677307128906deg);
   --nyc-ref-gradient-purple: linear-gradient(179deg, #131627 15.45%, #4B184D 87.84%);
   --nyc-ref-gradient-orange-blue: linear-gradient(172deg, #FDE3C9 14.43%, #B2DFFF 79.83%, #B2DFFF 79.83%);
   --nyc-ref-shadow-20: 4px 4px 12px 0px rgba(0, 0, 0, 0.20);
@@ -61,6 +66,7 @@
   --nyc-cmp-region-space: var(--nyc-sys-space-fluid-3xl);
   --nyc-sys-font-family-heading: var(--nyc-ref-type-family-clash);
   --nyc-sys-font-family-body: var(--nyc-ref-type-family-noto);
+  --nyc-sys-gradient-text-fill: var(--nyc-ref-gradient-rainbow);
   --nyc-sys-gradient-background: var(--nyc-ref-gradient-orange-blue);
   --nyc-sys-shadow-low: var(--nyc-ref-shadow-10);
   --nyc-sys-shadow-base: var(--nyc-ref-shadow-20);
@@ -69,7 +75,9 @@
   --nyc-sys-color-inactive: var(--nyc-ref-color-gray-70);
   --nyc-sys-color-border-focus: var(--nyc-ref-color-blue-90);
   --nyc-sys-color-border-base: var(--nyc-ref-color-gray-90);
+  --nyc-sys-color-on-surface-high: var(--nyc-ref-color-gray-100);
   --nyc-sys-color-on-surface-base: var(--nyc-ref-color-gray-10);
+  --nyc-sys-color-surface-high: var(--nyc-ref-color-gray-10);
   --nyc-sys-color-surface-inactive: var(--nyc-ref-color-gray-100-6);
   --nyc-sys-color-surface-low: var(--nyc-ref-color-gray-90);
   --nyc-sys-color-surface-base: var(--nyc-ref-color-gray-100);
@@ -83,6 +91,7 @@
   --nyc-sys-color-primary: var(--nyc-ref-color-blue-40);
   --nyc-sys-color-text: var(--nyc-ref-color-gray-10);
   --nyc-sys-color-background: var(--nyc-ref-color-gray-100);
+  --nyc-sys-space-xs: var(--nyc-ref-length-62);
   --nyc-sys-space-4xl: var(--nyc-ref-length-750);
   --nyc-sys-space-3xl: var(--nyc-ref-length-500);
   --nyc-sys-space-2xl: var(--nyc-ref-length-400);
@@ -90,7 +99,7 @@
   --nyc-sys-space-lg: var(--nyc-ref-length-150);
   --nyc-sys-space-base: var(--nyc-ref-length-100);
   --nyc-sys-space-sm: var(--nyc-ref-length-75);
-  --nyc-sys-space-xs: var(--nyc-ref-length-50);
+  --nyc-sys-space-2xs: var(--nyc-ref-length-50);
   --nyc-sys-radius-xl: var(--nyc-ref-length-250);
   --nyc-sys-radius-lg: var(--nyc-ref-length-150);
   --nyc-sys-radius-base: var(--nyc-ref-length-100);
@@ -101,6 +110,7 @@
   --nyc-sys-size-width-surface-lg: var(--nyc-ref-length-2750);
   --nyc-sys-size-width-surface-base: var(--nyc-ref-length-2250);
   --nyc-sys-size-line-height-body: var(--nyc-ref-length-150);
+  --nyc-sys-size-border-sm: var(--nyc-ref-length-9);
   --nyc-sys-size-border-base: var(--nyc-ref-length-12);
   --nyc-sys-size-heading-lg: var(--nyc-ref-length-625);
   --nyc-sys-size-heading-base: var(--nyc-ref-length-312);
@@ -109,6 +119,9 @@
   --nyc-sys-size-body-lg: var(--nyc-ref-length-125);
   --nyc-sys-size-body-base: var(--nyc-ref-length-112);
   --nyc-sys-size-body-sm: var(--nyc-ref-length-100);
+  --nyc-cmp-navigation-primary-color: var(--nyc-sys-color-on-surface-high);
+  --nyc-cmp-navigation-primary-background: var(--nyc-sys-color-surface-high);
+  --nyc-cmp-button-gap: var(--nyc-sys-space-2xs);
   --nyc-cmp-button-border-radius: var(--nyc-sys-radius-xl);
   --nyc-cmp-flow-space: var(--nyc-sys-space-lg);
   --nyc-cmp-card-background-hover: var(--nyc-sys-color-surface-base);
@@ -131,7 +144,7 @@
 
 /**
  * Do not edit directly
- * Generated on Wed, 07 Feb 2024 17:21:03 GMT
+ * Generated on Sat, 24 Feb 2024 20:59:31 GMT
  */
 
 :root[data-theme="dark"] {
@@ -162,10 +175,13 @@
   --nyc-ref-length-100: 16px;
   --nyc-ref-length-88: 14px;
   --nyc-ref-length-75: 12px;
+  --nyc-ref-length-62: 10px;
   --nyc-ref-length-50: 8px;
   --nyc-ref-length-12: 2px;
+  --nyc-ref-length-9: 1.5px;
   --nyc-ref-type-family-clash: 'Clash Display', sans-serif;
   --nyc-ref-type-family-noto: 'Noto Sans', sans-serif;
+  --nyc-ref-gradient-rainbow: conic-gradient(from 175deg at 50% 50%, #6C95FF 17.627713680267334deg, #FFA149 101.25deg, #BB64FF 226.87499284744263deg, #70BAFF 325.17677307128906deg);
   --nyc-ref-gradient-purple: linear-gradient(179deg, #131627 15.45%, #4B184D 87.84%);
   --nyc-ref-gradient-orange-blue: linear-gradient(172deg, #FDE3C9 14.43%, #B2DFFF 79.83%, #B2DFFF 79.83%);
   --nyc-ref-shadow-20: 4px 4px 12px 0px rgba(0, 0, 0, 0.20);
@@ -188,6 +204,7 @@
   --nyc-ref-color-gray-10: rgba(0,0,0,1);
   --nyc-sys-font-family-heading: var(--nyc-ref-type-family-clash);
   --nyc-sys-font-family-body: var(--nyc-ref-type-family-noto);
+  --nyc-sys-gradient-text-fill: var(--nyc-ref-gradient-rainbow);
   --nyc-sys-gradient-background: var(--nyc-ref-gradient-purple);
   --nyc-sys-shadow-low: var(--nyc-ref-shadow-10);
   --nyc-sys-shadow-base: var(--nyc-ref-shadow-20);
@@ -196,7 +213,9 @@
   --nyc-sys-color-inactive: var(--nyc-ref-color-gray-50);
   --nyc-sys-color-border-focus: var(--nyc-ref-color-blue-90);
   --nyc-sys-color-border-base: var(--nyc-ref-color-gray-50);
+  --nyc-sys-color-on-surface-high: var(--nyc-ref-color-gray-100);
   --nyc-sys-color-on-surface-base: var(--nyc-ref-color-gray-100);
+  --nyc-sys-color-surface-high: var(--nyc-ref-color-gray-10);
   --nyc-sys-color-surface-inactive: var(--nyc-ref-color-gray-30-6);
   --nyc-sys-color-surface-low: var(--nyc-ref-color-gray-10);
   --nyc-sys-color-surface-base: var(--nyc-ref-color-gray-30);
@@ -210,6 +229,7 @@
   --nyc-sys-color-primary: var(--nyc-ref-color-blue-80);
   --nyc-sys-color-text: var(--nyc-ref-color-gray-100);
   --nyc-sys-color-background: var(--nyc-ref-color-gray-100);
+  --nyc-sys-space-xs: var(--nyc-ref-length-62);
   --nyc-sys-space-4xl: var(--nyc-ref-length-750);
   --nyc-sys-space-3xl: var(--nyc-ref-length-500);
   --nyc-sys-space-2xl: var(--nyc-ref-length-400);
@@ -217,7 +237,7 @@
   --nyc-sys-space-lg: var(--nyc-ref-length-150);
   --nyc-sys-space-base: var(--nyc-ref-length-100);
   --nyc-sys-space-sm: var(--nyc-ref-length-75);
-  --nyc-sys-space-xs: var(--nyc-ref-length-50);
+  --nyc-sys-space-2xs: var(--nyc-ref-length-50);
   --nyc-sys-radius-xl: var(--nyc-ref-length-250);
   --nyc-sys-radius-lg: var(--nyc-ref-length-150);
   --nyc-sys-radius-base: var(--nyc-ref-length-100);
@@ -228,6 +248,7 @@
   --nyc-sys-size-width-surface-lg: var(--nyc-ref-length-2750);
   --nyc-sys-size-width-surface-base: var(--nyc-ref-length-2250);
   --nyc-sys-size-line-height-body: var(--nyc-ref-length-150);
+  --nyc-sys-size-border-sm: var(--nyc-ref-length-9);
   --nyc-sys-size-border-base: var(--nyc-ref-length-12);
   --nyc-sys-size-heading-lg: var(--nyc-ref-length-625);
   --nyc-sys-size-heading-base: var(--nyc-ref-length-312);
@@ -292,17 +313,21 @@ p {
 a,
 a:link,
 button {
+  --_gap: var(--nyc-cmp-button-gap, .5rem);
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
   background: transparent;
   color: var(--nyc-sys-color-link);
   display: inline-flex;
+  gap: 8px;
+  gap: var(--_gap);
   align-items: center;
   font-size: inherit;
-  -webkit-text-decoration: none;
-  text-decoration: none;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
   cursor: pointer;
+  /* } */
 }
 
 a:hover, a:link:hover, button:hover {
@@ -310,17 +335,25 @@ a:hover, a:link:hover, button:hover {
     text-decoration: underline;
   }
 
+/*   } */
+
 a > [class^=i-], a:link > [class^=i-], button > [class^=i-] {
-    font-size: 1.5rem;
+    flex-shrink: 0;
   }
 
-a > [class^=i-]:last-child, a:link > [class^=i-]:last-child, button > [class^=i-]:last-child {
-      margin-left: .5em;        
-    }
+/* & > [class^=i-] { */
 
-a > [class^=i-]:first-child, a:link > [class^=i-]:first-child, button > [class^=i-]:first-child {
-      margin-right: .5em;        
-    }
+/*   font-size: 1.5rem; */
+
+/*   &:last-child { */
+
+/*     margin-inline-start: .5em;         */
+
+/*   } */
+
+/*   &:first-child { */
+
+/*     margin-inline-end: .5em;         */
 
 :focus {
   outline: 2px solid inherit;
@@ -332,7 +365,7 @@ a > [class^=i-]:first-child, a:link > [class^=i-]:first-child, button > [class^=
   scroll-margin-top: 2ex;
 }
 
-:--heading {
+h1, h2, h3, h4, h5, h6 {
   display: flex;
   align-items: center;
 }
@@ -520,7 +553,7 @@ header > nav a, header > nav button {
   --_max-item-size: var(--nyc-cmp-grid-max-item-size, 1fr);
   --_cols: var(--nyc-cmp-grid-cols, 1);
   --_item-shrink-ratio: var(--nyc-cmp-grid-item-shrink-ratio, .7);
-  --_max-w: calc(var(--nyc-sys-dimension-page-max-width) + ((var(--_cols) - 1) * var(--_gutter)));
+  --_max-w: calc(var(--nyc-sys-size-width-page-max) * 1.1 + ((var(--_cols) - 1) * (var(--_gutter) * 1)));
 
   /* Setting container property breaks grid on Safari */
   /* container: grid-container / inline-size; */
@@ -544,10 +577,10 @@ header > nav a, header > nav button {
 .grid[data-layout^="col-"] {
   --nyc-cmp-grid-min-item-size: calc((var(--_max-w) / var(--_cols)) * var(--_item-shrink-ratio));
   --nyc-cmp-grid-placement: auto-fit;
+  --nyc-cmp-grid-gutter: var(--nyc-sys-space-sm);
 }
 
 .grid[data-layout="col-4"] {
-  --nyc-cmp-grid-gutter: var(--nyc-sys-dimension-space-s);
   --nyc-cmp-grid-cols: 4;
 }
 
@@ -570,12 +603,13 @@ header > nav a, header > nav button {
 
 .grid[data-layout=figure-split] {
   grid-template-columns: 1fr;
+  grid-auto-rows: auto;
   --_gutter: 0;
 }
 
 @media (min-width: 768px) {
   .grid[data-layout=figure-split] {
-    --_gutter: var(--nyc-sys-dimension-space-s-m);
+    --_gutter: var(--nyc-sys-space-fluid-lg);
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto 1fr;
     grid-template-areas:
@@ -584,12 +618,13 @@ header > nav a, header > nav button {
     row-gap: 0;
   }
 
-    .grid[data-layout=figure-split] :--heading {
+    .grid[data-layout=figure-split] h1, .grid[data-layout=figure-split] h2, .grid[data-layout=figure-split] h3, .grid[data-layout=figure-split] h4, .grid[data-layout=figure-split] h5, .grid[data-layout=figure-split] h6 {
       grid-area: heading;
     }
 
     .grid[data-layout=figure-split] .figure {
       grid-area: figure;
+      margin-top: 0;
     }
 
     .grid[data-layout=figure-split] > * {
@@ -713,6 +748,32 @@ header > nav a, header > nav button {
     box-shadow: var(--nyc-sys-shadow-base);
 }
 
+.border-rainbow {
+  background: linear-gradient(black, black) padding-box,
+              conic-gradient(from 175deg at 50% 50%, #6C95FF 17.627713680267334deg, #FFA149 101.25deg, #BB64FF 226.87499284744263deg, #70BAFF 325.17677307128906deg) border-box !important;
+  background: linear-gradient(black, black) padding-box,
+              var(--nyc-ref-gradient-rainbow) border-box !important;
+  border: 1.5px solid transparent !important;
+  border: var(--nyc-sys-size-border-sm) solid transparent !important;
+}
+
+.background-rainbow {
+  background: conic-gradient(from 175deg at 50% 50%, #6C95FF 17.627713680267334deg, #FFA149 101.25deg, #BB64FF 226.87499284744263deg, #70BAFF 325.17677307128906deg) !important;
+  background: var(--nyc-ref-gradient-rainbow) !important;
+}
+
+.text-rainbow {
+  background: conic-gradient(from 175deg at 50% 50%, #6C95FF 17.627713680267334deg, #FFA149 101.25deg, #BB64FF 226.87499284744263deg, #70BAFF 325.17677307128906deg);
+  background: var(--nyc-ref-gradient-rainbow); 
+  -webkit-text-fill-color: transparent; 
+  -webkit-background-clip: text;   
+}
+
+.radius-lg {
+  border-radius: 24px !important;
+  border-radius: var(--nyc-sys-radius-lg) !important;
+}
+
 [hidden] {
   display: none !important;
 }
@@ -786,6 +847,32 @@ html {
 
 /* } */
 
+.cmp-navigation--primary .cmp-navigation {
+  --_background: var(--nyc-cmp-navigation-primary-background, #000);
+  --_color: var(--nyc-cmp-navigation-primary-color, #FFF);
+  --_padding-inline: var(--nyc-cmp-navigation-primary-padding-inline, 2rem);
+  --_padding-block: var(--nyc-cmp-navigation-primary-padding-block, .75rem);
+  background: rgba(0,0,0,1);
+  background: var(--_background);
+  color: rgba(255,255,255,1);
+  color: var(--_color);
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+  padding-left: var(--_padding-inline);
+  padding-right: var(--_padding-inline);
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-top: var(--_padding-block);
+  padding-bottom: var(--_padding-block);}
+
+.cmp-navigation--primary .cmp-navigation > ul {
+    list-style-type: none;
+    padding-left: 0;
+    display: flex;
+    justify-content: space-between;
+  }
+
 .card {
   --_background: var(--nyc-cmp-card-background, white);
   --_background-hover: var(--nyc-cmp-card-background-hover, white);
@@ -798,7 +885,7 @@ html {
   --_border-radius: var(--nyc-cmp-card-radius-base, 4px);
   --_border: var(--nyc-cmp-card-border, var(--_border-width) solid var(--_border-color));
   --_border-hover: var(--nyc-cmp-card-border-hover, var(--_border-width) solid (--_border-color));
-  --_heading-font-size: var(--nyc-cmp-card-heading-font-size, 1.125rem);
+  --_heading-font-size: var(--nyc-cmp-card-heading-size, 1.125rem);
   --_body-font-size: var(--nyc-cmp-card-body-size, 1rem);
   --_padding: var(--nyc-cmp-card-padding, 1rem);
   /* container: card-container / inline-size; */
@@ -844,7 +931,7 @@ html {
   flex: 1;
 }
 
-.card__header :--heading {
+.card__header h1, .card__header h2, .card__header h3, .card__header h4, .card__header h5, .card__header h6 {
     flex: 1;
     font-size: var(--_heading-font-size);
   }
@@ -920,7 +1007,7 @@ html {
     flex-grow: 1;
   }
 
-.card[data-variant=large] .card__header :--heading {
+.card[data-variant=large] .card__header h1, .card[data-variant=large] .card__header h2, .card[data-variant=large] .card__header h3, .card[data-variant=large] .card__header h4, .card[data-variant=large] .card__header h5, .card[data-variant=large] .card__header h6 {
     font-size: calc(var(--_heading-font-size) * 1.16);
     max-width: none;
     width: 100%;
@@ -993,6 +1080,10 @@ nyc-event-card .card__body, .card[data-variant="event"] .card__body {
 .card[data-variant="feature"] .card__body {
     grid-area: body;
   }
+
+.card[data-variant="topic"] {
+  --nyc-cmp-card-heading-size: var(--nyc-sys-size-body-fluid-xl);
+}
 
 /* @container grid-container (max-width: 768px) { */
 
@@ -1099,13 +1190,13 @@ nyc-event-card .card__body, .card[data-variant="event"] .card__body {
 .cmp-button,
 .cmp-button:link,
 .cmp-button:visited {
-  --_background: var(--nyc-cmp-button-background, hsla(0, 0%, 100%, 1));
-  --_background-hover: var(--nyc-cmp-button-background-hover, white);
-  --_border-color: var(--nyc-cmp-button-border-color, hsla(0, 0%, 93%, 1));
+  --_background: var(--nyc-cmp-button-background, hsl(0, 0%, 100%));
+  --_background-hover: var(--nyc-cmp-button-background-hover, hsl(0, 0%, 100%));
+  --_border-color: var(--nyc-cmp-button-border-color, hsl(0, 0%, 93%));
   --_border-color-hover: var(--nyc-cmp-button-border-color-hover, currentColor);
   --_border-width: var(--nyc-cmp-button-border-width, 2px);
   --_border-radius: var(--nyc-cmp-button-border-radius, 0);
-  --_color: var(--nyc-cmp-button-color, currentColor);
+  --_color: var(--nyc-cmp-button-color, hsl(0, 0%, 0%));
   --_color-hover: var(--nyc-cmp-button-color-hover, inherit);
   --_font-weight: var(--nyc-cmp-button-font-weight, 500);
   --_font-size: var(--nyc-cmp-button-font-size, 500);
@@ -1113,19 +1204,20 @@ nyc-event-card .card__body, .card[data-variant="event"] .card__body {
   --_padding-block: var(--nyc-cmp-button-padding-block, .75rem);
   --_padding-inline: var(--nyc-cmp-button-padding-inline, .75rem);
   --_outline-color: var(--nyc-cmp-button-outline-color, inherit);
+  --_gap: var(--nyc-cmp-button-gap, .5rem);
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  background-color: hsla(0, 0%, 100%, 1);
+  background-color: hsl(0, 0%, 100%);
   background-color: var(--_background);
-  border-color: hsla(0, 0%, 93%, 1);
+  border-color: hsl(0, 0%, 93%);
   border-color: var(--_border-color);
   border-width: 2px;
   border-width: var(--_border-width);
   border-style: solid;
   border-radius: 40px;
   border-radius: var(--_border-radius);
-  color: currentColor;
+  color: hsl(0, 0%, 0%);
   color: var(--_color);
   padding: clamp(0.5rem, 0.40476190476190477rem + 0.4761904761904762vw, 0.75rem) clamp(1rem, 0.8095238095238095rem + 0.9523809523809524vw, 1.5rem);
   padding: var(--_padding-block) var(--_padding-inline);
@@ -1138,25 +1230,22 @@ nyc-event-card .card__body, .card[data-variant="event"] .card__body {
   font-weight: var(--_font-weight);
   font-size: clamp(1.125rem, 0.9821428571428571rem + 0.7142857142857143vw, 1.5rem);
   font-size: var(--_font-size);
+  line-height: inherit;
   display: inline-flex;
+  gap: 8px;
+  gap: var(--_gap);
   align-items: center;
   transition: all 0.3s ease;
-}
-
-.cmp-button > :first-child:not(i), .cmp-button:link > :first-child:not(i), .cmp-button:visited > :first-child:not(i) {
-      flex-grow: 1;
-      width: -moz-max-content;
-      width: max-content;
-    }
-
-.cmp-button > i:last-child, .cmp-button:link > i:last-child, .cmp-button:visited > i:last-child {
-      flex-shrink: 0;
-      margin-top: auto;
-      margin-bottom: auto;
-      font-size: 1.5rem;
-
-      margin-left: .5em;
-    }
+  /* & > :first-child:not(i) { */
+  /*   flex-grow: 1; */
+  /*   width: max-content; */
+  /* } */
+  /* & > i:last-child { */
+  /*   flex-shrink: 0; */
+  /*   margin-block: auto; */
+  /*   font-size: 1.5rem; */
+  /*   margin-inline-start: .5em; */
+  /* } */}
 
 .cmp-button:hover, .cmp-button:link:hover, .cmp-button:visited:hover {
       background: var(--_background-hover);
@@ -1174,14 +1263,20 @@ nyc-event-card .card__body, .card[data-variant="event"] .card__body {
   --nyc-cmp-button-background: var(--nyc-sys-color-primary);
   --nyc-cmp-button-color: var(--nyc-sys-color-on-primary);
   --nyc-cmp-button-border-color: var(--nyc-sys-color-primary);
-  --nyc-cmp-button-shadow: none;
-}
+  --nyc-cmp-button-shadow: none;}
 
 .cmp-button--primary .cmp-button:hover {
     --nyc-cmp-button-color-hover: var(--nyc-cmp-button-color);
     --nyc-cmp-button-background-hover: var(--nyc-sys-color-primary);
     --nyc-cmp-button-border-color-hover: var(--nyc-sys-color-primary);
   }
+
+.cmp-button--sm .cmp-button {
+  --nyc-cmp-button-border-radius: var(--nyc-sys-radius-lg);
+  --nyc-cmp-button-padding-block: var(--nyc-sys-space-xs);
+  --nyc-cmp-button-padding-inline: var(--nyc-sys-space-sm);
+  --nyc-cmp-button-font-size: var(--nyc-sys-size-body-base);
+  --nyc-cmp-button-font-weight: 600}
 
 .alert {
   --_accent-color: var(--nyc-cmp-alert-accent-color, hsla(208, 100%, 30%, 1));
@@ -1208,11 +1303,11 @@ nyc-event-card .card__body, .card[data-variant="event"] .card__body {
     border-radius: 5px;
   }
 
-.alert :--heading {
+.alert h1, .alert h2, .alert h3, .alert h4, .alert h5, .alert h6 {
     font-size: var(--nyc-sys-font-size-base);
   }
 
-.alert :--heading i {
+.alert h1 i, .alert h2 i, .alert h3 i, .alert h4 i, .alert h5 i, .alert h6 i {
       color: var(--_accent-color);
       font-size: 1.5rem;
       margin-right: .5rem;
@@ -1528,6 +1623,7 @@ nyc-tooltip[tip-position="inline-start"]::after {
 nyc-accordion,
 .accordion {
   display: grid;
+  flex: 1;
 }
 
 .accordion__group {
@@ -1535,7 +1631,7 @@ nyc-accordion,
   flex-direction: column;
 }
 
-.accordion__group > :--heading {
+.accordion__group > h1, .accordion__group > h2, .accordion__group > h3, .accordion__group > h4, .accordion__group > h5, .accordion__group > h6 {
     --_background: var(--nyc-cmp-accordion-heading-background, transparent);
     --_color: var(--nyc-cmp-accordion-heading-color, inherit);
     --_font-size: var(--nyc-cmp-accordion-heading-font-size, 1rem);
@@ -1554,7 +1650,7 @@ nyc-accordion,
     border-bottom: 2px solid currentColor;
   }
 
-.accordion__group > :--heading button {
+.accordion__group > h1 button, .accordion__group > h2 button, .accordion__group > h3 button, .accordion__group > h4 button, .accordion__group > h5 button, .accordion__group > h6 button {
       cursor: pointer;
       color: currentColor;
       display: flex;
@@ -1565,20 +1661,110 @@ nyc-accordion,
       width: 100%;
     }
 
-.accordion__group > :--heading button :first-child {
+.accordion__group > h1 button :first-child {
         margin-right: .5rem;
       }
 
-.accordion__group > :--heading button [class^=i-]:last-child {
+.accordion__group > h2 button :first-child {
+        margin-right: .5rem;
+      }
+
+.accordion__group > h3 button :first-child {
+        margin-right: .5rem;
+      }
+
+.accordion__group > h4 button :first-child {
+        margin-right: .5rem;
+      }
+
+.accordion__group > h5 button :first-child {
+        margin-right: .5rem;
+      }
+
+.accordion__group > h6 button :first-child {
+        margin-right: .5rem;
+      }
+
+.accordion__group > h1 button [class^=i-]:last-child {
         margin-left: auto;
         font-size: 1.5rem;
       }
 
-.accordion__group > :--heading button[aria-expanded=true] i {
+.accordion__group > h2 button [class^=i-]:last-child {
+        margin-left: auto;
+        font-size: 1.5rem;
+      }
+
+.accordion__group > h3 button [class^=i-]:last-child {
+        margin-left: auto;
+        font-size: 1.5rem;
+      }
+
+.accordion__group > h4 button [class^=i-]:last-child {
+        margin-left: auto;
+        font-size: 1.5rem;
+      }
+
+.accordion__group > h5 button [class^=i-]:last-child {
+        margin-left: auto;
+        font-size: 1.5rem;
+      }
+
+.accordion__group > h6 button [class^=i-]:last-child {
+        margin-left: auto;
+        font-size: 1.5rem;
+      }
+
+.accordion__group > h1 button[aria-expanded=true] i, .accordion__group > h2 button[aria-expanded=true] i, .accordion__group > h3 button[aria-expanded=true] i, .accordion__group > h4 button[aria-expanded=true] i, .accordion__group > h5 button[aria-expanded=true] i, .accordion__group > h6 button[aria-expanded=true] i {
         transform: rotate(-180deg);
       }
 
-.accordion__group > :--heading + :where(div,section) {
+.accordion__group > h1 + :where(div,section) {
+    --_background: var(--nyc-cmp-accordion-body-background, transparent);
+    --_padding: var(--nyc-cmp-accordion-body-padding, 1rem);
+    background: transparent;
+    background: var(--_background);
+    padding: 1rem;
+    padding: var(--_padding);
+  }
+
+.accordion__group > h2 + :where(div,section) {
+    --_background: var(--nyc-cmp-accordion-body-background, transparent);
+    --_padding: var(--nyc-cmp-accordion-body-padding, 1rem);
+    background: transparent;
+    background: var(--_background);
+    padding: 1rem;
+    padding: var(--_padding);
+  }
+
+.accordion__group > h3 + :where(div,section) {
+    --_background: var(--nyc-cmp-accordion-body-background, transparent);
+    --_padding: var(--nyc-cmp-accordion-body-padding, 1rem);
+    background: transparent;
+    background: var(--_background);
+    padding: 1rem;
+    padding: var(--_padding);
+  }
+
+.accordion__group > h4 + :where(div,section) {
+    --_background: var(--nyc-cmp-accordion-body-background, transparent);
+    --_padding: var(--nyc-cmp-accordion-body-padding, 1rem);
+    background: transparent;
+    background: var(--_background);
+    padding: 1rem;
+    padding: var(--_padding);
+  }
+
+.accordion__group > h5 + :where(div,section) {
+    --_background: var(--nyc-cmp-accordion-body-background, transparent);
+    --_padding: var(--nyc-cmp-accordion-body-padding, 1rem);
+    background: transparent;
+    background: var(--_background);
+    padding: 1rem;
+    padding: var(--_padding);
+  }
+
+.accordion__group > h6 + :where(div,section) {
     --_background: var(--nyc-cmp-accordion-body-background, transparent);
     --_padding: var(--nyc-cmp-accordion-body-padding, 1rem);
     background: transparent;
@@ -1591,7 +1777,7 @@ nyc-accordion,
     display: none;
   }
 
-.accordion__group .accordion__group > :--heading {
+.accordion__group .accordion__group > h1, .accordion__group .accordion__group > h2, .accordion__group .accordion__group > h3, .accordion__group .accordion__group > h4, .accordion__group .accordion__group > h5, .accordion__group .accordion__group > h6 {
     background: transparent;
   }
 

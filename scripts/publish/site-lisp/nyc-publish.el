@@ -24,7 +24,7 @@
 
 ;;; Code:
 (defvar nyc/site-url (if (string-equal (getenv "CI") "true")
-                         "https://nycdigitalservice.github.io/dof-design-system"
+                         "https://nycdigitalservice.github.io/nyc-design-system"
                        "http://localhost:8000")
   "The URL for the site being generated.")
 
@@ -34,9 +34,9 @@
                       (a (@ (href ,nyc/site-url) (class "mr-auto flex"))
                          (img (@ (class "logo")
                                  (height "50")
-                                 (src ,(concat nyc/site-url "/assets/img/nyc-dof-logo.svg"))
-                                 (alt "NYC Department of Finance"))))
-                      (button (@ (is "toggle-button")
+                                 (src ,(concat nyc/site-url "/assets/img/nyc-logo.svg"))
+                                 (alt "City of New York logo"))))
+                      (button (@ (is "nyc-toggle-button")
                                  (id "main-menu-control")
                                  (class "font-bold p-2")
                                  (aria-controls "main-menu")
@@ -58,7 +58,8 @@
 (setq package-nav (list '("/packages/reset/" . "Reset")
                         '("/packages/variables/" . "Variables")
                         '("/packages/global/" . "Global")
-                        '("/packages/composition/" . "Composition")))
+                        '("/packages/composition/" . "Composition")
+                        '("/packages/icons/" . "Icons")))
 
 (setq component-nav (list '("/packages/components/accordion/" . "Accordion")
                           '("/packages/components/alert/" . "Alert")
@@ -67,7 +68,7 @@
                           '("/packages/components/tooltip/" . "Tooltip")))
 
 (setq guide-nav (list '("/guides/navigation-page.html" . "Building a Navigation Page")
-                      '("/guides/icons.html" . "Using Icons")))
+                      ))
 
 (defun nyc/main-menu-nav (title links)
   (let ((link-list (nyc/link-list links)))
@@ -80,7 +81,7 @@
                    (class "background-primary-lightest")                   
                    (aria-labelledby "main-menu-control")
                    (hidden ""))
-                (div (@ (class "container grid p-4"))
+                (div (@ (class "center grid p-4"))
                      ,@(nyc/main-menu-nav "Packages" package-nav)
                      ,@(nyc/main-menu-nav "Components" component-nav)
                      ,@(nyc/main-menu-nav "Guides" guide-nav)))))
@@ -88,10 +89,10 @@
 ;; FIX list here
 (defun nyc/site-footer ()
   (list '(footer (@ (class "site-footer"))
-                 (div (@ (class "container"))
+                 (div (@ (class "center"))
                       (div (@ (class "row"))
                            (div (@ (class "column"))
-                                (p "© 2023 City of New York")))))))
+                                (p "© 2024 City of New York")))))))
 
 (defun get-article-output-path (org-file pub-dir)
   (let ((article-dir (concat pub-dir
@@ -137,9 +138,9 @@
             (meta (@ (name "viewport")
                      (content "width=device-width, initial-scale=1, shrink-to-fit=no")))
             (link (@ (rel "icon") (type "image/png") (href "/img/favicon.png")))
-            (link (@ (rel "stylesheet") (href ,(concat nyc/site-url "/assets/dof-2023-styles.css"))))
-            (link (@ (rel "stylesheet") (href "https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.css")))
-            (link (@ (rel "stylesheet") (href ,(concat nyc/site-url "/assets/dof-2023-docs.css"))))
+            ;;(link (@ (rel "stylesheet") (href ,(concat nyc/site-url "/assets/nycds-core.css"))))
+            ;; (link (@ (rel "stylesheet") (href "https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.css")))
+            (link (@ (rel "stylesheet") (href ,(concat nyc/site-url "/assets/nycds-docs.css"))))
             ;;(link (@ (rel "stylesheet") (href "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/nord.min.css")))
 
 
@@ -149,7 +150,7 @@
                  ,@(unless exclude-header
                      (nyc/site-header))
                  ,@(nyc/main-menu)
-                 (main (@ (class "container"))
+                 (main (@ (class "center"))
                        (div (@ (class "region flow"))
                             (h1 (@ (class "site-post-title"))
                                 ,title)
@@ -158,12 +159,13 @@
                                  ,content)))
                  ,@(unless exclude-footer
                      (nyc/site-footer))
-                 (script (@ (src "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js")) "")
+                 ;;(script (@ (src "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js")) "")
 
-                 (script (@ (src ,(concat nyc/site-url "/assets/main.js"))) "")
-                 (script (@ (src "https://unpkg.com/highlightjs-copy@1.0.3/dist/highlightjs-copy.min.js")) "")
+                 (script (@ (src ,(concat nyc/site-url "/assets/nycds-docs.js"))) "")
+                 ;;(script (@ (src "https://unpkg.com/highlightjs-copy@1.0.3/dist/highlightjs-copy.min.js")) "")
 
-                 (script (@) "try{hljs.highlightAll();hljs.addPlugin(new CopyButtonPlugin());} catch(e) {}"))))))
+                 ;;(script (@) "try{hljs.highlightAll();hljs.addPlugin(new CopyButtonPlugin());} catch(e) {}")
+                 )))))
 
 (defun nyc/org-html-template (contents info)
   (nyc/generate-page (org-export-data (plist-get info :title) info)

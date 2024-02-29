@@ -7,7 +7,7 @@ export default {
     postcssImport(),
     postcssMixins(),
     postcssPresetEnv({
-      stage: 1,
-    }),
+      stage: 1
+    })
   ]
 }

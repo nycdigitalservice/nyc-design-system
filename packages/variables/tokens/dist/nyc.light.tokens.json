@@ -57,6 +57,10 @@
         "base": {
           "type": "dimension",
           "value": "{ref.length.12}"
+        },
+        "sm": {
+          "type": "dimension",
+          "value": "{ref.length.9}"
         }
       },
       "line-height": {
@@ -111,7 +115,7 @@
       }
     },
     "space": {
-      "xs": {
+      "2xs": {
         "type": "dimension",
         "value": "{ref.length.50}"
       },
@@ -156,6 +160,10 @@
           "type": "dimension",
           "value": "clamp(0.5rem, 0.40476190476190477rem + 0.4761904761904762vw, 0.75rem)"
         }
+      },
+      "xs": {
+        "type": "dimension",
+        "value": "{ref.length.62}"
       }
     },
     "color": {
@@ -211,12 +219,20 @@
         "inactive": {
           "type": "color",
           "value": "{ref.color.gray.100_6}"
+        },
+        "high": {
+          "type": "color",
+          "value": "{ref.color.gray.10}"
         }
       },
       "on-surface": {
         "base": {
           "type": "color",
           "value": "{ref.color.gray.10}"
+        },
+        "high": {
+          "type": "color",
+          "value": "{ref.color.gray.100}"
         }
       },
       "border": {
@@ -256,6 +272,10 @@
       "background": {
         "type": "string",
         "value": "{ref.gradient.orange-blue}"
+      },
+      "text-fill": {
+        "type": "string",
+        "value": "{ref.gradient.rainbow}"
       }
     },
     "font": {

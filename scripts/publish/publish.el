@@ -132,15 +132,7 @@
       make-backup-files nil)
 
 (setq org-publish-project-alist
-      (list `("packages"
-              :base-directory ,(expand-file-name "../../packages" pwd)
-              :base-extension "org"
-              :recursive t
-              :publishing-directory ,(expand-file-name "../../docs/packages" pwd)
-              :publishing-function org-html-publish-to-html
-              :with-title nil
-              :with-timestamps nil)
-            `("guides"
+      (list `("docs:guides"
               :base-directory ,(expand-file-name "../../guides" pwd)
               :base-extension "org"
               :recursive t
@@ -148,25 +140,35 @@
               :publishing-function org-html-publish-to-html
               :with-title nil
               :with-timestamps nil)
-            `("dofdocs:index"
+            `("docs:packages"
+              :base-directory ,(expand-file-name "../../packages" pwd)
+              :base-extension "org"
+              :recursive t
+              :publishing-directory ,(expand-file-name "../../docs/packages" pwd)
+              :publishing-function org-html-publish-to-html
+              :exclude ".*/node_modules/.*"
+              :with-title nil
+              :with-timestamps nil)
+            `("docs:index"
               :base-directory ,(expand-file-name "../../" pwd)
               :base-extension "org"
+              :recursive nil
               :publishing-directory ,(expand-file-name "../../docs" pwd)
               :publishing-function org-html-publish-to-html
               :with-title nil
               :with-timestamps nil)
-            `("dofdocs:assets"
-              :base-directory ,(expand-file-name "../../dist" pwd)
+            `("docs:assets"
+              :base-directory ,(expand-file-name "../../apps/docs/dist" pwd)
               :base-extension "css\\|js\\|png\\|svg\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|woff2\\|ttf"
               :publishing-directory ,(expand-file-name "../../docs/assets" pwd)
               :recursive t
               :publishing-function org-publish-attachment)
-            `("dofdocs:core-js"
-              :base-directory ,(expand-file-name "../../packages/core/dist" pwd)
-              :base-extension "css\\|js\\|woff2\\|ttf"
-              :publishing-directory ,(expand-file-name "../../docs/assets" pwd)
-              :recursive t
-              :publishing-function org-publish-attachment)
+            ;; `("docs:core-js"
+            ;;   :base-directory ,(expand-file-name "../../packages/core/dist" pwd)
+            ;;   :base-extension "css\\|js\\|woff2\\|ttf"
+            ;;   :publishing-directory ,(expand-file-name "../../docs/assets" pwd)
+            ;;   :recursive t
+            ;;   :publishing-function org-publish-attachment)
             ))
 
 (defun nyc/publish ()

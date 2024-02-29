@@ -126,6 +126,10 @@
       "purple": {
         "type": "string",
         "value": "linear-gradient(179deg, #131627 15.45%, #4B184D 87.84%)"
+      },
+      "rainbow": {
+        "type": "string",
+        "value": "conic-gradient(from 175deg at 50% 50%, #6C95FF 17.627713680267334deg, #FFA149 101.25deg, #BB64FF 226.87499284744263deg, #70BAFF 325.17677307128906deg)"
       }
     },
     "type": {
@@ -141,6 +145,10 @@
       }
     },
     "length": {
+      "9": {
+        "type": "dimension",
+        "value": 1.5
+      },
       "12": {
         "type": "dimension",
         "value": 2
@@ -148,6 +156,10 @@
       "50": {
         "type": "dimension",
         "value": 8
+      },
+      "62": {
+        "type": "dimension",
+        "value": 10
       },
       "75": {
         "type": "dimension",
@@ -314,6 +326,10 @@
           "base": {
             "type": "dimension",
             "value": "{ref.length.12}"
+          },
+          "sm": {
+            "type": "dimension",
+            "value": "{ref.length.9}"
           }
         },
         "line-height": {
@@ -368,7 +384,7 @@
         }
       },
       "space": {
-        "xs": {
+        "2xs": {
           "type": "dimension",
           "value": "{ref.length.50}"
         },
@@ -431,6 +447,10 @@
               "value": "{ref.length.50}"
             }
           }
+        },
+        "xs": {
+          "type": "dimension",
+          "value": "{ref.length.62}"
         }
       },
       "color": {
@@ -486,12 +506,20 @@
           "inactive": {
             "type": "color",
             "value": "{ref.color.gray.100_6}"
+          },
+          "high": {
+            "type": "color",
+            "value": "{ref.color.gray.10}"
           }
         },
         "on-surface": {
           "base": {
             "type": "color",
             "value": "{ref.color.gray.10}"
+          },
+          "high": {
+            "type": "color",
+            "value": "{ref.color.gray.100}"
           }
         },
         "border": {
@@ -531,6 +559,10 @@
         "background": {
           "type": "string",
           "value": "{ref.gradient.orange-blue}"
+        },
+        "text-fill": {
+          "type": "string",
+          "value": "{ref.gradient.rainbow}"
         }
       },
       "font": {
@@ -628,6 +660,10 @@
           "base": {
             "type": "dimension",
             "value": "{ref.length.12}"
+          },
+          "sm": {
+            "type": "dimension",
+            "value": "{ref.length.9}"
           }
         },
         "line-height": {
@@ -682,7 +718,7 @@
         }
       },
       "space": {
-        "xs": {
+        "2xs": {
           "type": "dimension",
           "value": "{ref.length.50}"
         },
@@ -745,6 +781,10 @@
               "value": "{ref.length.50}"
             }
           }
+        },
+        "xs": {
+          "type": "dimension",
+          "value": "{ref.length.62}"
         }
       },
       "color": {
@@ -800,10 +840,18 @@
           "inactive": {
             "type": "color",
             "value": "{ref.color.gray.30_6}"
+          },
+          "high": {
+            "type": "color",
+            "value": "{ref.color.gray.10}"
           }
         },
         "on-surface": {
           "base": {
+            "type": "color",
+            "value": "{ref.color.gray.100}"
+          },
+          "high": {
             "type": "color",
             "value": "{ref.color.gray.100}"
           }
@@ -845,6 +893,10 @@
         "background": {
           "type": "string",
           "value": "{ref.gradient.purple}"
+        },
+        "text-fill": {
+          "type": "string",
+          "value": "{ref.gradient.rainbow}"
         }
       },
       "font": {
@@ -962,6 +1014,30 @@
       "font-size": {
         "type": "color",
         "value": "{sys.dark.size.body.fluid.xl.max}"
+      },
+      "gap": {
+        "type": "color",
+        "value": "{sys.dark.space.2xs}"
+      }
+    },
+    "navigation": {
+      "primary": {
+        "background": {
+          "type": "color",
+          "value": "{sys.dark.color.surface.high}"
+        },
+        "color": {
+          "type": "color",
+          "value": "{sys.dark.color.on-surface.high}"
+        },
+        "padding-inline": {
+          "type": "dimension",
+          "value": 0
+        },
+        "padding-block": {
+          "type": "dimension",
+          "value": 0
+        }
       }
     }
   }

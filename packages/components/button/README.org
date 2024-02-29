@@ -5,7 +5,7 @@ surface.
 
 ** Examples
 
-#+html: <div class="example-wrapper">
+#+html: <div class="example-wrapper example-list">
 #+results: button-basic-example
 #+html: </div>
 
@@ -33,20 +33,22 @@ Use these custom properties in your theme to override default styling
 | --nyc-cmp-button-shadow       | none         |
 | --nyc-cmp-button-padding      | .75rem       |
 
-** Base class
+** Base styles
 
 The =button= CSS class implements the custom properties and other
 default styles.
 
+*** Mixin
+
 #+begin_src css :noweb-ref mixins-base
   @define-mixin button {
-      --_background: var(--nyc-cmp-button-background, hsla(0, 0%, 100%, 1));
-      --_background-hover: var(--nyc-cmp-button-background-hover, white);
-      --_border-color: var(--nyc-cmp-button-border-color, hsla(0, 0%, 93%, 1));
+      --_background: var(--nyc-cmp-button-background, hsl(0 0% 100%));
+      --_background-hover: var(--nyc-cmp-button-background-hover, hsl(0 0% 100%));
+      --_border-color: var(--nyc-cmp-button-border-color, hsl(0 0% 93%));
       --_border-color-hover: var(--nyc-cmp-button-border-color-hover, currentColor);
       --_border-width: var(--nyc-cmp-button-border-width, 2px);
       --_border-radius: var(--nyc-cmp-button-border-radius, 0);
-      --_color: var(--nyc-cmp-button-color, currentColor);
+      --_color: var(--nyc-cmp-button-color, hsl(0 0% 0%));
       --_color-hover: var(--nyc-cmp-button-color-hover, inherit);
       --_font-weight: var(--nyc-cmp-button-font-weight, 500);
       --_font-size: var(--nyc-cmp-button-font-size, 500);
@@ -54,6 +56,7 @@ default styles.
       --_padding-block: var(--nyc-cmp-button-padding-block, .75rem);
       --_padding-inline: var(--nyc-cmp-button-padding-inline, .75rem);
       --_outline-color: var(--nyc-cmp-button-outline-color, inherit);
+      --_gap: var(--nyc-cmp-button-gap, .5rem);
       appearance: none;
       background-color: var(--_background);
       border-color: var(--_border-color);
@@ -67,22 +70,24 @@ default styles.
       cursor: pointer;
       font-weight: var(--_font-weight);
       font-size: var(--_font-size);
+      line-height: inherit;
       display: inline-flex;
+      gap: var(--_gap);
       align-items: center;
       transition: all 0.3s ease;
 
-      & > :first-child:not(i) {
-        flex-grow: 1;
-        width: max-content;
-      }
+      /* & > :first-child:not(i) { */
+      /*   flex-grow: 1; */
+      /*   width: max-content; */
+      /* } */
 
-      & > i:last-child {
-        flex-shrink: 0;
-        margin-block: auto;
-        font-size: 1.5rem;
+      /* & > i:last-child { */
+      /*   flex-shrink: 0; */
+      /*   margin-block: auto; */
+      /*   font-size: 1.5rem; */
 
-        margin-inline-start: .5em;
-      }
+      /*   margin-inline-start: .5em; */
+      /* } */
 
       &:hover {
         background: var(--_background-hover);
@@ -97,43 +102,31 @@ default styles.
   }
 #+end_src
 
+*** Default class
+
 #+begin_src css :noweb-ref default-base
   .button,
   .button:link,
   .button:visited {
-    @mixin button {}
+    @mixin button
   }
   #+end_src
+
+*** AEM class
 
 #+begin_src css :noweb-ref aem-base
   .cmp-button,
   .cmp-button:link,
   .cmp-button:visited {
-    @mixin button {}
-  }
-#+end_src
-
-When within a grid list, have the button fill the grid child
-
-#+begin_src css :noweb-ref default-base
-  .grid li > .button {
-    display: flex;
-    height: 100%;
+    @mixin button
   }
 #+end_src
 
 ** Variants
 
-#+begin_src css
-  /* .button[data-variant] { */
-  /*   &:hover { */
-  /*     background: var(--_color); */
-  /*     color: var(--_background); */
-  /*   }     */
-  /* } */
-#+end_src
-
 *** Primary
+
+**** Mixin
 
 #+begin_src css :noweb-ref mixins-primary
   @define-mixin button-primary {
@@ -149,24 +142,58 @@ When within a grid list, have the button fill the grid child
   }
 #+end_src
 
+**** Default class
+
 #+begin_src css :noweb-ref default-primary
   .button[data-variant=primary] {
-    @mixin button-primary {}
+    @mixin button-primary
   }
 #+end_src
 
+**** AEM class
+
 #+begin_src css :noweb-ref aem-primary
   .cmp-button--primary .cmp-button {
-    @mixin button-primary {}
+    @mixin button-primary
+  }
+#+end_src
+
+*** Sizes
+
+**** Mixin
+
+#+begin_src css :noweb-ref mixins-sizes
+  @define-mixin button-sm {
+    --nyc-cmp-button-border-radius: var(--nyc-sys-radius-lg);
+    --nyc-cmp-button-padding-block: var(--nyc-sys-space-xs);
+    --nyc-cmp-button-padding-inline: var(--nyc-sys-space-sm);
+    --nyc-cmp-button-font-size: var(--nyc-sys-size-body-base);
+    --nyc-cmp-button-font-weight: 600;
+  }
+#+end_src
+
+**** Default class
+
+#+begin_src css :noweb-ref default-sizes
+  .button[data-size=sm] {
+    @mixin button-sm
+  }
+#+end_src
+
+**** AEM class
+
+#+begin_src css :noweb-ref aem-sizes
+  .cmp-button--sm .cmp-button {
+    @mixin button-sm
   }
 #+end_src
 
 ** Javascript
 
-*** Toggle Button
+*** Toggle Button Class
 
-The Toggle Button is an extended Custom Element that when clicked
-toggles the visibility of another element.
+The Toggle Button is a [[https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_custom_elements#types_of_custom_element][Customized Built-in Button Element]] that when
+clicked toggles the visibility of another element.
 
 #+begin_src js :tangle src/js/toggle-button.js
   import { toggle } from '@nycds/utilities';
@@ -197,6 +224,12 @@ toggles the visibility of another element.
   }
 #+end_src
 
+*** Define custom element
+
+To provide the button for use we import the =ToggleButton= class and
+define the =nyc-toggle-button= custom element. Note the use of =extends=
+here to create a [[https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_custom_elements#types_of_custom_element][customized built-in element]].
+
 #+begin_src js :tangle src/js/index.js
   import ToggleButton from './toggle-button';
   if (!customElements.get('nyc-toggle-button')) {
@@ -204,23 +237,35 @@ toggles the visibility of another element.
   }
 #+end_src
 
-** File exports :noexport
+** File exports :noexport:
+
+*** Mixins
 
 #+begin_src css :noweb yes :tangle src/css/mixins.css
+  /* Generated from README.org - do not edit directly */
   <<mixins-base>>
   <<mixins-primary>>
+  <<mixins-sizes>>
 #+end_src
+
+*** Default
 
 #+begin_src css :noweb yes :tangle src/css/index.css
+  /* Generated from README.org - do not edit directly */
   @import './mixins.css';
-  
+
   <<default-base>>
   <<default-primary>>
+  <<default-sizes>>
 #+end_src
 
+*** AEM
+
 #+begin_src css :noweb yes :tangle src/css/aem/index.css
+  /* Generated from README.org - do not edit directly */
   @import '../mixins.css';
-  
+
   <<aem-base>>
   <<aem-primary>>
+  <<aem-sizes>>
 #+end_src

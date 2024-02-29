@@ -1,8 +1,8 @@
 export default (array, chunkSize) => {
-  const arr = [];
+  const arr = []
   for (let i = 0; i < array.length; i += chunkSize) {
-    const chunk = array.slice(i, i + chunkSize);
-    arr.push(chunk);
+    const chunk = array.slice(i, i + chunkSize)
+    arr.push(chunk)
   }
-  return arr;
+  return arr
 }

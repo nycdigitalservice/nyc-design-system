@@ -100,6 +100,30 @@
       "font-size": {
         "type": "color",
         "value": "{sys.size.body.fluid.xl}"
+      },
+      "gap": {
+        "type": "color",
+        "value": "{sys.space.2xs}"
+      }
+    },
+    "navigation": {
+      "primary": {
+        "background": {
+          "type": "color",
+          "value": "{sys.color.surface.high}"
+        },
+        "color": {
+          "type": "color",
+          "value": "{sys.color.on-surface.high}"
+        },
+        "padding-inline": {
+          "type": "dimension",
+          "value": 0
+        },
+        "padding-block": {
+          "type": "dimension",
+          "value": 0
+        }
       }
     }
   }

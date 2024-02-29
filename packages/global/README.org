@@ -28,28 +28,30 @@ body {
 ** Typesetting
 
 #+begin_src css :tangle src/index.css
-h1,
-h2,
-h3 {
-  line-height: 1.2;
-  letter-spacing: var(--nyc-ref-dimension-tracking-s);
-}
+  @custom-selector :--heading h1, h2, h3, h4, h5, h6;
 
-h1 {
-  font-size: var(--nyc-sys-size-heading-fluid-lg);
-}
+  h1,
+  h2,
+  h3 {
+    line-height: 1.2;
+    letter-spacing: var(--nyc-ref-dimension-tracking-s);
+  }
 
-h2 {
-  font-size: var(--nyc-sys-size-heading-fluid-base);
-}
+  h1 {
+    font-size: var(--nyc-sys-size-heading-fluid-lg);
+  }
 
-h3 {
-  font-size: var(--nyc-sys-size-heading-fluid-sm);
-}
+  h2 {
+    font-size: var(--nyc-sys-size-heading-fluid-base);
+  }
 
-p {
-  max-inline-size: var(--nyc-ref-dimension-measure);
-}
+  h3 {
+    font-size: var(--nyc-sys-size-heading-fluid-sm);
+  }
+
+  p {
+    max-inline-size: var(--nyc-ref-dimension-measure);
+  }
 
 #+end_src
 
@@ -59,13 +61,15 @@ p {
   a,
   a:link,
   button {
+    --_gap: var(--nyc-cmp-button-gap, .5rem);
     appearance: none;
     background: transparent;
     color: var(--nyc-sys-color-link);
     display: inline-flex;
+    gap: var(--_gap);
     align-items: center;
     font-size: inherit;
-    text-decoration: none;
+    text-decoration: underline;
     cursor: pointer;
 
     &:hover {
@@ -73,14 +77,18 @@ p {
     }
 
     & > [class^=i-] {
-      font-size: 1.5rem;
-      &:last-child {
-        margin-inline-start: .5em;        
-      }
-      &:first-child {
-        margin-inline-end: .5em;        
-      }
+      flex-shrink: 0;
     }
+
+    /* & > [class^=i-] { */
+    /*   font-size: 1.5rem; */
+    /*   &:last-child { */
+    /*     margin-inline-start: .5em;         */
+    /*   } */
+    /*   &:first-child { */
+    /*     margin-inline-end: .5em;         */
+    /*   } */
+    /* } */
   }
 
   :focus {

@@ -1,0 +1,5 @@
+@import './mixins.css';
+
+.navigation[data-variant=primary] {
+  @mixin navigation-primary
+}

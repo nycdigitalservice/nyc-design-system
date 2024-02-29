@@ -1,10 +1,10 @@
-import { wrapElement } from '@nycds/utilities';
-import './tab-group';
+import { wrapElement } from '@nycds/utilities'
+import './tab-group'
 
 try {
   Array.from(
     document.querySelectorAll('[data-is=nyc-tab-group]')
-  ).map(el => wrapElement(el, 'nyc-tab-group'));
+  ).map(el => wrapElement(el, 'nyc-tab-group'))
 } catch (e) {
   console.error(`Could not initialize TabGroup: ${e}`)
 }

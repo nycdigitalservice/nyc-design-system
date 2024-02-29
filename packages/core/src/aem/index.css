@@ -4,6 +4,7 @@
 @import "@nycds/composition";
 @import "@nycds/utilities";
 @import "@nycds/reset";
+@import "@nycds/navigation/src/css/aem/index.css";
 @import "@nycds/card";
 @import "@nycds/button/src/css/aem/index.css";
 @import "@nycds/alert";

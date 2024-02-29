@@ -69,7 +69,13 @@
             e.preventDefault();
             // If the down key is pressed, move focus to the open panel,
             // otherwise switch to the adjacent tab
-            dir === 'down' ? this.panels[i].focus() : this.tabs[dir] ? this.switchTab(e.currentTarget, this.tabs[dir]) : void 0;
+            if (dir === 'down') {
+              this.panels[i].focus()
+            } else if(this.tabs[dir]) {
+              this.switchTab(e.currentTarget, this.tabs[dir])
+            } else {
+              return undefined
+            }
           }
         });
       });
@@ -79,9 +85,9 @@
       Array.prototype.forEach.call(this.panels, (panel, i) => {
         panel.setAttribute('role', 'tabpanel');
         panel.setAttribute('tabindex', '-1');
-        let id = panel.getAttribute('id');
+        // let id = panel.getAttribute('id');
         panel.setAttribute('aria-labelledby', this.tabs[i].id);
-        panel.hidden = true; 
+        panel.hidden = true;
       });
     }
   }

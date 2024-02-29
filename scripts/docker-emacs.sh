@@ -32,4 +32,3 @@ then
 else
     echo "Please provide a command: tangle, publish"
 fi
-

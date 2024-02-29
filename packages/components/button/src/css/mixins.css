@@ -1,11 +1,11 @@
 @define-mixin button {
-    --_background: var(--nyc-cmp-button-background, hsla(0, 0%, 100%, 1));
-    --_background-hover: var(--nyc-cmp-button-background-hover, white);
-    --_border-color: var(--nyc-cmp-button-border-color, hsla(0, 0%, 93%, 1));
+    --_background: var(--nyc-cmp-button-background, hsl(0 0% 100%));
+    --_background-hover: var(--nyc-cmp-button-background-hover, hsl(0 0% 100%));
+    --_border-color: var(--nyc-cmp-button-border-color, hsl(0 0% 93%));
     --_border-color-hover: var(--nyc-cmp-button-border-color-hover, currentColor);
     --_border-width: var(--nyc-cmp-button-border-width, 2px);
     --_border-radius: var(--nyc-cmp-button-border-radius, 0);
-    --_color: var(--nyc-cmp-button-color, currentColor);
+    --_color: var(--nyc-cmp-button-color, hsl(0 0% 0%));
     --_color-hover: var(--nyc-cmp-button-color-hover, inherit);
     --_font-weight: var(--nyc-cmp-button-font-weight, 500);
     --_font-size: var(--nyc-cmp-button-font-size, 500);
@@ -13,6 +13,7 @@
     --_padding-block: var(--nyc-cmp-button-padding-block, .75rem);
     --_padding-inline: var(--nyc-cmp-button-padding-inline, .75rem);
     --_outline-color: var(--nyc-cmp-button-outline-color, inherit);
+    --_gap: var(--nyc-cmp-button-gap, .5rem);
     appearance: none;
     background-color: var(--_background);
     border-color: var(--_border-color);
@@ -26,22 +27,24 @@
     cursor: pointer;
     font-weight: var(--_font-weight);
     font-size: var(--_font-size);
+    line-height: inherit;
     display: inline-flex;
+    gap: var(--_gap);
     align-items: center;
     transition: all 0.3s ease;
 
-    & > :first-child:not(i) {
-      flex-grow: 1;
-      width: max-content;
-    }
+    /* & > :first-child:not(i) { */
+    /*   flex-grow: 1; */
+    /*   width: max-content; */
+    /* } */
 
-    & > i:last-child {
-      flex-shrink: 0;
-      margin-block: auto;
-      font-size: 1.5rem;
+    /* & > i:last-child { */
+    /*   flex-shrink: 0; */
+    /*   margin-block: auto; */
+    /*   font-size: 1.5rem; */
 
-      margin-inline-start: .5em;
-    }
+    /*   margin-inline-start: .5em; */
+    /* } */
 
     &:hover {
       background: var(--_background-hover);
@@ -64,4 +67,11 @@
     --nyc-cmp-button-background-hover: var(--nyc-sys-color-primary);
     --nyc-cmp-button-border-color-hover: var(--nyc-sys-color-primary);
   }    
+}
+@define-mixin button-sm {
+  --nyc-cmp-button-border-radius: var(--nyc-sys-radius-lg);
+  --nyc-cmp-button-padding-block: var(--nyc-sys-space-xs);
+  --nyc-cmp-button-padding-inline: var(--nyc-sys-space-sm);
+  --nyc-cmp-button-font-size: var(--nyc-sys-size-body-base);
+  --nyc-cmp-button-font-weight: 600;
 }

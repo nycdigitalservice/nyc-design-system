@@ -1,0 +1,317 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta author="Michael Mausler - NYC"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><link rel="icon" type="image/png" href="/img/favicon.png"/><link rel="stylesheet" href="http://localhost:8000/assets/nycds-docs.css"/><title>Card - NYC</title></head><body class="u-reset"><header class="background-primary"><nav class="p-2 flex"><a href="http://localhost:8000" class="mr-auto flex"><img class="logo" height="50" src="http://localhost:8000/assets/img/nyc-logo.svg" alt="City of New York logo"/></a><button is="nyc-toggle-button" id="main-menu-control" class="font-bold p-2" aria-controls="main-menu" aria-expanded="false"><i class="i-ri:menu-line mr-2"></i>Menu</button></nav></header><aside id="main-menu" class="background-primary-lightest" aria-labelledby="main-menu-control" hidden=""><div class="center grid p-4"><nav class="flex flex-col"><span class="p-2 border-b-2 border-current border-solid">Packages</span><a class="p-2" href="http://localhost:8000/packages/reset/">Reset</a><a class="p-2" href="http://localhost:8000/packages/variables/">Variables</a><a class="p-2" href="http://localhost:8000/packages/global/">Global</a><a class="p-2" href="http://localhost:8000/packages/composition/">Composition</a><a class="p-2" href="http://localhost:8000/packages/icons/">Icons</a></nav><nav class="flex flex-col"><span class="p-2 border-b-2 border-current border-solid">Components</span><a class="p-2" href="http://localhost:8000/packages/components/accordion/">Accordion</a><a class="p-2" href="http://localhost:8000/packages/components/alert/">Alert</a><a class="p-2" href="http://localhost:8000/packages/components/button/">Button</a><a class="p-2" href="http://localhost:8000/packages/components/card/">Card</a><a class="p-2" href="http://localhost:8000/packages/components/tooltip/">Tooltip</a></nav><nav class="flex flex-col"><span class="p-2 border-b-2 border-current border-solid">Guides</span><a class="p-2" href="http://localhost:8000/guides/navigation-page.html">Building a Navigation Page</a></nav></div></aside><main class="center"><div class="region flow"><h1 class="site-post-title">Card</h1><div id="content" class="flow"><p>
+Cards are thumbnails of content and may include a full or partial set
+of content-related elements. It reflects what would be seen in the
+Header of a singular content view. Further guidance on generic cards
+can be found on the <a href="https://designsystem.digital.gov/components/card">U.S. Web Design System (USWDS) site</a>. Cards may
+contain any of the following elements; title, subtitle, status,
+summary, feature list, call-to-action, or web share component.
+</p>
+
+<section class="region flow"><h2><a id="usage" class="anchor" href="#usage"><i class="i-ri:anchor-line"></i></a>Usage</h2><div class="example-wrapper container">
+<div class="grid flex-1" data-layout="col-2">
+  <article class="card">
+    <header class="card__header">
+      <h3>
+        <a href="/property.page" class="card__primary-action">
+          <span>
+            View property bills, assessments, and notices
+          </span>
+          <span>
+            <span class="i-ri:external-link-line"></span>
+          </span>
+        </a>
+      </h3>
+    </header>
+    <div class="card__media">
+      <img src="/assets/img/card-placeholder.png" alt="Alt text here">
+    </div>
+    <div class="card__body">
+      <p>A short description for the card</p>
+    </div>
+  </article>
+  <article class="card">
+    <header class="card__header">
+      <h3>
+        <a href="/property.page" class="card__primary-action">
+          <span>
+            View property bills, assessments, and notices
+          </span>
+          <span>
+            <span class="i-ri:external-link-line"></span>
+          </span>
+        </a>
+      </h3>
+    </header>
+    <div class="card__media">
+      <img src="/assets/img/card-placeholder.png" alt="Alt text here">
+    </div>
+    <div class="card__body">
+      <p>A short description for the card</p>
+    </div>
+  </article>
+  <article class="card">
+    <header class="card__header">
+      <h3>
+        <a href="/property.page" class="card__primary-action">
+          <span>
+            View property bills, assessments, and notices
+          </span>
+          <span>
+            <span class="i-ri:external-link-line"></span>
+          </span>
+        </a>
+      </h3>
+    </header>
+    <div class="card__media">
+      <img src="/assets/img/card-placeholder.png" alt="Alt text here">
+    </div>
+    <div class="card__body">
+      <p>A short description for the card</p>
+    </div>
+  </article>
+  <article class="card">
+    <header class="card__header">
+      <h3>
+        <a href="/property.page" class="card__primary-action">
+          <span>
+            View property bills, assessments, and notices
+          </span>
+          <span>
+            <span class="i-ri:external-link-line"></span>
+          </span>
+        </a>
+      </h3>
+    </header>
+    <div class="card__media">
+      <img src="/assets/img/card-placeholder.png" alt="Alt text here">
+    </div>
+    <div class="card__body">
+      <p>A short description for the card</p>
+    </div>
+  </article>
+</div>
+</div>
+
+<nyc-accordion class='code-view'><h3>Inspect code</h3><div><pre><code class="language-html">&lt;div class="grid flex-1" data-layout="col-2"&gt;
+  &lt;article class="card"&gt;
+    &lt;header class="card__header"&gt;
+      &lt;h3&gt;
+        &lt;a href="/property.page" class="card__primary-action"&gt;
+          &lt;span&gt;
+            View property bills, assessments, and notices
+          &lt;/span&gt;
+          &lt;span&gt;
+            &lt;span class="i-ri:external-link-line"&gt;&lt;/span&gt;
+          &lt;/span&gt;
+        &lt;/a&gt;
+      &lt;/h3&gt;
+    &lt;/header&gt;
+    &lt;div class="card__media"&gt;
+      &lt;img src="/assets/img/card-placeholder.png" alt="Alt text here"&gt;
+    &lt;/div&gt;
+    &lt;div class="card__body"&gt;
+      &lt;p&gt;A short description for the card&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/article&gt;
+  &lt;article class="card"&gt;
+    &lt;header class="card__header"&gt;
+      &lt;h3&gt;
+        &lt;a href="/property.page" class="card__primary-action"&gt;
+          &lt;span&gt;
+            View property bills, assessments, and notices
+          &lt;/span&gt;
+          &lt;span&gt;
+            &lt;span class="i-ri:external-link-line"&gt;&lt;/span&gt;
+          &lt;/span&gt;
+        &lt;/a&gt;
+      &lt;/h3&gt;
+    &lt;/header&gt;
+    &lt;div class="card__media"&gt;
+      &lt;img src="/assets/img/card-placeholder.png" alt="Alt text here"&gt;
+    &lt;/div&gt;
+    &lt;div class="card__body"&gt;
+      &lt;p&gt;A short description for the card&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/article&gt;
+  &lt;article class="card"&gt;
+    &lt;header class="card__header"&gt;
+      &lt;h3&gt;
+        &lt;a href="/property.page" class="card__primary-action"&gt;
+          &lt;span&gt;
+            View property bills, assessments, and notices
+          &lt;/span&gt;
+          &lt;span&gt;
+            &lt;span class="i-ri:external-link-line"&gt;&lt;/span&gt;
+          &lt;/span&gt;
+        &lt;/a&gt;
+      &lt;/h3&gt;
+    &lt;/header&gt;
+    &lt;div class="card__media"&gt;
+      &lt;img src="/assets/img/card-placeholder.png" alt="Alt text here"&gt;
+    &lt;/div&gt;
+    &lt;div class="card__body"&gt;
+      &lt;p&gt;A short description for the card&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/article&gt;
+  &lt;article class="card"&gt;
+    &lt;header class="card__header"&gt;
+      &lt;h3&gt;
+        &lt;a href="/property.page" class="card__primary-action"&gt;
+          &lt;span&gt;
+            View property bills, assessments, and notices
+          &lt;/span&gt;
+          &lt;span&gt;
+            &lt;span class="i-ri:external-link-line"&gt;&lt;/span&gt;
+          &lt;/span&gt;
+        &lt;/a&gt;
+      &lt;/h3&gt;
+    &lt;/header&gt;
+    &lt;div class="card__media"&gt;
+      &lt;img src="/assets/img/card-placeholder.png" alt="Alt text here"&gt;
+    &lt;/div&gt;
+    &lt;div class="card__body"&gt;
+      &lt;p&gt;A short description for the card&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/article&gt;
+&lt;/div&gt;</code></pre></div></nyc-accordion>
+</section>
+
+
+<section class="region flow"><h2><a id="variants" class="anchor" href="#variants"><i class="i-ri:anchor-line"></i></a>Variants</h2><h3><a id="large-card" class="anchor" href="#large-card"><i class="i-ri:anchor-line"></i></a>Large Card</h3><p>
+Large Cards have a larger heading size and do not include media or a
+card body
+</p>
+
+<h4><a id="usage" class="anchor" href="#usage"><i class="i-ri:anchor-line"></i></a>Usage</h4><div class="example-wrapper">
+<div class="grid" data-layout="col-4">
+  <article class="card" data-variant="large">
+    <header class="card__header">
+      <h3>
+        <a href="#" class="card__primary-action">
+          <span>
+            View property bills, assessments, and notices
+          </span>
+          <span>
+            <span class="i-ri:external-link-line"></span>
+          </span>
+        </a>
+      </h3>
+    </header>
+  </article>
+  <article class="card" data-variant="large">
+    <header class="card__header">
+      <h3>
+        <a href="#" class="card__primary-action">
+          <span>
+            View property bills, assessments, and notices
+          </span>
+          <span>
+            <span class="i-ri:external-link-line"></span>
+          </span>
+        </a>
+      </h3>
+    </header>
+  </article>
+  <article class="card" data-variant="large">
+    <header class="card__header">
+      <h3>
+        <a href="#" class="card__primary-action">
+          <span>
+            View property bills, assessments, and notices
+          </span>
+          <span>
+            <span class="i-ri:external-link-line"></span>
+          </span>
+        </a>
+      </h3>
+    </header>
+  </article>
+  <article class="card" data-variant="large">
+    <header class="card__header">
+      <h3>
+        <a href="#" class="card__primary-action">
+          <span>
+            View property bills, assessments, and notices
+          </span>
+          <span>
+            <span class="i-ri:external-link-line"></span>
+          </span>
+        </a>
+      </h3>
+    </header>
+  </article>
+</div>
+</div>
+
+<nyc-accordion class='code-view'><h3>Inspect code</h3><div><pre><code class="language-html">&lt;div class="grid" data-layout="col-4"&gt;
+  &lt;article class="card" data-variant="large"&gt;
+    &lt;header class="card__header"&gt;
+      &lt;h3&gt;
+        &lt;a href="#" class="card__primary-action"&gt;
+          &lt;span&gt;
+            View property bills, assessments, and notices
+          &lt;/span&gt;
+          &lt;span&gt;
+            &lt;span class="i-ri:external-link-line"&gt;&lt;/span&gt;
+          &lt;/span&gt;
+        &lt;/a&gt;
+      &lt;/h3&gt;
+    &lt;/header&gt;
+  &lt;/article&gt;
+  &lt;article class="card" data-variant="large"&gt;
+    &lt;header class="card__header"&gt;
+      &lt;h3&gt;
+        &lt;a href="#" class="card__primary-action"&gt;
+          &lt;span&gt;
+            View property bills, assessments, and notices
+          &lt;/span&gt;
+          &lt;span&gt;
+            &lt;span class="i-ri:external-link-line"&gt;&lt;/span&gt;
+          &lt;/span&gt;
+        &lt;/a&gt;
+      &lt;/h3&gt;
+    &lt;/header&gt;
+  &lt;/article&gt;
+  &lt;article class="card" data-variant="large"&gt;
+    &lt;header class="card__header"&gt;
+      &lt;h3&gt;
+        &lt;a href="#" class="card__primary-action"&gt;
+          &lt;span&gt;
+            View property bills, assessments, and notices
+          &lt;/span&gt;
+          &lt;span&gt;
+            &lt;span class="i-ri:external-link-line"&gt;&lt;/span&gt;
+          &lt;/span&gt;
+        &lt;/a&gt;
+      &lt;/h3&gt;
+    &lt;/header&gt;
+  &lt;/article&gt;
+  &lt;article class="card" data-variant="large"&gt;
+    &lt;header class="card__header"&gt;
+      &lt;h3&gt;
+        &lt;a href="#" class="card__primary-action"&gt;
+          &lt;span&gt;
+            View property bills, assessments, and notices
+          &lt;/span&gt;
+          &lt;span&gt;
+            &lt;span class="i-ri:external-link-line"&gt;&lt;/span&gt;
+          &lt;/span&gt;
+        &lt;/a&gt;
+      &lt;/h3&gt;
+    &lt;/header&gt;
+  &lt;/article&gt;
+&lt;/div&gt;</code></pre></div></nyc-accordion>
+</section>
+
+<section class="region flow"><h2><a id="source-code" class="anchor" href="#source-code"><i class="i-ri:anchor-line"></i></a>Source Code</h2><ul class="org-ul">
+<li><a href="./css.html">CSS</a></li>
+</ul>
+</section>
+
+<section class="region flow"><h2><a id="references" class="anchor" href="#references"><i class="i-ri:anchor-line"></i></a>References</h2><ul class="org-ul">
+<li><a href="https://nycopportunity.github.io/standard/card">NYCO Opportunity Standard: Card</a></li>
+<li><a href="https://designsystem.digital.gov/components/card/">U.S. Web Design System: Card</a></li>
+<li><a href="https://inclusive-components.design/cards/">Inclusive Components: Card</a></li>
+</ul>
+</section>
+</div></div></main><footer class="site-footer"><div class="center"><div class="row"><div class="column"><p>© 2024 City of New York</p></div></div></div></footer><script src="http://localhost:8000/assets/nycds-docs.js"></script></body></html>

@@ -1,0 +1,18 @@
+@define-mixin navigation-primary {
+  --_background: var(--nyc-cmp-navigation-primary-background, #000);
+  --_color: var(--nyc-cmp-navigation-primary-color, #FFF);
+  --_padding-inline: var(--nyc-cmp-navigation-primary-padding-inline, 2rem);
+  --_padding-block: var(--nyc-cmp-navigation-primary-padding-block, .75rem);
+  background: var(--_background);
+  color: var(--_color);
+  width: 100%;
+  padding-inline: var(--_padding-inline);
+  padding-block: var(--_padding-block);
+
+  & > ul {
+    list-style-type: none;
+    padding-inline-start: 0;
+    display: flex;
+    justify-content: space-between;
+  }
+}

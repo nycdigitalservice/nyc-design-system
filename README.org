@@ -25,7 +25,7 @@ nature of CSS to provide progressively enhanced page styling.
 Use CSS variables as hooks to theme the design system. They can be
 used to modify size, space, color and typography.
 
-[[file:packages/variables/variables.org][Learn more about DOF CSS variables]]
+[[file:packages/variables/variables.org][Learn more about CSS variables]]
 
 *** Intrinsic web design
 

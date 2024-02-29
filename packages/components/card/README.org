@@ -15,7 +15,7 @@ summary, feature list, call-to-action, or web share component.
 
 #+name: card-example
 #+begin_src html :exports both :results replace html
-  <div class="grid" data-layout="col-4">
+  <div class="grid flex-1" data-layout="col-2">
     <article class="card">
       <header class="card__header">
         <h3>

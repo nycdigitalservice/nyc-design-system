@@ -1,0 +1,60 @@
+#+title: Navigation
+
+** Primary navigation
+
+#+begin_src css :noweb-ref mixins-primary
+  @define-mixin navigation-primary {
+    --_background: var(--nyc-cmp-navigation-primary-background, #000);
+    --_color: var(--nyc-cmp-navigation-primary-color, #FFF);
+    --_padding-inline: var(--nyc-cmp-navigation-primary-padding-inline, 2rem);
+    --_padding-block: var(--nyc-cmp-navigation-primary-padding-block, .75rem);
+    background: var(--_background);
+    color: var(--_color);
+    width: 100%;
+    padding-inline: var(--_padding-inline);
+    padding-block: var(--_padding-block);
+
+    & > ul {
+      list-style-type: none;
+      padding-inline-start: 0;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+#+end_src
+
+#+begin_src css :noweb-ref default-primary
+  .navigation[data-variant=primary] {
+    @mixin navigation-primary
+  }
+#+end_src
+
+#+begin_src css :noweb-ref aem-primary
+  .cmp-navigation--primary .cmp-navigation {
+    @mixin navigation-primary
+  }
+#+end_src
+
+** File exports :noexport
+
+*** Mixins
+
+#+begin_src css :noweb yes :tangle src/css/mixins.css
+  <<mixins-primary>>
+#+end_src
+
+*** Default
+
+#+begin_src css :noweb yes :tangle src/css/index.css
+  @import './mixins.css';
+
+  <<default-primary>>
+#+end_src
+
+*** AEM
+
+#+begin_src css :noweb yes :tangle src/css/aem/index.css
+  @import '../mixins.css';
+
+  <<aem-primary>>
+#+end_src

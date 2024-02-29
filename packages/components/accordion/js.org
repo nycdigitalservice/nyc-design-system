@@ -177,7 +177,7 @@ required attributes.
     createButton(label, panelId) {
       const labelEl = document.createElement('span');
       labelEl.append(label);
-      const button = document.createElement('button', { is: 'toggle-button' });
+      const button = document.createElement('button', { is: 'nyc-toggle-button' });
       button.setAttribute('aria-controls', panelId);
       button.setAttribute('aria-expanded', false);
       button.innerHTML = "<i class='i-ri:arrow-down-s-line' aria-hidden='true'></i>";

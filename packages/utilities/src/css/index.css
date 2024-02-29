@@ -49,6 +49,26 @@
     box-shadow: var(--nyc-sys-shadow-base);
 }
 
+.border-rainbow {
+  background: linear-gradient(black, black) padding-box,
+              var(--nyc-ref-gradient-rainbow) border-box !important;
+  border: var(--nyc-sys-size-border-sm) solid transparent !important;
+}
+
+.background-rainbow {
+  background: var(--nyc-ref-gradient-rainbow) !important;
+}
+
+.text-rainbow {
+  background: var(--nyc-ref-gradient-rainbow); 
+  -webkit-text-fill-color: transparent; 
+  -webkit-background-clip: text;   
+}
+
+.radius-lg {
+  border-radius: var(--nyc-sys-radius-lg) !important;
+}
+
 [hidden] {
   display: none !important;
 }

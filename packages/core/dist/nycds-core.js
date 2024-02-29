@@ -548,7 +548,7 @@
 
   // ../utilities/src/js/is-alternating.js
   var is_alternating_default = (n) => n.every((el, i) => {
-    return n[i & 1].nodeName == el.nodeName;
+    return n[i & 1].nodeName === el.nodeName;
   });
 
   // ../utilities/src/js/wrap-element.js
@@ -732,7 +732,7 @@
     createButton(label, panelId) {
       const labelEl = document.createElement("span");
       labelEl.append(label);
-      const button = document.createElement("button", { is: "toggle-button" });
+      const button = document.createElement("button", { is: "nyc-toggle-button" });
       button.setAttribute("aria-controls", panelId);
       button.setAttribute("aria-expanded", false);
       button.innerHTML = "<i class='i-ri:arrow-down-s-line' aria-hidden='true'></i>";
@@ -827,8 +827,8 @@
       newTab.setAttribute("aria-selected", "true");
       oldTab.removeAttribute("aria-selected");
       oldTab.setAttribute("tabindex", "-1");
-      let index = Array.prototype.indexOf.call(this.tabs, newTab);
-      let oldIndex = Array.prototype.indexOf.call(this.tabs, oldTab);
+      const index = Array.prototype.indexOf.call(this.tabs, newTab);
+      const oldIndex = Array.prototype.indexOf.call(this.tabs, oldTab);
       this.panels[oldIndex].hidden = true;
       this.panels[index].hidden = false;
     }
@@ -840,17 +840,23 @@
         tab.parentNode.setAttribute("role", "presentation");
         tab.addEventListener("click", (e) => {
           e.preventDefault();
-          let currentTab = this.tablist.querySelector("[aria-selected]");
+          const currentTab = this.tablist.querySelector("[aria-selected]");
           if (e.currentTarget !== currentTab) {
             this.switchTab(currentTab, e.currentTarget);
           }
         });
         tab.addEventListener("keydown", (e) => {
-          let index = Array.prototype.indexOf.call(this.tabs, e.currentTarget);
-          let dir = e.which === 37 ? index - 1 : e.which === 39 ? index + 1 : e.which === 40 ? "down" : null;
+          const index = Array.prototype.indexOf.call(this.tabs, e.currentTarget);
+          const dir = e.which === 37 ? index - 1 : e.which === 39 ? index + 1 : e.which === 40 ? "down" : null;
           if (dir !== null) {
             e.preventDefault();
-            dir === "down" ? this.panels[i].focus() : this.tabs[dir] ? this.switchTab(e.currentTarget, this.tabs[dir]) : void 0;
+            if (dir === "down") {
+              this.panels[i].focus();
+            } else if (this.tabs[dir]) {
+              this.switchTab(e.currentTarget, this.tabs[dir]);
+            } else {
+              return void 0;
+            }
           }
         });
       });
@@ -859,7 +865,6 @@
       Array.prototype.forEach.call(this.panels, (panel, i) => {
         panel.setAttribute("role", "tabpanel");
         panel.setAttribute("tabindex", "-1");
-        let id = panel.getAttribute("id");
         panel.setAttribute("aria-labelledby", this.tabs[i].id);
         panel.hidden = true;
       });

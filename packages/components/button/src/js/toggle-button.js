@@ -1,26 +1,27 @@
-import { toggle } from '@nycds/utilities';
+import { toggle } from '@nycds/utilities'
 
 export default class ToggleButton extends HTMLButtonElement {
-  connectedCallback() {
+  connectedCallback () {
     if (!this.hasAttribute('aria-controls')) {
       console.error(
         `ToggleButton: "aria-controls" must be set to the
                           ID of the element you are toggling`
-      );
-      return;
+      )
+      return
     }
     if (!this.hasAttribute('aria-expanded')) {
       console.error(
         `ToggleButton: "aria-expanded" must be set to the
                toggled elements initial visibility, either
                "true" or "false"`
-      );
-      return;
+      )
+      return
     }
-    this.addEventListener('click', this);
+    this.addEventListener('click', this)
   }
-  handleEvent(e) { this['on' + e.type](e); }
-  onclick(e) {
-    toggle(this);
+
+  handleEvent (e) { this['on' + e.type](e) }
+  onclick (e) {
+    toggle(this)
   }
 }

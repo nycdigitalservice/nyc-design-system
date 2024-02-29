@@ -1,9 +1,11 @@
 /**
  * Do not edit directly
- * Generated on Wed, 07 Feb 2024 17:21:03 GMT
+ * Generated on Sat, 24 Feb 2024 20:59:31 GMT
  */
 
 :root {
+  --nyc-cmp-navigation-primary-padding-block: 0;
+  --nyc-cmp-navigation-primary-padding-inline: 0;
   --nyc-sys-space-fluid-sm: clamp(0.5rem, 0.40476190476190477rem + 0.4761904761904762vw, 0.75rem);
   --nyc-sys-space-fluid-lg: clamp(1rem, 0.8095238095238095rem + 0.9523809523809524vw, 1.5rem);
   --nyc-sys-space-fluid-3xl: clamp(4rem, 3.619047619047619rem + 1.9047619047619049vw, 5rem);
@@ -31,10 +33,13 @@
   --nyc-ref-length-100: 16px;
   --nyc-ref-length-88: 14px;
   --nyc-ref-length-75: 12px;
+  --nyc-ref-length-62: 10px;
   --nyc-ref-length-50: 8px;
   --nyc-ref-length-12: 2px;
+  --nyc-ref-length-9: 1.5px;
   --nyc-ref-type-family-clash: 'Clash Display', sans-serif;
   --nyc-ref-type-family-noto: 'Noto Sans', sans-serif;
+  --nyc-ref-gradient-rainbow: conic-gradient(from 175deg at 50% 50%, #6C95FF 17.627713680267334deg, #FFA149 101.25deg, #BB64FF 226.87499284744263deg, #70BAFF 325.17677307128906deg);
   --nyc-ref-gradient-purple: linear-gradient(179deg, #131627 15.45%, #4B184D 87.84%);
   --nyc-ref-gradient-orange-blue: linear-gradient(172deg, #FDE3C9 14.43%, #B2DFFF 79.83%, #B2DFFF 79.83%);
   --nyc-ref-shadow-20: 4px 4px 12px 0px rgba(0, 0, 0, 0.20);
@@ -61,6 +66,7 @@
   --nyc-cmp-region-space: var(--nyc-sys-space-fluid-3xl);
   --nyc-sys-font-family-heading: var(--nyc-ref-type-family-clash);
   --nyc-sys-font-family-body: var(--nyc-ref-type-family-noto);
+  --nyc-sys-gradient-text-fill: var(--nyc-ref-gradient-rainbow);
   --nyc-sys-gradient-background: var(--nyc-ref-gradient-orange-blue);
   --nyc-sys-shadow-low: var(--nyc-ref-shadow-10);
   --nyc-sys-shadow-base: var(--nyc-ref-shadow-20);
@@ -69,7 +75,9 @@
   --nyc-sys-color-inactive: var(--nyc-ref-color-gray-70);
   --nyc-sys-color-border-focus: var(--nyc-ref-color-blue-90);
   --nyc-sys-color-border-base: var(--nyc-ref-color-gray-90);
+  --nyc-sys-color-on-surface-high: var(--nyc-ref-color-gray-100);
   --nyc-sys-color-on-surface-base: var(--nyc-ref-color-gray-10);
+  --nyc-sys-color-surface-high: var(--nyc-ref-color-gray-10);
   --nyc-sys-color-surface-inactive: var(--nyc-ref-color-gray-100-6);
   --nyc-sys-color-surface-low: var(--nyc-ref-color-gray-90);
   --nyc-sys-color-surface-base: var(--nyc-ref-color-gray-100);
@@ -83,6 +91,7 @@
   --nyc-sys-color-primary: var(--nyc-ref-color-blue-40);
   --nyc-sys-color-text: var(--nyc-ref-color-gray-10);
   --nyc-sys-color-background: var(--nyc-ref-color-gray-100);
+  --nyc-sys-space-xs: var(--nyc-ref-length-62);
   --nyc-sys-space-4xl: var(--nyc-ref-length-750);
   --nyc-sys-space-3xl: var(--nyc-ref-length-500);
   --nyc-sys-space-2xl: var(--nyc-ref-length-400);
@@ -90,7 +99,7 @@
   --nyc-sys-space-lg: var(--nyc-ref-length-150);
   --nyc-sys-space-base: var(--nyc-ref-length-100);
   --nyc-sys-space-sm: var(--nyc-ref-length-75);
-  --nyc-sys-space-xs: var(--nyc-ref-length-50);
+  --nyc-sys-space-2xs: var(--nyc-ref-length-50);
   --nyc-sys-radius-xl: var(--nyc-ref-length-250);
   --nyc-sys-radius-lg: var(--nyc-ref-length-150);
   --nyc-sys-radius-base: var(--nyc-ref-length-100);
@@ -101,6 +110,7 @@
   --nyc-sys-size-width-surface-lg: var(--nyc-ref-length-2750);
   --nyc-sys-size-width-surface-base: var(--nyc-ref-length-2250);
   --nyc-sys-size-line-height-body: var(--nyc-ref-length-150);
+  --nyc-sys-size-border-sm: var(--nyc-ref-length-9);
   --nyc-sys-size-border-base: var(--nyc-ref-length-12);
   --nyc-sys-size-heading-lg: var(--nyc-ref-length-625);
   --nyc-sys-size-heading-base: var(--nyc-ref-length-312);
@@ -109,6 +119,9 @@
   --nyc-sys-size-body-lg: var(--nyc-ref-length-125);
   --nyc-sys-size-body-base: var(--nyc-ref-length-112);
   --nyc-sys-size-body-sm: var(--nyc-ref-length-100);
+  --nyc-cmp-navigation-primary-color: var(--nyc-sys-color-on-surface-high);
+  --nyc-cmp-navigation-primary-background: var(--nyc-sys-color-surface-high);
+  --nyc-cmp-button-gap: var(--nyc-sys-space-2xs);
   --nyc-cmp-button-border-radius: var(--nyc-sys-radius-xl);
   --nyc-cmp-flow-space: var(--nyc-sys-space-lg);
   --nyc-cmp-card-background-hover: var(--nyc-sys-color-surface-base);

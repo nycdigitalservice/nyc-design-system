@@ -1,6 +1,7 @@
 nyc-accordion,
 .accordion {
   display: grid;
+  flex: 1;
 }
 
 .accordion__group {
