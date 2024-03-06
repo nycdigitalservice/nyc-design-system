@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Sat, 24 Feb 2024 20:59:31 GMT
+ * Generated on Mon, 04 Mar 2024 23:34:28 GMT
  */
 
 :root {
@@ -121,6 +121,10 @@
   --nyc-sys-size-body-sm: var(--nyc-ref-length-100);
   --nyc-cmp-navigation-primary-color: var(--nyc-sys-color-on-surface-high);
   --nyc-cmp-navigation-primary-background: var(--nyc-sys-color-surface-high);
+  --nyc-cmp-header-primary-padding-block: var(--nyc-sys-space-sm);
+  --nyc-cmp-header-primary-padding-inline: var(--nyc-sys-space-lg);
+  --nyc-cmp-header-primary-color: var(--nyc-sys-color-on-surface-high);
+  --nyc-cmp-header-primary-background: var(--nyc-sys-color-surface-high);
   --nyc-cmp-button-gap: var(--nyc-sys-space-2xs);
   --nyc-cmp-button-border-radius: var(--nyc-sys-radius-xl);
   --nyc-cmp-flow-space: var(--nyc-sys-space-lg);

@@ -5,6 +5,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
+    "dev:js": "esbuild src/index.js --bundle --outfile=dist/nycds-docs.js --watch",
+    "dev:css": "postcss src/index.css -o dist/nycds-docs.css -w",
+    "dev": "npm-run-all --parallel dev:*",
     "clean": "rm -rf ./dist && mkdir ./dist",
     "build:js": "esbuild src/index.js --bundle --outfile=dist/nycds-docs.js",
     "build:css": "postcss src/index.css -o dist/nycds-docs.css",

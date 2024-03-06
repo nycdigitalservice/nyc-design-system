@@ -16,7 +16,7 @@
     "watch:org": "node scripts/watch-org-files.js",
     "build:org": "node scripts/docker-emacs-run.js tangle ./packages",
     "build:docs-assets": "pnpm --filter nyc-design-system-docs run build",
-    "build:docs-publish": "node scripts/docker-emacs-run.js publish --prod",
+    "build:docs-publish": "node scripts/docker-emacs-run.js publish",
     "build:docs": "npm-run-all -s clean:docs build:docs-assets build:docs-publish",
     "build:image": "node scripts/docker-emacs-init.js"
   },

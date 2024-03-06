@@ -319,7 +319,7 @@ To adjust the cards presentation based on its width, we use a
     & .card__media {
       grid-area: figure;
       overflow: hidden;
-      border-radius: var(--nyc-sys-radius-base);
+      border-radius: calc(var(--_border-radius) * .4);
     }
 
     & .card__body {
@@ -337,6 +337,7 @@ To adjust the cards presentation based on its width, we use a
     --nyc-cmp-card-heading-size: var(--nyc-sys-size-body-fluid-xl);
   }
 #+end_src
+
 ** Appendix :noexport:
 
 *** Tangle template

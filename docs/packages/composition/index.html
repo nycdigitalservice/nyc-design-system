@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta author="Michael Mausler - NYC"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><link rel="icon" type="image/png" href="/img/favicon.png"/><link rel="stylesheet" href="https://nycdigitalservice.github.io/nyc-design-system/assets/nycds-docs.css"/><title>Composition - NYC</title></head><body class="u-reset"><header class="background-primary"><nav class="p-2 flex"><a href="https://nycdigitalservice.github.io/nyc-design-system" class="mr-auto flex"><img class="logo" height="50" src="https://nycdigitalservice.github.io/nyc-design-system/assets/img/nyc-logo.svg" alt="City of New York logo"/></a><button is="nyc-toggle-button" id="main-menu-control" class="font-bold p-2" aria-controls="main-menu" aria-expanded="false"><i class="i-ri:menu-line mr-2"></i>Menu</button></nav></header><aside id="main-menu" class="background-primary-lightest" aria-labelledby="main-menu-control" hidden=""><div class="center grid p-4"><nav class="flex flex-col"><span class="p-2 border-b-2 border-current border-solid">Packages</span><a class="p-2" href="https://nycdigitalservice.github.io/nyc-design-system/packages/reset/">Reset</a><a class="p-2" href="https://nycdigitalservice.github.io/nyc-design-system/packages/variables/">Variables</a><a class="p-2" href="https://nycdigitalservice.github.io/nyc-design-system/packages/global/">Global</a><a class="p-2" href="https://nycdigitalservice.github.io/nyc-design-system/packages/composition/">Composition</a><a class="p-2" href="https://nycdigitalservice.github.io/nyc-design-system/packages/icons/">Icons</a></nav><nav class="flex flex-col"><span class="p-2 border-b-2 border-current border-solid">Components</span><a class="p-2" href="https://nycdigitalservice.github.io/nyc-design-system/packages/components/accordion/">Accordion</a><a class="p-2" href="https://nycdigitalservice.github.io/nyc-design-system/packages/components/alert/">Alert</a><a class="p-2" href="https://nycdigitalservice.github.io/nyc-design-system/packages/components/button/">Button</a><a class="p-2" href="https://nycdigitalservice.github.io/nyc-design-system/packages/components/card/">Card</a><a class="p-2" href="https://nycdigitalservice.github.io/nyc-design-system/packages/components/tooltip/">Tooltip</a></nav><nav class="flex flex-col"><span class="p-2 border-b-2 border-current border-solid">Guides</span><a class="p-2" href="https://nycdigitalservice.github.io/nyc-design-system/guides/navigation-page.html">Building a Navigation Page</a></nav></div></aside><main class="center"><div class="region flow"><h1 class="site-post-title">Composition</h1><div id="content" class="flow"><p>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta author="Michael Mausler - NYC"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><link rel="icon" type="image/png" href="/img/favicon.png"/><link rel="stylesheet" href="http://localhost:8000/assets/nycds-docs.css"/><title>Composition - NYC</title></head><body class="u-reset"><header class="background-primary"><nav class="p-2 flex"><a href="http://localhost:8000" class="mr-auto flex"><img class="logo" height="50" src="http://localhost:8000/assets/img/nyc-logo.svg" alt="City of New York logo"/></a><button is="nyc-toggle-button" id="main-menu-control" class="font-bold p-2" aria-controls="main-menu" aria-expanded="false"><i class="i-ri:menu-line mr-2"></i>Menu</button></nav></header><aside id="main-menu" class="background-primary-lightest" aria-labelledby="main-menu-control" hidden=""><div class="center grid p-4"><nav class="flex flex-col"><span class="p-2 border-b-2 border-current border-solid">Packages</span><a class="p-2" href="http://localhost:8000/packages/reset/">Reset</a><a class="p-2" href="http://localhost:8000/packages/variables/">Variables</a><a class="p-2" href="http://localhost:8000/packages/global/">Global</a><a class="p-2" href="http://localhost:8000/packages/composition/">Composition</a><a class="p-2" href="http://localhost:8000/packages/icons/">Icons</a></nav><nav class="flex flex-col"><span class="p-2 border-b-2 border-current border-solid">Components</span><a class="p-2" href="http://localhost:8000/packages/components/accordion/">Accordion</a><a class="p-2" href="http://localhost:8000/packages/components/alert/">Alert</a><a class="p-2" href="http://localhost:8000/packages/components/button/">Button</a><a class="p-2" href="http://localhost:8000/packages/components/card/">Card</a><a class="p-2" href="http://localhost:8000/packages/components/tooltip/">Tooltip</a></nav><nav class="flex flex-col"><span class="p-2 border-b-2 border-current border-solid">Guides</span><a class="p-2" href="http://localhost:8000/guides/navigation-page.html">Building a Navigation Page</a></nav></div></aside><main class="center"><div class="region flow"><h1 class="site-post-title">Composition</h1><div id="content" class="flow"><p>
 Composition classes can be used to control page layout and spacing
 between page items
 </p>
@@ -24,7 +24,56 @@ horizontal <b>padding</b>, and is <b>centered</b> by default
 The <code>region</code> class supplies consistent vertical padding to sections of content
 </p>
 
-<nyc-accordion class='code-view'><h3>Inspect code</h3><div><pre><code class="language-css">.region {
+<div class="example-wrapper">
+  <div class="region bg-yellow-500/50" data-region-space="sm" id="region-example-el">
+    <div class="bg-white">
+      <p>This is a region</p>
+    </div>
+  </div>
+</div>
+
+<div class="flex">
+  <fieldset class="flex">
+    <legend>Select a space size:</legend>
+
+    <div>
+      <input type="radio" id="rs-sm" name="region-space" value="sm"
+             onchange="setRegionSpace(this)" checked />
+      <label for="rs-sm">Small</label>
+    </div>
+
+    <div>
+      <input type="radio" id="rs-base" name="region-space" value="base"
+             onchange="setRegionSpace(this)" />
+      <label for="rs-base">Base</label>
+    </div>
+
+    <div>
+      <input type="radio" id="rs-lg" name="region-space" value="lg"
+             onchange="setRegionSpace(this)" />
+      <label for="rs-lg">Large</label>
+    </div>
+  </fieldset>
+  <script>
+  function setRegionSpace(evt) {
+    console.log(evt, 'hey')
+    //const newVal = document.querySelector('input[name="region-space"]:checked').value;
+    const newVal = evt.value;
+    console.log(newVal);
+    document.getElementById('region-example-el').setAttribute('data-region-space', newVal)
+  }
+  </script>
+</div>
+
+<nyc-accordion class='code-view'><h3>Inspect code</h3><div><pre><code class="language-html">&lt;div class="example-wrapper"&gt;
+  &lt;div class="region bg-yellow-500/50" data-region-space="sm" id="region-example-el"&gt;
+    &lt;div class="bg-white"&gt;
+      &lt;p&gt;This is a region&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre></div></nyc-accordion>
+
+<h3><a id="css" class="anchor" href="#css"><i class="i-ri:anchor-line"></i></a>CSS</h3><nyc-accordion class='code-view'><h3>Inspect code</h3><div><pre><code class="language-css">.region {
   --_region-space: var(--nyc-cmp-region-space);
 
   padding-block: var(--_region-space);
@@ -37,14 +86,6 @@ The <code>region</code> class supplies consistent vertical padding to sections o
 .region[data-region-space="2xl"] { --_region-space: var(--nyc-sys-space-2xl); }
 .region[data-region-space="3xl"] { --_region-space: var(--nyc-sys-space-3xl); }
 .region[data-region-space="4xl"] { --_region-space: var(--nyc-sys-space-4xl); }</code></pre></div></nyc-accordion>
-
-<nyc-accordion class='code-view'><h3>Inspect code</h3><div><pre><code class="language-emacs-lisp">(setq space-scale '("sm" "base" "lg" "xl" "2xl" "3xl" "4xl"))
-(mapconcat
- (lambda (str)
-   (format-spec
-    ".region[data-region-space=\"%s\"] { --_region-space: var(--nyc-sys-space-%s); }\n"
-    (format-spec-make ?s str)))
- space-scale)</code></pre></div></nyc-accordion>
 </section>
 
 <section class="region flow"><h2><a id="flow" class="anchor" href="#flow"><i class="i-ri:anchor-line"></i></a>Flow</h2><p>
@@ -74,13 +115,6 @@ this spacing on a per-element level.
 [data-flow-space="2xl"] { --nyc-cmp-flow-space: var(--nyc-sys-space-2xl); }
 [data-flow-space="3xl"] { --nyc-cmp-flow-space: var(--nyc-sys-space-3xl); }
 [data-flow-space="4xl"] { --nyc-cmp-flow-space: var(--nyc-sys-space-4xl); }</code></pre></div></nyc-accordion>
-
-<nyc-accordion class='code-view'><h3>Inspect code</h3><div><pre><code class="language-emacs-lisp">(mapconcat
-(lambda (str)
-  (format-spec
-   "[data-flow-space=\"%s\"] { --nyc-cmp-flow-space: var(--nyc-sys-space-%s); }\n"
-   (format-spec-make ?s str)))
-space-scale)</code></pre></div></nyc-accordion>
 </section>
 
 <section class="region flow"><h2><a id="grid" class="anchor" href="#grid"><i class="i-ri:anchor-line"></i></a>Grid</h2><p>
@@ -293,4 +327,4 @@ markup. Especially useful if the markup order is <code>heading</code> -&gt; <cod
   }
 }</code></pre></div></nyc-accordion>
 </section>
-</div></div></main><footer class="site-footer"><div class="center"><div class="row"><div class="column"><p>© 2024 City of New York</p></div></div></div></footer><script src="https://nycdigitalservice.github.io/nyc-design-system/assets/nycds-docs.js"></script></body></html>
+</div></div></main><footer class="site-footer"><div class="center"><div class="row"><div class="column"><p>© 2024 City of New York</p></div></div></div></footer><script src="http://localhost:8000/assets/nycds-docs.js"></script></body></html>

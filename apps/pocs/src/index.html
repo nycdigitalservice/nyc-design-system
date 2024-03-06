@@ -10,7 +10,7 @@
     <!-- <link rel="stylesheet" href="./parallax.css"> -->
   </head>
   <body class="u-reset">
-    <header>
+    <header class="header" data-variant="primary">
       <nav class="navigation" data-variant="primary">
         <ul>
           <li>
@@ -20,31 +20,51 @@
               </svg>
             </a>
           </li>
-          <li class="flex-1">
+          <li>
             <a href="#">Services and Information</a>
+            <ul>
+              <li><a href="#">Parking ticket or camera violation</a></li>
+            </ul>
+          </li>
+          <li>
             <a href="#">Events</a>
-            <a href="#">Agencies and Officials</a>
+          </li>
+          <li>
+            <a href="#">Your Government</a>
+            <ul>
+              <li>
+                <a href="#">Agencies and Officials</a>
+              </li>
+              <li>
+                <a href="#">Office of the Mayor</a>
+              </li>
+            </ul>
+          </li>
+          <li>
             <a href="#">Initiatives</a>
           </li>
           <li>
-            <form>
-              <input type="text" placeholder="Search" />
-              <button type="submit">Search</button>
-            </form>
-          </li>
-          <li>
-            <button type="button" class="button border-rainbow" data-size="sm">
-              <i class="i-custom:translate background-rainbow"></i>
-              <span class="text-rainbow">English</span>
-            </button>
+            <a href="#">311</a>
           </li>
         </ul>
-        <div>
-          <button type="button" class="button" data-size="sm">
-            Menu
-          </button>
-        </div>
       </nav>
+      <div>
+        <form class="search">
+          <input type="text" placeholder="Search" />
+          <button type="submit">Search</button>
+        </form>
+      </div>
+      <div class="translate">
+        <button type="button">
+          <i class="i-custom:translate background-rainbow"></i>
+          <span class="text-rainbow">English</span>
+        </button>
+      </div>      
+      <div hidden class="menu-toggle">
+        <button type="button" class="button" data-size="sm">
+          Menu
+        </button>
+      </div>
     </header>
     <main class="background-gradient">
       <header class="hero relative z-50 py-6 flex items-center">

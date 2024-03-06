@@ -7,6 +7,7 @@ export default defineConfig({
     filesystem: [
       //'../../docs/**/*.{html}',
       '../../scripts/publish/site-lisp/nyc-publish.el',
+      '../../packages/**/*.org',
     ],
   },
   presets: [

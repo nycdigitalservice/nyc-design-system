@@ -25,6 +25,59 @@ horizontal *padding*, and is *centered* by default
 
 The =region= class supplies consistent vertical padding to sections of content
 
+#+results: region-example
+
+#+results: region-example-controls
+
+#+name: region-example
+#+begin_src html :exports both :results replace html
+  <div class="example-wrapper">
+    <div class="region bg-yellow-500/50" data-region-space="sm" id="region-example-el">
+      <div class="bg-white">
+        <p>This is a region</p>
+      </div>
+    </div>
+  </div>
+#+end_src
+
+#+name: region-example-controls
+#+begin_src html :exports results :results replace html
+  <div class="flex">
+    <fieldset class="flex">
+      <legend>Select a space size:</legend>
+
+      <div>
+        <input type="radio" id="rs-sm" name="region-space" value="sm"
+               onchange="setRegionSpace(this)" checked />
+        <label for="rs-sm">Small</label>
+      </div>
+
+      <div>
+        <input type="radio" id="rs-base" name="region-space" value="base"
+               onchange="setRegionSpace(this)" />
+        <label for="rs-base">Base</label>
+      </div>
+
+      <div>
+        <input type="radio" id="rs-lg" name="region-space" value="lg"
+               onchange="setRegionSpace(this)" />
+        <label for="rs-lg">Large</label>
+      </div>
+    </fieldset>
+    <script>
+    function setRegionSpace(evt) {
+      console.log(evt, 'hey')
+      //const newVal = document.querySelector('input[name="region-space"]:checked').value;
+      const newVal = evt.value;
+      console.log(newVal);
+      document.getElementById('region-example-el').setAttribute('data-region-space', newVal)
+    }
+    </script>
+  </div>
+#+end_src
+
+*** CSS
+
 #+BEGIN_SRC css :noweb-ref region :noweb yes
   .region {
     --_region-space: var(--nyc-cmp-region-space);
@@ -36,7 +89,7 @@ The =region= class supplies consistent vertical padding to sections of content
 #+END_SRC
 
 #+name: region-space
-#+begin_src emacs-lisp
+#+begin_src emacs-lisp :exports none
   (setq space-scale '("sm" "base" "lg" "xl" "2xl" "3xl" "4xl"))
   (mapconcat
    (lambda (str)
@@ -71,7 +124,7 @@ this spacing on a per-element level.
 #+end_src
 
 #+name: flow-space
-#+begin_src emacs-lisp
+#+begin_src emacs-lisp :exports none
   (mapconcat
   (lambda (str)
     (format-spec

@@ -1020,6 +1020,26 @@
         "value": "{sys.dark.space.2xs}"
       }
     },
+    "header": {
+      "primary": {
+        "background": {
+          "type": "color",
+          "value": "{sys.dark.color.surface.high}"
+        },
+        "color": {
+          "type": "color",
+          "value": "{sys.dark.color.on-surface.high}"
+        },
+        "padding-inline": {
+          "type": "color",
+          "value": "{sys.dark.space.lg}"
+        },
+        "padding-block": {
+          "type": "color",
+          "value": "{sys.dark.space.sm}"
+        }
+      }
+    },
     "navigation": {
       "primary": {
         "background": {

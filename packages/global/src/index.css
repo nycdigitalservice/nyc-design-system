@@ -109,7 +109,7 @@ main {
 }
 
 /* Inputs */
-input,
+input:not([type='radio']),
 select {
   font-size: inherit;
   line-height: 2.25;

@@ -506,3 +506,27 @@ input:checked + .slider:before {
 /*     padding: 1rem 1.5rem; */
 /*   } */
 /* } */
+
+.header[data-variant="primary"] {
+  --_background: var(--nyc-cmp-header-primary-background, #000);
+  --_color: var(--nyc-cmp-header-primary-color, #FFF);
+  --_padding-inline: var(--nyc-cmp-header-primary-padding-inline, 2rem);
+  --_padding-block: var(--nyc-cmp-header-primary-padding-block, .75rem);
+
+  display: flex;
+  background: var(--_background);
+  color: var(--_color);
+  width: 100%;
+  padding-inline: var(--_padding-inline);
+  padding-block: var(--_padding-block);
+}
+
+.search {
+  input {
+    height: 2rem;
+  }
+  
+  & button {
+    display: none;
+  }
+}

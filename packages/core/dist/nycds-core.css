@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Sat, 24 Feb 2024 20:59:31 GMT
+ * Generated on Mon, 04 Mar 2024 23:34:28 GMT
  */
 
 :root {
@@ -121,6 +121,10 @@
   --nyc-sys-size-body-sm: var(--nyc-ref-length-100);
   --nyc-cmp-navigation-primary-color: var(--nyc-sys-color-on-surface-high);
   --nyc-cmp-navigation-primary-background: var(--nyc-sys-color-surface-high);
+  --nyc-cmp-header-primary-padding-block: var(--nyc-sys-space-sm);
+  --nyc-cmp-header-primary-padding-inline: var(--nyc-sys-space-lg);
+  --nyc-cmp-header-primary-color: var(--nyc-sys-color-on-surface-high);
+  --nyc-cmp-header-primary-background: var(--nyc-sys-color-surface-high);
   --nyc-cmp-button-gap: var(--nyc-sys-space-2xs);
   --nyc-cmp-button-border-radius: var(--nyc-sys-radius-xl);
   --nyc-cmp-flow-space: var(--nyc-sys-space-lg);
@@ -144,7 +148,7 @@
 
 /**
  * Do not edit directly
- * Generated on Sat, 24 Feb 2024 20:59:31 GMT
+ * Generated on Mon, 04 Mar 2024 23:34:28 GMT
  */
 
 :root[data-theme="dark"] {
@@ -401,7 +405,7 @@ main {
 
 /* Inputs */
 
-input,
+input:not([type='radio']),
 select {
   font-size: inherit;
   line-height: 2.25;
@@ -533,8 +537,8 @@ header > nav a, header > nav button {
 .navigation[data-variant=primary] {
   --_background: var(--nyc-cmp-navigation-primary-background, #000);
   --_color: var(--nyc-cmp-navigation-primary-color, #FFF);
-  --_padding-inline: var(--nyc-cmp-navigation-primary-padding-inline, 2rem);
-  --_padding-block: var(--nyc-cmp-navigation-primary-padding-block, .75rem);
+  --_padding-inline: var(--nyc-cmp-navigation-primary-padding-inline, 0);
+  --_padding-block: var(--nyc-cmp-navigation-primary-padding-block, 0);
   background: rgba(0,0,0,1);
   background: var(--_background);
   color: rgba(255,255,255,1);
@@ -554,7 +558,29 @@ header > nav a, header > nav button {
     padding-left: 0;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    position: relative;
   }
+
+.navigation[data-variant=primary] > ul > li {
+      display: flex;
+    }
+
+.navigation[data-variant=primary] > ul > li > ul {
+        background: var(--_background);
+        display: none;
+        position: fixed;
+        top: 56px;
+        left: 0;
+        z-index: 999;
+        width: 100%;
+      }
+
+.navigation[data-variant=primary] > ul > li:hover > ul {
+          display: flex;
+          flex-direction: column;
+        }
 
 /* Composition classes */
 
@@ -1140,8 +1166,7 @@ nyc-event-card .card__body, .card[data-variant="event"] .card__body {
 .card[data-variant="feature"] .card__media {
     grid-area: figure;
     overflow: hidden;
-    border-radius: 16px;
-    border-radius: var(--nyc-sys-radius-base);
+    border-radius: calc(var(--_border-radius) * .4);
   }
 
 .card[data-variant="feature"] .card__body {
