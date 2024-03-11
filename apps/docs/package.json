@@ -1,5 +1,6 @@
 {
   "name": "nyc-design-system-docs",
+  "private": "true",
   "version": "0.1.0",
   "description": "Builds assets for use in NYC Design System documentation website.",
   "main": "index.js",
