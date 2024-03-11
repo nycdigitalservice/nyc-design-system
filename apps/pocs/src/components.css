@@ -1,71 +1,71 @@
-/* Layout - Reel */
-.reel {
-  display: flex;
-  block-size: auto;
-  overflow-x: auto;
-  overflow-y: hidden;
-  scrollbar-color: #ccc transparent;
-  scroll-behavior: smooth;
-}
+/* /\* Layout - Reel *\/ */
+/* .reel { */
+/*   display: flex; */
+/*   block-size: auto; */
+/*   overflow-x: auto; */
+/*   overflow-y: hidden; */
+/*   scrollbar-color: #ccc transparent; */
+/*   scroll-behavior: smooth; */
+/* } */
 
-.reel > * {
-  flex: 0 0 auto;
-  display: flex;
-}
+/* .reel > * { */
+/*   flex: 0 0 auto; */
+/*   display: flex; */
+/* } */
 
 
-.reel > img {
-  block-size: 100%;
-  flex-basis: auto;
-  width: auto;
-}
+/* .reel > img { */
+/*   block-size: 100%; */
+/*   flex-basis: auto; */
+/*   width: auto; */
+/* } */
 
-.reel > * + * {
-  margin-inline-start: 1rem;
-}
+/* .reel > * + * { */
+/*   margin-inline-start: 1rem; */
+/* } */
 
-.reel.overflowing {
-  padding-block-end: 1rem;
+/* .reel.overflowing { */
+/*   padding-block-end: 1rem; */
 
-  & ~ .reel__nav {
-    visibility: visible;
-  }
-}
+/*   & ~ .reel__nav { */
+/*     visibility: visible; */
+/*   } */
+/* } */
 
-.reel::-webkit-scrollbar {
-  block-size: .5rem;
-}
+/* .reel::-webkit-scrollbar { */
+/*   block-size: .5rem; */
+/* } */
 
-.reel::-webkit-scrollbar-track {
-  background-color: transparent;
-}
+/* .reel::-webkit-scrollbar-track { */
+/*   background-color: transparent; */
+/* } */
 
-.reel::-webkit-scrollbar-thumb {
-  background-color: #ccc;
-  border-radius: 10px;
-  background-image: linear-gradient(tranparent 0, transparent 0.25rem, #ccc 0.25rem, #ccc 0.75rem, transparent 0.75rem);
-}
+/* .reel::-webkit-scrollbar-thumb { */
+/*   background-color: #ccc; */
+/*   border-radius: 10px; */
+/*   background-image: linear-gradient(tranparent 0, transparent 0.25rem, #ccc 0.25rem, #ccc 0.75rem, transparent 0.75rem); */
+/* } */
 
-.reel__nav {
-  visibility: hidden;
-  display: flex;
-  justify-content: flex-start;
-  gap: 4rem;
-}
+/* .reel__nav { */
+/*   visibility: hidden; */
+/*   display: flex; */
+/*   justify-content: flex-start; */
+/*   gap: 4rem; */
+/* } */
 
-.reel__nav button {
-  width: 2.75rem;
-  height: 2.75rem;
-  border-radius: 9999px;
-  justify-content: center;
-  touch-action: none;
-  box-shadow: none;
+/* .reel__nav button { */
+/*   width: 2.75rem; */
+/*   height: 2.75rem; */
+/*   border-radius: 9999px; */
+/*   justify-content: center; */
+/*   touch-action: none; */
+/*   box-shadow: none; */
 
-  /* TODO refactor how buttons deal with icons */
-  & i:last-child {
-    margin: 0;
-  }
-}
+/*   /\* TODO refactor how buttons deal with icons *\/ */
+/*   & i:last-child { */
+/*     margin: 0; */
+/*   } */
+/* } */
 
 /* Full-bleed right */
 .center--full-bleed-right {

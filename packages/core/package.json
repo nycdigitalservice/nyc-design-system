@@ -26,6 +26,7 @@
     "@nycds/icons": "workspace:^",
     "@nycds/navigation": "workspace:^",
     "@nycds/reset": "workspace:^",
+    "@nycds/reel": "workspace:^",
     "@nycds/select": "workspace:^",
     "@nycds/tab-group": "workspace:^",
     "@nycds/themes": "workspace:^",

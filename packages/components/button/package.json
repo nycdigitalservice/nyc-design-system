@@ -8,9 +8,6 @@
   "scripts": {
     "build": "esbuild src/js/index.js --bundle --outfile=dist/index.js"
   },
-  "devDependencies": {
-    "esbuild": "^0.19.1"    
-  },
   "dependencies": {
     "@nycds/utilities": "workspace:^"
   }

@@ -12,6 +12,8 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "lint:js": "eslint ./packages",
+    "lint-fix:js": "eslint --fix ./packages",
     "clean:docs": "rm -rf ./docs && mkdir ./docs",
     "watch:org": "node scripts/watch-org-files.js",
     "build:org": "node scripts/docker-emacs-run.js tangle ./packages",

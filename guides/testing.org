@@ -1,0 +1,4 @@
+#+title: Testing
+
+The NYC Design System project utilizes the [[https://www.cypress.io/][Cypress]] testing framework
+for both unit and end-to-end testing.

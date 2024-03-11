@@ -1,0 +1,18 @@
+#+title: Utilities
+
+This package provides Javascript and CSS utilities.
+
+** Javascript
+
+*** Toggle expand
+
+The toggle-expand function takes an element
+#+begin_src js :tangle src/toggle-expand.js
+  export default (controller) => {
+    const controls = document.getElementById(controller.getAttribute('aria-controls'))
+    const isExpanded = controller.getAttribute('aria-expanded').toLowerCase() === 'true'
+    controller.setAttribute('aria-expanded', !isExpanded)
+    isExpanded ? controls.setAttribute('hidden', '') : controls.removeAttribute('hidden')
+    return controller
+  }
+#+end_src
