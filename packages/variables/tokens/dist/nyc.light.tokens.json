@@ -4,19 +4,19 @@
       "body": {
         "sm": {
           "type": "dimension",
-          "value": "{ref.length.100}"
+          "value": "{ref.length.16}"
         },
         "base": {
           "type": "dimension",
-          "value": "{ref.length.112}"
+          "value": "{ref.length.18}"
         },
         "lg": {
           "type": "dimension",
-          "value": "{ref.length.125}"
+          "value": "{ref.length.20}"
         },
         "xl": {
           "type": "dimension",
-          "value": "{ref.length.150}"
+          "value": "{ref.length.24}"
         },
         "fluid": {
           "xl": {
@@ -28,15 +28,15 @@
       "heading": {
         "sm": {
           "type": "dimension",
-          "value": "{ref.length.200}"
+          "value": "{ref.length.32}"
         },
         "base": {
           "type": "dimension",
-          "value": "{ref.length.312}"
+          "value": "{ref.length.50}"
         },
         "lg": {
           "type": "dimension",
-          "value": "{ref.length.625}"
+          "value": "{ref.length.100}"
         },
         "fluid": {
           "lg": {
@@ -56,42 +56,42 @@
       "border": {
         "base": {
           "type": "dimension",
-          "value": "{ref.length.12}"
+          "value": "{ref.length.2}"
         },
         "sm": {
           "type": "dimension",
-          "value": "{ref.length.9}"
+          "value": "{ref.length.1-5}"
         }
       },
       "line-height": {
         "body": {
           "type": "dimension",
-          "value": "{ref.length.150}"
+          "value": "{ref.length.24}"
         }
       },
       "width": {
         "surface": {
           "base": {
             "type": "dimension",
-            "value": "{ref.length.2250}"
+            "value": "{ref.length.360}"
           },
           "lg": {
             "type": "dimension",
-            "value": "{ref.length.2750}"
+            "value": "{ref.length.440}"
           },
           "sm": {
             "type": "dimension",
-            "value": "{ref.length.1500}"
+            "value": "{ref.length.240}"
           }
         },
         "page": {
           "max": {
             "type": "dimension",
-            "value": "{ref.length.7250}"
+            "value": "{ref.length.1160}"
           },
           "min": {
             "type": "dimension",
-            "value": "{ref.length.2000}"
+            "value": "{ref.length.320}"
           }
         }
       }
@@ -99,53 +99,53 @@
     "radius": {
       "sm": {
         "type": "dimension",
-        "value": "{ref.length.50}"
+        "value": "{ref.length.8}"
       },
       "base": {
         "type": "dimension",
-        "value": "{ref.length.100}"
+        "value": "{ref.length.16}"
       },
       "lg": {
         "type": "dimension",
-        "value": "{ref.length.150}"
+        "value": "{ref.length.24}"
       },
       "xl": {
         "type": "dimension",
-        "value": "{ref.length.250}"
+        "value": "{ref.length.40}"
       }
     },
     "space": {
       "2xs": {
         "type": "dimension",
-        "value": "{ref.length.50}"
+        "value": "{ref.length.8}"
       },
       "sm": {
         "type": "dimension",
-        "value": "{ref.length.75}"
+        "value": "{ref.length.12}"
       },
       "base": {
         "type": "dimension",
-        "value": "{ref.length.100}"
+        "value": "{ref.length.16}"
       },
       "lg": {
         "type": "dimension",
-        "value": "{ref.length.150}"
+        "value": "{ref.length.24}"
       },
       "xl": {
         "type": "dimension",
-        "value": "{ref.length.250}"
+        "value": "{ref.length.40}"
       },
       "2xl": {
         "type": "dimension",
-        "value": "{ref.length.400}"
+        "value": "{ref.length.64}"
       },
       "3xl": {
         "type": "dimension",
-        "value": "{ref.length.500}"
+        "value": "{ref.length.80}"
       },
       "4xl": {
         "type": "dimension",
-        "value": "{ref.length.750}"
+        "value": "{ref.length.120}"
       },
       "fluid": {
         "3xl": {
@@ -163,7 +163,7 @@
       },
       "xs": {
         "type": "dimension",
-        "value": "{ref.length.62}"
+        "value": "{ref.length.10}"
       }
     },
     "color": {
