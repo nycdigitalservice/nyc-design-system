@@ -145,101 +145,101 @@
       }
     },
     "length": {
-      "9": {
-        "type": "dimension",
-        "value": 1.5
-      },
-      "12": {
+      "2": {
         "type": "dimension",
         "value": 2
       },
-      "50": {
+      "8": {
         "type": "dimension",
         "value": 8
       },
-      "62": {
+      "10": {
         "type": "dimension",
         "value": 10
       },
-      "75": {
+      "12": {
         "type": "dimension",
         "value": 12
       },
-      "88": {
+      "14": {
         "type": "dimension",
         "value": 14
       },
-      "100": {
+      "16": {
         "type": "dimension",
         "value": 16
       },
-      "112": {
+      "18": {
         "type": "dimension",
         "value": 18
       },
-      "125": {
+      "20": {
         "type": "dimension",
         "value": 20
       },
-      "150": {
+      "24": {
         "type": "dimension",
         "value": 24
       },
-      "175": {
+      "28": {
         "type": "dimension",
         "value": 28
       },
-      "200": {
+      "32": {
         "type": "dimension",
         "value": 32
       },
-      "225": {
+      "36": {
         "type": "dimension",
         "value": 36
       },
-      "250": {
+      "40": {
         "type": "dimension",
         "value": 40
       },
-      "312": {
+      "50": {
         "type": "dimension",
         "value": 50
       },
-      "400": {
+      "64": {
         "type": "dimension",
         "value": 64
       },
-      "500": {
+      "80": {
         "type": "dimension",
         "value": 80
       },
-      "625": {
+      "100": {
         "type": "dimension",
         "value": 100
       },
-      "750": {
+      "120": {
         "type": "dimension",
         "value": 120
       },
-      "1500": {
+      "240": {
         "type": "dimension",
         "value": 240
       },
-      "2000": {
+      "320": {
         "type": "dimension",
         "value": 320
       },
-      "2250": {
+      "360": {
         "type": "dimension",
         "value": 360
       },
-      "2750": {
+      "440": {
         "type": "dimension",
         "value": 440
       },
-      "7250": {
+      "1160": {
         "type": "dimension",
         "value": 1160
+      },
+      "1-5": {
+        "type": "dimension",
+        "value": 1.5
       }
     }
   },
@@ -249,29 +249,29 @@
         "body": {
           "sm": {
             "type": "dimension",
-            "value": "{ref.length.100}"
+            "value": "{ref.length.16}"
           },
           "base": {
             "type": "dimension",
-            "value": "{ref.length.112}"
+            "value": "{ref.length.18}"
           },
           "lg": {
             "type": "dimension",
-            "value": "{ref.length.125}"
+            "value": "{ref.length.20}"
           },
           "xl": {
             "type": "dimension",
-            "value": "{ref.length.150}"
+            "value": "{ref.length.24}"
           },
           "fluid": {
             "xl": {
               "max": {
                 "type": "dimension",
-                "value": "{ref.length.150}"
+                "value": "{ref.length.24}"
               },
               "min": {
                 "type": "dimension",
-                "value": "{ref.length.112}"
+                "value": "{ref.length.18}"
               }
             }
           }
@@ -279,45 +279,45 @@
         "heading": {
           "sm": {
             "type": "dimension",
-            "value": "{ref.length.200}"
+            "value": "{ref.length.32}"
           },
           "base": {
             "type": "dimension",
-            "value": "{ref.length.312}"
+            "value": "{ref.length.50}"
           },
           "lg": {
             "type": "dimension",
-            "value": "{ref.length.625}"
+            "value": "{ref.length.100}"
           },
           "fluid": {
             "lg": {
               "min": {
                 "type": "dimension",
-                "value": "{ref.length.312}"
+                "value": "{ref.length.50}"
               },
               "max": {
                 "type": "dimension",
-                "value": "{ref.length.625}"
+                "value": "{ref.length.100}"
               }
             },
             "base": {
               "min": {
                 "type": "dimension",
-                "value": "{ref.length.250}"
+                "value": "{ref.length.40}"
               },
               "max": {
                 "type": "dimension",
-                "value": "{ref.length.312}"
+                "value": "{ref.length.50}"
               }
             },
             "sm": {
               "min": {
                 "type": "dimension",
-                "value": "{ref.length.112}"
+                "value": "{ref.length.18}"
               },
               "max": {
                 "type": "dimension",
-                "value": "{ref.length.200}"
+                "value": "{ref.length.32}"
               }
             }
           }
@@ -325,42 +325,42 @@
         "border": {
           "base": {
             "type": "dimension",
-            "value": "{ref.length.12}"
+            "value": "{ref.length.2}"
           },
           "sm": {
             "type": "dimension",
-            "value": "{ref.length.9}"
+            "value": "{ref.length.1-5}"
           }
         },
         "line-height": {
           "body": {
             "type": "dimension",
-            "value": "{ref.length.150}"
+            "value": "{ref.length.24}"
           }
         },
         "width": {
           "surface": {
             "base": {
               "type": "dimension",
-              "value": "{ref.length.2250}"
+              "value": "{ref.length.360}"
             },
             "lg": {
               "type": "dimension",
-              "value": "{ref.length.2750}"
+              "value": "{ref.length.440}"
             },
             "sm": {
               "type": "dimension",
-              "value": "{ref.length.1500}"
+              "value": "{ref.length.240}"
             }
           },
           "page": {
             "max": {
               "type": "dimension",
-              "value": "{ref.length.7250}"
+              "value": "{ref.length.1160}"
             },
             "min": {
               "type": "dimension",
-              "value": "{ref.length.2000}"
+              "value": "{ref.length.320}"
             }
           }
         }
@@ -368,89 +368,89 @@
       "radius": {
         "sm": {
           "type": "dimension",
-          "value": "{ref.length.50}"
+          "value": "{ref.length.8}"
         },
         "base": {
           "type": "dimension",
-          "value": "{ref.length.100}"
+          "value": "{ref.length.16}"
         },
         "lg": {
           "type": "dimension",
-          "value": "{ref.length.150}"
+          "value": "{ref.length.24}"
         },
         "xl": {
           "type": "dimension",
-          "value": "{ref.length.250}"
+          "value": "{ref.length.40}"
         }
       },
       "space": {
         "2xs": {
           "type": "dimension",
-          "value": "{ref.length.50}"
+          "value": "{ref.length.8}"
         },
         "sm": {
           "type": "dimension",
-          "value": "{ref.length.75}"
+          "value": "{ref.length.12}"
         },
         "base": {
           "type": "dimension",
-          "value": "{ref.length.100}"
+          "value": "{ref.length.16}"
         },
         "lg": {
           "type": "dimension",
-          "value": "{ref.length.150}"
+          "value": "{ref.length.24}"
         },
         "xl": {
           "type": "dimension",
-          "value": "{ref.length.250}"
+          "value": "{ref.length.40}"
         },
         "2xl": {
           "type": "dimension",
-          "value": "{ref.length.400}"
+          "value": "{ref.length.64}"
         },
         "3xl": {
           "type": "dimension",
-          "value": "{ref.length.500}"
+          "value": "{ref.length.80}"
         },
         "4xl": {
           "type": "dimension",
-          "value": "{ref.length.750}"
+          "value": "{ref.length.120}"
         },
         "fluid": {
           "3xl": {
             "min": {
               "type": "dimension",
-              "value": "{ref.length.400}"
+              "value": "{ref.length.64}"
             },
             "max": {
               "type": "dimension",
-              "value": "{ref.length.500}"
+              "value": "{ref.length.80}"
             }
           },
           "lg": {
             "max": {
               "type": "dimension",
-              "value": "{ref.length.150}"
+              "value": "{ref.length.24}"
             },
             "min": {
               "type": "dimension",
-              "value": "{ref.length.100}"
+              "value": "{ref.length.16}"
             }
           },
           "sm": {
             "max": {
               "type": "dimension",
-              "value": "{ref.length.75}"
+              "value": "{ref.length.12}"
             },
             "min": {
               "type": "dimension",
-              "value": "{ref.length.50}"
+              "value": "{ref.length.8}"
             }
           }
         },
         "xs": {
           "type": "dimension",
-          "value": "{ref.length.62}"
+          "value": "{ref.length.10}"
         }
       },
       "color": {
@@ -583,29 +583,29 @@
         "body": {
           "sm": {
             "type": "dimension",
-            "value": "{ref.length.100}"
+            "value": "{ref.length.16}"
           },
           "base": {
             "type": "dimension",
-            "value": "{ref.length.112}"
+            "value": "{ref.length.18}"
           },
           "lg": {
             "type": "dimension",
-            "value": "{ref.length.125}"
+            "value": "{ref.length.20}"
           },
           "xl": {
             "type": "dimension",
-            "value": "{ref.length.150}"
+            "value": "{ref.length.24}"
           },
           "fluid": {
             "xl": {
               "max": {
                 "type": "dimension",
-                "value": "{ref.length.150}"
+                "value": "{ref.length.24}"
               },
               "min": {
                 "type": "dimension",
-                "value": "{ref.length.112}"
+                "value": "{ref.length.18}"
               }
             }
           }
@@ -613,45 +613,45 @@
         "heading": {
           "sm": {
             "type": "dimension",
-            "value": "{ref.length.200}"
+            "value": "{ref.length.32}"
           },
           "base": {
             "type": "dimension",
-            "value": "{ref.length.312}"
+            "value": "{ref.length.50}"
           },
           "lg": {
             "type": "dimension",
-            "value": "{ref.length.625}"
+            "value": "{ref.length.100}"
           },
           "fluid": {
             "lg": {
               "min": {
                 "type": "dimension",
-                "value": "{ref.length.312}"
+                "value": "{ref.length.50}"
               },
               "max": {
                 "type": "dimension",
-                "value": "{ref.length.625}"
+                "value": "{ref.length.100}"
               }
             },
             "base": {
               "min": {
                 "type": "dimension",
-                "value": "{ref.length.250}"
+                "value": "{ref.length.40}"
               },
               "max": {
                 "type": "dimension",
-                "value": "{ref.length.312}"
+                "value": "{ref.length.50}"
               }
             },
             "sm": {
               "min": {
                 "type": "dimension",
-                "value": "{ref.length.112}"
+                "value": "{ref.length.18}"
               },
               "max": {
                 "type": "dimension",
-                "value": "{ref.length.200}"
+                "value": "{ref.length.32}"
               }
             }
           }
@@ -659,42 +659,42 @@
         "border": {
           "base": {
             "type": "dimension",
-            "value": "{ref.length.12}"
+            "value": "{ref.length.2}"
           },
           "sm": {
             "type": "dimension",
-            "value": "{ref.length.9}"
+            "value": "{ref.length.1-5}"
           }
         },
         "line-height": {
           "body": {
             "type": "dimension",
-            "value": "{ref.length.150}"
+            "value": "{ref.length.24}"
           }
         },
         "width": {
           "surface": {
             "base": {
               "type": "dimension",
-              "value": "{ref.length.2250}"
+              "value": "{ref.length.360}"
             },
             "lg": {
               "type": "dimension",
-              "value": "{ref.length.2750}"
+              "value": "{ref.length.440}"
             },
             "sm": {
               "type": "dimension",
-              "value": "{ref.length.1500}"
+              "value": "{ref.length.240}"
             }
           },
           "page": {
             "max": {
               "type": "dimension",
-              "value": "{ref.length.7250}"
+              "value": "{ref.length.1160}"
             },
             "min": {
               "type": "dimension",
-              "value": "{ref.length.2000}"
+              "value": "{ref.length.320}"
             }
           }
         }
@@ -702,89 +702,89 @@
       "radius": {
         "sm": {
           "type": "dimension",
-          "value": "{ref.length.50}"
+          "value": "{ref.length.8}"
         },
         "base": {
           "type": "dimension",
-          "value": "{ref.length.100}"
+          "value": "{ref.length.16}"
         },
         "lg": {
           "type": "dimension",
-          "value": "{ref.length.150}"
+          "value": "{ref.length.24}"
         },
         "xl": {
           "type": "dimension",
-          "value": "{ref.length.250}"
+          "value": "{ref.length.40}"
         }
       },
       "space": {
         "2xs": {
           "type": "dimension",
-          "value": "{ref.length.50}"
+          "value": "{ref.length.8}"
         },
         "sm": {
           "type": "dimension",
-          "value": "{ref.length.75}"
+          "value": "{ref.length.12}"
         },
         "base": {
           "type": "dimension",
-          "value": "{ref.length.100}"
+          "value": "{ref.length.16}"
         },
         "lg": {
           "type": "dimension",
-          "value": "{ref.length.150}"
+          "value": "{ref.length.24}"
         },
         "xl": {
           "type": "dimension",
-          "value": "{ref.length.250}"
+          "value": "{ref.length.40}"
         },
         "2xl": {
           "type": "dimension",
-          "value": "{ref.length.400}"
+          "value": "{ref.length.64}"
         },
         "3xl": {
           "type": "dimension",
-          "value": "{ref.length.500}"
+          "value": "{ref.length.80}"
         },
         "4xl": {
           "type": "dimension",
-          "value": "{ref.length.750}"
+          "value": "{ref.length.120}"
         },
         "fluid": {
           "3xl": {
             "min": {
               "type": "dimension",
-              "value": "{ref.length.400}"
+              "value": "{ref.length.64}"
             },
             "max": {
               "type": "dimension",
-              "value": "{ref.length.500}"
+              "value": "{ref.length.80}"
             }
           },
           "lg": {
             "max": {
               "type": "dimension",
-              "value": "{ref.length.150}"
+              "value": "{ref.length.24}"
             },
             "min": {
               "type": "dimension",
-              "value": "{ref.length.100}"
+              "value": "{ref.length.16}"
             }
           },
           "sm": {
             "max": {
               "type": "dimension",
-              "value": "{ref.length.75}"
+              "value": "{ref.length.12}"
             },
             "min": {
               "type": "dimension",
-              "value": "{ref.length.50}"
+              "value": "{ref.length.8}"
             }
           }
         },
         "xs": {
           "type": "dimension",
-          "value": "{ref.length.62}"
+          "value": "{ref.length.10}"
         }
       },
       "color": {
