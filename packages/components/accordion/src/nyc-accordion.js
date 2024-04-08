@@ -1,3 +1,4 @@
+// [[file:../js.org::*NYCAccordion custom element][NYCAccordion custom element:1]]
 import Accordion from './accordion'
 
 class NYCAccordion extends HTMLElement {
@@ -8,3 +9,4 @@ class NYCAccordion extends HTMLElement {
 }
 
 customElements.define('nyc-accordion', NYCAccordion)
+// NYCAccordion custom element:1 ends here

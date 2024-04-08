@@ -1,3 +1,4 @@
+// [[file:../js.org::*Accordion class][Accordion class:1]]
 import { chunkArray, chunkr, isAlternating } from '@nycds/utilities'
 
 export default class Accordion {
@@ -161,7 +162,7 @@ export default class Accordion {
   createButton (label, panelId) {
     const labelEl = document.createElement('span')
     labelEl.append(label)
-    const button = document.createElement('button', { is: 'nyc-toggle-button' })
+    const button = document.createElement('button', { is: 'nyc-expand-button' })
     button.setAttribute('aria-controls', panelId)
     button.setAttribute('aria-expanded', false)
     button.innerHTML = "<i class='i-ri:arrow-down-s-line' aria-hidden='true'></i>"
@@ -227,3 +228,4 @@ export default class Accordion {
     return null
   }
 }
+// Accordion class:1 ends here

@@ -46,6 +46,14 @@ summary {
   padding-block: .75rem;
 }
 
+code {
+  display: inline-flex;
+  padding: .1rem;
+  border: 1px solid #ddd;
+  border-radius: .5rem;
+  background: #fafafa;
+}
+
 .example-wrapper {
   padding: var(--nyc-sys-space-base);
   border: 2px solid var(--nyc-sys-color-border-base);

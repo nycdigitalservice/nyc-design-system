@@ -2209,14 +2209,47 @@
     }
   })();
 
-  // ../../packages/utilities/src/js/toggle.js
-  var toggle_default = (controller) => {
-    const controls = document.getElementById(controller.getAttribute("aria-controls"));
-    const isExpanded = controller.getAttribute("aria-expanded").toLowerCase() === "true";
-    controller.setAttribute("aria-expanded", !isExpanded);
-    isExpanded ? controls.setAttribute("hidden", "") : controls.removeAttribute("hidden");
-    return controller;
+  // ../../packages/components/expand-button/src/nyc-expand-button.js
+  var NYCExpandButton = class extends HTMLButtonElement {
+    connectedCallback() {
+      try {
+        if (!this.hasAttribute("aria-controls")) {
+          throw new Error(
+            'No "aria-controls" attribute found. "aria-controls" must be set to the ID of the element you are expanding'
+          );
+        }
+        this.target = document.getElementById(this.getAttribute("aria-controls"));
+        if (!this.target) {
+          throw new Error('"aria-controls" target ID not found');
+        }
+        if (!this.hasAttribute("aria-expanded")) {
+          this.setAttribute("aria-expanded", false);
+        }
+        document.addEventListener(
+          "DOMContentLoaded",
+          () => this.toggleTarget()
+        );
+        this.addEventListener("click", this.toggleExpand);
+      } catch (e) {
+        console.error(`[ToggleButton] ${e}`, this);
+      }
+    }
+    toggleExpand() {
+      this.setAttribute("aria-expanded", !this.isExpanded());
+      this.toggleTarget();
+    }
+    toggleTarget() {
+      this.target.toggleAttribute("hidden", !this.isExpanded());
+    }
+    isExpanded() {
+      return this.getAttribute("aria-expanded").toLowerCase() === "true";
+    }
   };
+
+  // ../../packages/components/expand-button/src/index.js
+  if (!customElements.get("nyc-expand-button")) {
+    window.customElements.define("nyc-expand-button", NYCExpandButton, { extends: "button" });
+  }
 
   // ../../packages/utilities/src/js/chunk-array.js
   var chunk_array_default = (array, chunkSize) => {
@@ -2260,39 +2293,6 @@
     })(arr);
     return res;
   };
-
-  // ../../packages/components/button/src/js/toggle-button.js
-  var ToggleButton = class extends HTMLButtonElement {
-    connectedCallback() {
-      if (!this.hasAttribute("aria-controls")) {
-        console.error(
-          `ToggleButton: "aria-controls" must be set to the
-                          ID of the element you are toggling`
-        );
-        return;
-      }
-      if (!this.hasAttribute("aria-expanded")) {
-        console.error(
-          `ToggleButton: "aria-expanded" must be set to the
-               toggled elements initial visibility, either
-               "true" or "false"`
-        );
-        return;
-      }
-      this.addEventListener("click", this);
-    }
-    handleEvent(e) {
-      this["on" + e.type](e);
-    }
-    onclick(e) {
-      toggle_default(this);
-    }
-  };
-
-  // ../../packages/components/button/src/js/index.js
-  if (!customElements.get("nyc-toggle-button")) {
-    window.customElements.define("nyc-toggle-button", ToggleButton, { extends: "button" });
-  }
 
   // ../../packages/components/accordion/src/accordion.js
   var Accordion = class {
@@ -2414,7 +2414,7 @@
     createButton(label, panelId) {
       const labelEl = document.createElement("span");
       labelEl.append(label);
-      const button = document.createElement("button", { is: "nyc-toggle-button" });
+      const button = document.createElement("button", { is: "nyc-expand-button" });
       button.setAttribute("aria-controls", panelId);
       button.setAttribute("aria-expanded", false);
       button.innerHTML = "<i class='i-ri:arrow-down-s-line' aria-hidden='true'></i>";
