@@ -43,7 +43,7 @@ Escape is pressed or on mouse out.
     --_color: var(--nyc-cmp-tooltip-color, inherit);
     --_shadow-alpha: 50%;
 
-    --isRTL: -1;
+    --is-rtl: -1;
 
     --_bottom-tip: conic-gradient(from -30deg at bottom, #0000, #000 1deg 60deg, #0000 61deg) bottom / 100% 50% no-repeat;
     --_top-tip: conic-gradient(from 150deg at top, #0000, #000 1deg 60deg, #0000 61deg) top / 100% 50% no-repeat;
@@ -82,7 +82,7 @@ Escape is pressed or on mouse out.
     }
 
     &:dir(rtl) {
-      --isRTL: 1;
+      --is-rtl: 1;
     }
 
     /* create a stacking context for elements with > nyc-tooltips */
@@ -134,7 +134,7 @@ Escape is pressed or on mouse out.
     &:is([tip-position="top"], [tip-position="block-start"], :not([tip-position])) {
       inset-inline-start: 50%;
       inset-block-end: calc(100% + var(--_p-block) + var(--_triangle-size));
-      --_x: calc(50% * var(--isRTL));
+      --_x: calc(50% * var(--is-rtl));
 
       @media (prefers-reduced-motion: no-preference) {
         :has(> &):not(:hover, :active) nyc-tooltip {
@@ -157,7 +157,7 @@ Escape is pressed or on mouse out.
 
       @media (prefers-reduced-motion: no-preference) {
         :has(> &):not(:hover, :active) nyc-tooltip {
-          --_x: calc(var(--isRTL) * -3px * -1);
+          --_x: calc(var(--is-rtl) * -3px * -1);
         }
       }
 
@@ -176,7 +176,7 @@ Escape is pressed or on mouse out.
     &:is([tip-position="bottom"], [tip-position="block-end"]) {
       inset-inline-start: 50%;
       inset-block-start: calc(100% + var(--_p-block) + var(--_triangle-size));
-      --_x: calc(50% * var(--isRTL));
+      --_x: calc(50% * var(--is-rtl));
 
       @media (prefers-reduced-motion: no-preference) {
         :has(> &):not(:hover, :active) nyc-tooltip {
@@ -199,7 +199,7 @@ Escape is pressed or on mouse out.
 
       @media (prefers-reduced-motion: no-preference) {
         :has(> &):not(:hover, :active) nyc-tooltip {
-          --_x: calc(var(--isRTL) * 3px * -1);
+          --_x: calc(var(--is-rtl) * 3px * -1);
         }
       }
 

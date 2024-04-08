@@ -6,11 +6,13 @@ nyc-accordion,
 .accordion__group {
   display: flex;
   flex-direction: column;
+
   & > :--heading {
     --_background: var(--nyc-cmp-accordion-heading-background, transparent);
     --_color: var(--nyc-cmp-accordion-heading-color, inherit);
     --_font-size: var(--nyc-cmp-accordion-heading-font-size, 1rem);
     --_padding: var(--nyc-cmp-accordion-heading-padding, 1rem);
+
     background: var(--_background);
     color: var(--_color);
     font-size: var(--_font-size);
@@ -18,24 +20,28 @@ nyc-accordion,
     flex: 1;
     padding: var(--_padding);
     margin: 0;
-    border-bottom: 2px solid currentColor;
+    border-bottom: 2px solid currentcolor;
+
     & button {
       cursor: pointer;
-      color: currentColor;
+      color: currentcolor;
       display: flex;
       font-weight: inherit;
       align-items: center;
       justify-content: flex-start;
       text-align: left;
       width: 100%;
+
       & :first-child {
         margin-right: .5rem;
       }
-      & [class^=i-]:last-child {
+
+      & [class^="i-"]:last-child {
         margin-inline-start: auto;
         font-size: 1.5rem;
       }
-      &[aria-expanded=true] i {
+
+      &[aria-expanded="true"] i {
         transform: rotate(-180deg);
       }
     }
@@ -44,6 +50,7 @@ nyc-accordion,
   & > :--heading + :where(div,section) {
     --_background: var(--nyc-cmp-accordion-body-background, transparent);
     --_padding: var(--nyc-cmp-accordion-body-padding, 1rem);
+
     background: var(--_background);
     padding: var(--_padding);
   }

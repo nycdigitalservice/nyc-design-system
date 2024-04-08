@@ -1,4 +1,4 @@
-import ToggleButton from './toggle-button'
-if (!customElements.get('nyc-toggle-button')) {
-  window.customElements.define('nyc-toggle-button', ToggleButton, { extends: 'button' })
+import NYCExpandButton from './nyc-expand-button'
+if (!customElements.get('nyc-expand-button')) {
+  window.customElements.define('nyc-expand-button', NYCExpandButton, { extends: 'button' })
 }

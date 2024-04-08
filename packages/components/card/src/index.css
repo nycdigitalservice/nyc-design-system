@@ -5,7 +5,7 @@
   --_color: var(--nyc-cmp-card-color, inherit);
   --_color-hover: var(--nyc-cmp-card-color-hover, inherit);
   --_body-color: var(--nyc-cmp-card-body-color, inherit);
-  --_border-color: var(--nyc-cmp-card-border-color, hsla(0, 0%, 93%, 1));
+  --_border-color: var(--nyc-cmp-card-border-color, hsl(0deg 0% 93% / 100%));
   --_border-width: var(--nyc-cmp-card-border-width, 1px);
   --_border-radius: var(--nyc-cmp-card-radius-base, 4px);
   --_border: var(--nyc-cmp-card-border, var(--_border-width) solid var(--_border-color));
@@ -15,20 +15,19 @@
   --_padding: var(--nyc-cmp-card-padding, 1rem);
 
   /* container prop is collapsing the reel card slides */
+
   /* container: card-container / inline-size; */
 
   position: relative;
   display: flex;
   flex-direction: column;
-
   background-color: var(--_background);
   color: var(--_color);
-
   border: var(--_border-width) solid var(--_border-color);
   border-radius: var(--_border-radius);
   box-shadow: var(--_shadow);
-
   transition: all .3s ease;
+
   /* min-block-size: 2.5rem; */
 
   &:hover {
@@ -37,14 +36,18 @@
     border: var(--_border-hover);
   }
 }
+
 .card > * + * {
   margin-block-start: .5rem;
 }
+
 .card__header {
   padding: var(--_padding);
+
   /* padding-block-end: 0; */
   display: flex;
   flex: 1;
+
   & :--heading {
     flex: 1;
     font-size: var(--_heading-font-size);
@@ -54,13 +57,16 @@
 .card:not(:has(.card__body)) .card__header {
   padding-block: var(--nyc-sys-space-base);
 }
+
 .card__media {
   order: -1;
   margin-block-start: 0;
+
   & img {
     width: 100%;
   }
 }
+
 .card__body {
   flex-grow: 1;
   padding: var(--_padding);
@@ -68,21 +74,21 @@
   color: var(--_body-color);
   font-size: var(--_body-font-size);
 }
+
 .card__primary-action,
 .card__primary-action:link {
   display: flex;
   align-items: flex-start;
-  color: currentColor;
+  color: currentcolor;
   text-decoration: none;
-  &:before {
+
+  &::before {
     content: '';
     position: absolute;
-    top: 0; /* 2 */
-    left: 0; /* 2 */
-    right: 0; /* 2 */
-    bottom: 0; /* 2 */
+    inset: 0; /* 2 */ /* 2 */ /* 2 */ /* 2 */
     Z-index: 1; /* 3 */
   }
+
   & > :first-child {
     flex: 1;
     display: -webkit-box;
@@ -91,15 +97,18 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
+
   &:focus {
     text-decoration: underline;
   }
-  & [class*=i-] {
+
+  & [class*="i-"] {
     font-size: 1.5rem;
     margin-inline-start: .5rem;
   }
 }
-.card[data-variant=large] {
+
+.card[data-variant="large"] {
   & * {
     display: flex;
     flex-wrap: wrap;
@@ -119,10 +128,12 @@
     /* flex-direction: column; */
     height: 100%;
     width: 100%;
+
     /* align-items: center; */
     & > :first-child {
       flex-basis: 280px;
     }
+
     & > :last-child {
       margin-block-start: auto;
       margin-inline-start: auto;
@@ -130,12 +141,15 @@
   }
 
 }
+
 nyc-event-card,
 .card[data-variant="event"] {
   --_border-radius: var(--nyc-cmp-card-radius-lg);
+
   max-width: var(--nyc-cmp-card-width-lg);
   width: 100%;
   min-height: 22.5rem;
+
   &:hover {
       --_border-radius: var(--nyc-cmp-card-radius-lg-hover);
   }
@@ -149,15 +163,18 @@ nyc-event-card,
 .card__event-details {
   margin-block-start: auto;
 }
+
 .card[data-variant="feature"] {
   --_border-radius: var(--nyc-cmp-card-radius-xl);
 
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: auto 1fr;
-  grid-template-areas:
-    "heading figure"
-    "body figure";
+  
+  /* grid-template-columns: repeat(2, 1fr); */
+  
+  /* grid-template-rows: auto 1fr; */
+  grid-template:
+    "heading figure" repeat(2, 1fr) / auto 1fr
+    "body figure" repeat(2, 1fr) / auto 1fr;
   row-gap: 0;
   padding: var(--_padding);
 
@@ -174,43 +191,76 @@ nyc-event-card,
   & .card__body {
     grid-area: body;
   }
-
 }
+
 .card[data-variant="topic"] {
   --nyc-cmp-card-heading-size: var(--nyc-sys-size-body-fluid-xl);
 }
+
 /* @container grid-container (max-width: 768px) { */
+
 /*   .card { */
+
 /*     flex-direction: row; */
+
 /*     flex-wrap: wrap; */
+
 /*     overflow: hidden; */
+
 /*   } */
+
 /*   .card__header { */
+
 /*     flex: 1; */
+
 /*     flex-basis: 100%; */
+
 /*   } */
+
 /*   .card__media { */
+
 /*     width: 35%; */
+
 /*     height: 100%; */
+
 /*     position: absolute; */
+
 /*     & img { */
+
 /*       width: 100%; */
+
 /*       height: 100%; */
+
 /*       object-fit: cover; */
+
 /*     } */
+
 /*   } */
+
 /*   .card__body { */
+
 /*     flex-grow: 1; */
+
 /*     flex-basis: 100%; */
+
 /*   } */
+
 /*   .card:has(.card__media) { */
+
 /*     & .card__header, */
+
 /*     & .card__body { */
+
 /*       margin-left: auto; */
+
 /*       flex-basis: 65%; */
+
 /*       flex-grow: 0; */
+
 /*     } */
+
 /*   } */
+
 /* } */
 @container card-container (min-width: 320px) {
   .card__media {
@@ -218,16 +268,19 @@ nyc-event-card,
     height: 100%;
     position: absolute;
     aspect-ratio: 1/1;
+
     & img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
   }
+
   .card__body {
     flex-grow: 1;
     flex-basis: 100%;
   }
+
   .card:has(.card__media) {
     & .card__header,
     & .card__body {
@@ -238,8 +291,13 @@ nyc-event-card,
     }
   }    
 }
+
 /* @container card (min-width: 11rem) and (max-width: 15rem) { */
+
 /*   .card__header { */
+
 /*     aspect-ratio: 4 / 3; */
+
 /*   } */
+
 /* } */

@@ -5,13 +5,16 @@
 .button:visited {
   @mixin button
 }
+
 .grid li > .button {
   display: flex;
   height: 100%;
 }
-.button[data-variant=primary] {
+
+.button[data-variant="primary"] {
   @mixin button-primary
 }
-.button[data-size=sm] {
+
+.button[data-size="sm"] {
   @mixin button-sm
 }

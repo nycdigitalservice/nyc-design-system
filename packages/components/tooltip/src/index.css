@@ -2,12 +2,10 @@ nyc-tooltip {
   --_p-inline: 1rem;
   --_p-block: 1rem;
   --_triangle-size: 20px;
-  --_bg: var(--nyc-cmp-tooltip-background-color, hsla(214, 54%, 95%, 1));
+  --_bg: var(--nyc-cmp-tooltip-background-color, hsl(214deg 54% 95% / 100%));
   --_color: var(--nyc-cmp-tooltip-color, inherit);
   --_shadow-alpha: 50%;
-
-  --isRTL: -1;
-
+  --is-rtl: -1;
   --_bottom-tip: conic-gradient(from -30deg at bottom, #0000, #000 1deg 60deg, #0000 61deg) bottom / 100% 50% no-repeat;
   --_top-tip: conic-gradient(from 150deg at top, #0000, #000 1deg 60deg, #0000 61deg) top / 100% 50% no-repeat;
   --_right-tip: conic-gradient(from -120deg at right, #0000, #000 1deg 60deg, #0000 61deg) right / 50% 100% no-repeat;
@@ -15,11 +13,9 @@ nyc-tooltip {
 
   pointer-events: none;
   user-select: none;
-
   opacity: 0;
   transform: translateX(var(--_x, 0)) translateY(var(--_y, 0));
   transition: opacity .2s ease, transform .2s ease;
-
   position: absolute;
   z-index: 1;
   inline-size: max-content;
@@ -35,8 +31,8 @@ nyc-tooltip {
   color: var(--_color);
   will-change: filter;
   filter: 
-    drop-shadow(0 3px 3px hsl(0 0% 0% / var(--_shadow-alpha))) 
-    drop-shadow(0 12px 12px hsl(0 0% 0% / var(--_shadow-alpha)));
+    drop-shadow(0 3px 3px hsl(0deg 0% 0% / var(--_shadow-alpha))) 
+    drop-shadow(0 12px 12px hsl(0deg 0% 0% / var(--_shadow-alpha)));
 
   /* light theme style adjustments */
   @media (prefers-color-scheme: light) {
@@ -45,7 +41,7 @@ nyc-tooltip {
   }
 
   &:dir(rtl) {
-    --isRTL: 1;
+    --is-rtl: 1;
   }
 
   /* create a stacking context for elements with > nyc-tooltips */
@@ -97,7 +93,8 @@ nyc-tooltip {
   &:is([tip-position="top"], [tip-position="block-start"], :not([tip-position])) {
     inset-inline-start: 50%;
     inset-block-end: calc(100% + var(--_p-block) + var(--_triangle-size));
-    --_x: calc(50% * var(--isRTL));
+
+    --_x: calc(50% * var(--is-rtl));
 
     @media (prefers-reduced-motion: no-preference) {
       :has(> &):not(:hover, :active) nyc-tooltip {
@@ -107,6 +104,7 @@ nyc-tooltip {
 
     &::after {
       --_tip: var(--_bottom-tip);
+
       inset-block-end: calc(var(--_triangle-size) * -1);
       border-block-end: var(--_triangle-size) solid transparent;
     }
@@ -116,16 +114,18 @@ nyc-tooltip {
   &:is([tip-position="right"], [tip-position="inline-end"]) {
     inset-inline-start: calc(100% + var(--_p-inline) + var(--_triangle-size));
     inset-block-end: 50%;
+
     --_y: 50%;
 
     @media (prefers-reduced-motion: no-preference) {
       :has(> &):not(:hover, :active) nyc-tooltip {
-        --_x: calc(var(--isRTL) * -3px * -1);
+        --_x: calc(var(--is-rtl) * -3px * -1);
       }
     }
 
     &::after {
       --_tip: var(--_left-tip);
+
       inset-inline-start: calc(var(--_triangle-size) * -1);
       border-inline-start: var(--_triangle-size) solid transparent;
     }
@@ -139,7 +139,8 @@ nyc-tooltip {
   &:is([tip-position="bottom"], [tip-position="block-end"]) {
     inset-inline-start: 50%;
     inset-block-start: calc(100% + var(--_p-block) + var(--_triangle-size));
-    --_x: calc(50% * var(--isRTL));
+
+    --_x: calc(50% * var(--is-rtl));
 
     @media (prefers-reduced-motion: no-preference) {
       :has(> &):not(:hover, :active) nyc-tooltip {
@@ -149,6 +150,7 @@ nyc-tooltip {
 
     &::after {
       --_tip: var(--_top-tip);
+
       inset-block-start: calc(var(--_triangle-size) * -1);
       border-block-start: var(--_triangle-size) solid transparent;
     }
@@ -158,16 +160,18 @@ nyc-tooltip {
   &:is([tip-position="left"], [tip-position="inline-start"]) {
     inset-inline-end: calc(100% + var(--_p-inline) + var(--_triangle-size));
     inset-block-end: 50%;
+
     --_y: 50%;
 
     @media (prefers-reduced-motion: no-preference) {
       :has(> &):not(:hover, :active) nyc-tooltip {
-        --_x: calc(var(--isRTL) * 3px * -1);
+        --_x: calc(var(--is-rtl) * 3px * -1);
       }
     }
 
     &::after {
       --_tip: var(--_right-tip);
+
       inset-inline-end: calc(var(--_triangle-size) * -1);
       border-inline-end: var(--_triangle-size) solid transparent;
     }

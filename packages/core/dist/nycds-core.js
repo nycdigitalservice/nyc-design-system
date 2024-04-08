@@ -1,4 +1,10 @@
 (() => {
+  var __defProp = Object.defineProperty;
+  var __export = (target, all) => {
+    for (var name in all)
+      __defProp(target, name, { get: all[name], enumerable: true });
+  };
+
   // ../../node_modules/.pnpm/@ungap+custom-elements@1.3.0/node_modules/@ungap/custom-elements/index.js
   (function() {
     "use strict";
@@ -234,7 +240,7 @@
         parse: parse2
       };
     };
-    var _self = self, document$1 = _self.document, Map = _self.Map, MutationObserver$1 = _self.MutationObserver, Object$1 = _self.Object, Set$1 = _self.Set, WeakMap = _self.WeakMap, Element = _self.Element, HTMLElement2 = _self.HTMLElement, Node = _self.Node, Error = _self.Error, TypeError$1 = _self.TypeError, Reflect = _self.Reflect;
+    var _self = self, document$1 = _self.document, Map = _self.Map, MutationObserver$1 = _self.MutationObserver, Object$1 = _self.Object, Set$1 = _self.Set, WeakMap = _self.WeakMap, Element = _self.Element, HTMLElement2 = _self.HTMLElement, Node = _self.Node, Error2 = _self.Error, TypeError$1 = _self.TypeError, Reflect2 = _self.Reflect;
     var defineProperty = Object$1.defineProperty, keys = Object$1.keys, getOwnPropertyNames = Object$1.getOwnPropertyNames, setPrototypeOf = Object$1.setPrototypeOf;
     var legacy = !self.customElements;
     var expando = function expando2(element) {
@@ -309,7 +315,7 @@
       self.customElements = {
         define: function define2(is2, Class) {
           if (registry.has(is2))
-            throw new Error('the name "'.concat(is2, '" has already been used with this registry'));
+            throw new Error2('the name "'.concat(is2, '" has already been used with this registry'));
           classes.set(Class, is2);
           prototypes.set(is2, Class.prototype);
           registry.set(is2, Class);
@@ -374,7 +380,7 @@
       var customElements2 = self.customElements;
       var _createElement = document$1.createElement;
       var define = customElements2.define, _get = customElements2.get, upgrade = customElements2.upgrade;
-      var _ref = Reflect || {
+      var _ref = Reflect2 || {
         construct: function construct2(HTMLElement3) {
           return HTMLElement3.call(this);
         }
@@ -496,7 +502,7 @@
       };
       customElements2.define = function(is2, Class, options) {
         if (getCE(is2))
-          throw new Error("'".concat(is2, "' has already been defined as a custom element"));
+          throw new Error2("'".concat(is2, "' has already been defined as a custom element"));
         var selector;
         var tag = options && options["extends"];
         _classes.set(Class, tag ? {
@@ -527,14 +533,56 @@
     }
   })();
 
-  // ../utilities/src/js/toggle.js
-  var toggle_default = (controller) => {
-    const controls = document.getElementById(controller.getAttribute("aria-controls"));
-    const isExpanded = controller.getAttribute("aria-expanded").toLowerCase() === "true";
-    controller.setAttribute("aria-expanded", !isExpanded);
-    isExpanded ? controls.setAttribute("hidden", "") : controls.removeAttribute("hidden");
-    return controller;
+  // ../components/button/src/js/nyc-expand-button.js
+  var NYCExpandButton = class extends HTMLButtonElement {
+    connectedCallback() {
+      try {
+        if (!this.hasAttribute("aria-controls")) {
+          throw new Error(
+            'No "aria-controls" attribute found. "aria-controls" must be set to the ID of the element you are expanding'
+          );
+        }
+        this.target = document.getElementById(this.getAttribute("aria-controls"));
+        if (!this.target) {
+          throw new Error('"aria-controls" target ID not found');
+        }
+        if (!this.hasAttribute("aria-expanded")) {
+          this.setAttribute("aria-expanded", false);
+        }
+        document.addEventListener(
+          "DOMContentLoaded",
+          () => this.toggleTarget()
+        );
+        this.addEventListener("click", this.toggleExpand);
+      } catch (e) {
+        console.error(`[ToggleButton] ${e}`, this);
+      }
+    }
+    toggleExpand() {
+      this.setAttribute("aria-expanded", !this.isExpanded());
+      this.toggleTarget();
+    }
+    toggleTarget() {
+      this.target.toggleAttribute("hidden", !this.isExpanded());
+    }
+    isExpanded() {
+      return this.getAttribute("aria-expanded").toLowerCase() === "true";
+    }
   };
+
+  // ../components/button/src/js/index.js
+  if (!customElements.get("nyc-expand-button")) {
+    window.customElements.define("nyc-expand-button", NYCExpandButton, { extends: "button" });
+  }
+
+  // ../utilities/src/js/index.js
+  var js_exports = {};
+  __export(js_exports, {
+    chunkArray: () => chunk_array_default,
+    chunkr: () => chunkr,
+    isAlternating: () => is_alternating_default,
+    wrapElement: () => wrap_element_default
+  });
 
   // ../utilities/src/js/chunk-array.js
   var chunk_array_default = (array, chunkSize) => {
@@ -578,39 +626,6 @@
     })(arr);
     return res;
   };
-
-  // ../components/button/src/js/toggle-button.js
-  var ToggleButton = class extends HTMLButtonElement {
-    connectedCallback() {
-      if (!this.hasAttribute("aria-controls")) {
-        console.error(
-          `ToggleButton: "aria-controls" must be set to the
-                          ID of the element you are toggling`
-        );
-        return;
-      }
-      if (!this.hasAttribute("aria-expanded")) {
-        console.error(
-          `ToggleButton: "aria-expanded" must be set to the
-               toggled elements initial visibility, either
-               "true" or "false"`
-        );
-        return;
-      }
-      this.addEventListener("click", this);
-    }
-    handleEvent(e) {
-      this["on" + e.type](e);
-    }
-    onclick(e) {
-      toggle_default(this);
-    }
-  };
-
-  // ../components/button/src/js/index.js
-  if (!customElements.get("nyc-toggle-button")) {
-    window.customElements.define("nyc-toggle-button", ToggleButton, { extends: "button" });
-  }
 
   // ../components/accordion/src/accordion.js
   var Accordion = class {

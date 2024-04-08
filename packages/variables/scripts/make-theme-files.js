@@ -1,6 +1,12 @@
 import { readFileSync, writeFile } from 'fs'
 import { resolve } from 'path'
 
+const roundTo4 = num => roundToX(num, 4)
+
+const roundToX = (num, decimals) => {
+  return +(Math.round(num + "e" + decimals) + "e-" + decimals)
+}
+
 const SRCDIR = resolve(process.cwd(), './tokens/src')
 const DESTDIR = resolve(process.cwd(), './tokens/dist')
 
@@ -58,8 +64,8 @@ const getTokenValue = (reference, tokens) => {
 
 const getClampVal = (pageMin, pageMax, minVal, maxVal) => {
   const factor = 1 / (pageMax - pageMin) * (maxVal - minVal)
-  const calc1 = `${minVal - (pageMin * factor)}rem`
-  const calc2 = `${100 * factor}vw`
+  const calc1 = `${roundTo4(minVal - (pageMin * factor))}rem`
+  const calc2 = `${roundTo4(100 * factor)}vw`
   const calcV = `${calc1} + ${calc2}`
   const clamp = `clamp(${minVal}rem, ${calcV}, ${maxVal}rem)`
   return clamp
