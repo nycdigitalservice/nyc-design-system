@@ -533,7 +533,7 @@
     }
   })();
 
-  // ../components/button/src/js/nyc-expand-button.js
+  // ../components/expand-button/src/nyc-expand-button.js
   var NYCExpandButton = class extends HTMLButtonElement {
     connectedCallback() {
       try {
@@ -570,7 +570,7 @@
     }
   };
 
-  // ../components/button/src/js/index.js
+  // ../components/expand-button/src/index.js
   if (!customElements.get("nyc-expand-button")) {
     window.customElements.define("nyc-expand-button", NYCExpandButton, { extends: "button" });
   }
@@ -747,7 +747,7 @@
     createButton(label, panelId) {
       const labelEl = document.createElement("span");
       labelEl.append(label);
-      const button = document.createElement("button", { is: "nyc-toggle-button" });
+      const button = document.createElement("button", { is: "nyc-expand-button" });
       button.setAttribute("aria-controls", panelId);
       button.setAttribute("aria-expanded", false);
       button.innerHTML = "<i class='i-ri:arrow-down-s-line' aria-hidden='true'></i>";

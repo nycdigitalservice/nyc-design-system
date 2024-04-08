@@ -21,6 +21,7 @@
     "@nycds/button": "workspace:^",
     "@nycds/card": "workspace:^",
     "@nycds/composition": "workspace:^",
+    "@nycds/expand-button": "workspace:^",
     "@nycds/form": "workspace:^",
     "@nycds/global": "workspace:^",
     "@nycds/icons": "workspace:^",

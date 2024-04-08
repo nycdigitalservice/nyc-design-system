@@ -1,0 +1,7 @@
+{
+  "name": "@nycds/expand-button",
+  "version": "0.1.0",
+  "main": "src/index.js",
+  "module": "src/index.js",
+  "type": "module"
+}
