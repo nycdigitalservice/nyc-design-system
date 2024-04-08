@@ -1,0 +1,90 @@
+#+title: Expand Button
+
+The =nyc-expand-button= is a [[https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_custom_elements#types_of_custom_element][Customized Built-in Button Element]] that when
+clicked toggles the visibility of another element.
+
+** Usage
+
+To use the custom element, add an ~is="nyc-expand-button"~ attribute to
+any =button= element. The element has one requirement, which is an
+=aria-controls= attribute whose value matches an =id= attribute of another
+element in the document.
+
+#+html: <div class="example-wrapper">
+#+results: expand-button-example
+#+html: </div>
+
+#+name: expand-button-example
+#+begin_src html :exports both :results replace html
+  <button
+    aria-controls="my-expand-target"
+    aria-expanded="false"
+    is="nyc-expand-button"
+  >
+    Expand target
+  </button>
+  <div id="my-expand-target" class="flex gap-9 p-9" hidden>
+    <p>Expandable content</p>
+  </div>
+#+end_src
+
+** Javascript class
+
+#+begin_src js
+  export default class NYCExpandButton extends HTMLButtonElement {
+    connectedCallback () {
+      try {
+        if (!this.hasAttribute('aria-controls')) {
+          throw new Error(
+            'No "aria-controls" attribute found. "aria-controls" must be set to the ID of the element you are expanding'
+          )
+        }
+
+        this.target = document.getElementById(this.getAttribute('aria-controls'))
+
+        if (!this.target) {
+          throw new Error('"aria-controls" target ID not found')
+        }
+
+        if (!this.hasAttribute('aria-expanded')) {
+          this.setAttribute('aria-expanded', false)
+        }
+
+        document.addEventListener(
+          'DOMContentLoaded',
+          () => this.toggleTarget()
+        )
+
+        this.addEventListener('click', this.toggleExpand)
+      } catch (e) {
+        console.error(`[ToggleButton] ${e}`, this)
+      }
+    }
+
+    toggleExpand () {
+      this.setAttribute('aria-expanded', !this.isExpanded())
+      this.toggleTarget()
+    }
+
+    toggleTarget () {
+      this.target.toggleAttribute('hidden', !this.isExpanded())
+    }
+
+    isExpanded () {
+      return this.getAttribute('aria-expanded').toLowerCase() === 'true'
+    }
+  }
+#+end_src
+
+** Define custom element
+
+To provide the button for use we import the =NYCExpandButton= class and
+define the =nyc-expand-button= custom element. Note the use of =extends=
+here to create a [[https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_custom_elements#types_of_custom_element][customized built-in element]].
+
+#+begin_src js
+  import NYCExpandButton from './nyc-expand-button'
+  if (!customElements.get('nyc-expand-button')) {
+    window.customElements.define('nyc-expand-button', NYCExpandButton, { extends: 'button' })
+  }
+#+end_src

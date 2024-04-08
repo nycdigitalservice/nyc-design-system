@@ -3,6 +3,7 @@ import 'uno.css';
 // import './main.css';
 // import { buildHiringEvents } from './js/hiring-events.js';
 // import { buildAgencySelect } from './js/agency-select.js';
+import '@nycds/core';
 import buildJobCategoryList from './js/scaffolding/job-category-list-items';
 import './js/inert-polyfill.js';
 import './js/components/NYCForm.js';

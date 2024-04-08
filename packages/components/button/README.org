@@ -188,55 +188,6 @@ default styles.
   }
 #+end_src
 
-** Javascript
-
-*** Toggle Button Class
-
-The Toggle Button is a [[https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_custom_elements#types_of_custom_element][Customized Built-in Button Element]] that when
-clicked toggles the visibility of another element.
-
-#+begin_src js :tangle src/js/toggle-button.js
-  import { toggle } from '@nycds/utilities';
-
-  export default class ToggleButton extends HTMLButtonElement {
-    connectedCallback() {
-      if (!this.hasAttribute('aria-controls')) {
-        console.error(
-          `ToggleButton: "aria-controls" must be set to the
-                            ID of the element you are toggling`
-        );
-        return;
-      }
-      if (!this.hasAttribute('aria-expanded')) {
-        console.error(
-          `ToggleButton: "aria-expanded" must be set to the
-                 toggled elements initial visibility, either
-                 "true" or "false"`
-        );
-        return;
-      }
-      this.addEventListener('click', this);
-    }
-    handleEvent(e) { this['on' + e.type](e); }
-    onclick(e) {
-      toggle(this);
-    }
-  }
-#+end_src
-
-*** Define custom element
-
-To provide the button for use we import the =ToggleButton= class and
-define the =nyc-toggle-button= custom element. Note the use of =extends=
-here to create a [[https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_custom_elements#types_of_custom_element][customized built-in element]].
-
-#+begin_src js :tangle src/js/index.js
-  import ToggleButton from './toggle-button';
-  if (!customElements.get('nyc-toggle-button')) {
-    window.customElements.define('nyc-toggle-button', ToggleButton, { extends: 'button' });
-  }
-#+end_src
-
 ** File exports :noexport:
 
 *** Mixins

@@ -149,13 +149,11 @@ importers:
 
   packages/components/alert: {}
 
-  packages/components/button:
-    dependencies:
-      '@nycds/utilities':
-        specifier: workspace:^
-        version: link:../../utilities
+  packages/components/button: {}
 
   packages/components/card: {}
+
+  packages/components/expand-button: {}
 
   packages/components/form: {}
 
@@ -198,6 +196,9 @@ importers:
       '@nycds/composition':
         specifier: workspace:^
         version: link:../composition
+      '@nycds/expand-button':
+        specifier: workspace:^
+        version: link:../components/expand-button
       '@nycds/form':
         specifier: workspace:^
         version: link:../components/form
