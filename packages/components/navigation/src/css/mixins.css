@@ -3,6 +3,7 @@
   --_color: var(--nyc-cmp-navigation-primary-color, #FFF);
   --_padding-inline: var(--nyc-cmp-navigation-primary-padding-inline, 0);
   --_padding-block: var(--nyc-cmp-navigation-primary-padding-block, 0);
+
   background: var(--_background);
   color: var(--_color);
   width: 100%;
@@ -17,6 +18,7 @@
     align-items: center;
     height: 100%;
     position: relative;
+
     & > li {
       display: flex;
 

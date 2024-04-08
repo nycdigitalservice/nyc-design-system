@@ -5,9 +5,11 @@
 .cmp-button:visited {
   @mixin button
 }
+
 .cmp-button--primary .cmp-button {
   @mixin button-primary
 }
+
 .cmp-button--sm .cmp-button {
   @mixin button-sm
 }

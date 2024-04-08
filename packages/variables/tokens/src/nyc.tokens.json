@@ -111,11 +111,11 @@
     "shadow": {
       "10": {
         "type": "string",
-        "value": "0px 4px 12px 0px rgba(0, 0, 0, 0.20)"
+        "value": "0px 4px 12px 0px rgb(0 0 0 / 20%)"
       },
       "20": {
         "type": "string",
-        "value": "4px 4px 12px 0px rgba(0, 0, 0, 0.20)"
+        "value": "4px 4px 12px 0px rgb(0 0 0 / 20%)"
       }
     },
     "gradient": {
@@ -129,7 +129,7 @@
       },
       "rainbow": {
         "type": "string",
-        "value": "conic-gradient(from 175deg at 50% 50%, #6C95FF 17.627713680267334deg, #FFA149 101.25deg, #BB64FF 226.87499284744263deg, #70BAFF 325.17677307128906deg)"
+        "value": "conic-gradient(from 175deg at 50% 50%, #6C95FF 17.6277deg, #FFA149 101.25deg, #BB64FF 226.875deg, #70BAFF 325.1768deg)"
       }
     },
     "type": {

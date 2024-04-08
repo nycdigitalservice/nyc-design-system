@@ -1,5 +1,7 @@
 /* :not(:defined) {  */
+
 /*   visibility: hidden */
+
 /* } */
 
 * {
@@ -34,7 +36,7 @@ html {
   padding: 0
 }
 
-:where(.u-reset) :where(ul[role=list],ol[role=list]) {
+:where(.u-reset) :where(ul[role="list"],ol[role="list"]) {
   list-style: none
 }
 
@@ -51,7 +53,11 @@ html {
 }
 
 /* From https://github.com/elad2412/the-new-css-reset */
+
 /* *:where(:not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)) { */
+
 /*   all: unset; */
+
 /*   display: revert; */
+
 /* } */

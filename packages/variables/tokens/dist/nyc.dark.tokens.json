@@ -21,7 +21,7 @@
         "fluid": {
           "xl": {
             "type": "dimension",
-            "value": "clamp(1.125rem, 0.9821428571428571rem + 0.7142857142857143vw, 1.5rem)"
+            "value": "clamp(1.125rem, 0.9821rem + 0.7143vw, 1.5rem)"
           }
         }
       },
@@ -41,15 +41,15 @@
         "fluid": {
           "lg": {
             "type": "dimension",
-            "value": "clamp(3.125rem, 1.9345238095238095rem + 5.9523809523809526vw, 6.25rem)"
+            "value": "clamp(3.125rem, 1.9345rem + 5.9524vw, 6.25rem)"
           },
           "base": {
             "type": "dimension",
-            "value": "clamp(2.5rem, 2.261904761904762rem + 1.1904761904761907vw, 3.125rem)"
+            "value": "clamp(2.5rem, 2.2619rem + 1.1905vw, 3.125rem)"
           },
           "sm": {
             "type": "dimension",
-            "value": "clamp(1.125rem, 0.7916666666666666rem + 1.666666666666667vw, 2rem)"
+            "value": "clamp(1.125rem, 0.7917rem + 1.6667vw, 2rem)"
           }
         }
       },
@@ -150,15 +150,15 @@
       "fluid": {
         "3xl": {
           "type": "dimension",
-          "value": "clamp(4rem, 3.619047619047619rem + 1.9047619047619049vw, 5rem)"
+          "value": "clamp(4rem, 3.619rem + 1.9048vw, 5rem)"
         },
         "lg": {
           "type": "dimension",
-          "value": "clamp(1rem, 0.8095238095238095rem + 0.9523809523809524vw, 1.5rem)"
+          "value": "clamp(1rem, 0.8095rem + 0.9524vw, 1.5rem)"
         },
         "sm": {
           "type": "dimension",
-          "value": "clamp(0.5rem, 0.40476190476190477rem + 0.4761904761904762vw, 0.75rem)"
+          "value": "clamp(0.5rem, 0.4048rem + 0.4762vw, 0.75rem)"
         }
       },
       "xs": {

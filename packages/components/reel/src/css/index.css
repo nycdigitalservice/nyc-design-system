@@ -2,8 +2,7 @@
 .reel {
   display: flex;
   block-size: auto;
-  overflow-x: auto;
-  overflow-y: hidden;
+  overflow: auto hidden;
   scrollbar-color: #ccc transparent;
   scroll-behavior: smooth;
 }

@@ -1,12 +1,14 @@
 .alert {
-  --_accent-color: var(--nyc-cmp-alert-accent-color, hsla(208, 100%, 30%, 1));
-  --_panel-background: var(--nyc-cmp-alert-panel-background-color, hsla(0, 0%, 93%, 1));
+  --_accent-color: var(--nyc-cmp-alert-accent-color, hsl(208deg 100% 30% / 100%));
+  --_panel-background: var(--nyc-cmp-alert-panel-background-color, hsl(0deg 0% 93% / 100%));
+
   background: var(--_panel-background);
   border-radius: .3125rem;
   margin-inline-start: var(--nyc-sys-dimension-space-s-m);
   margin-inline-start: 1.125rem;
   padding: .75rem 1rem;
   position: relative;
+
   &::before {
     content: '';
     width: .625rem;
@@ -22,6 +24,7 @@
 
   & :--heading {
     font-size: var(--nyc-sys-font-size-base);
+
     & i {
       color: var(--_accent-color);
       font-size: 1.5rem;
@@ -30,17 +33,19 @@
   }
 }
 
-.alert[data-variant=news] {
+.alert[data-variant="news"] {
     --space: .8em;
     --_accent-color: var(--nyc-sys-color-secondary);
+
     display: flex;
     flex-direction: column;
 
     & time {
         order: -1;
+
         --space: 0;
-        margin-block-start: 0;
-        margin-block-end: .8em;
+
+        margin-block: 0 .8em;
         font-weight: 400;
     }
 }
@@ -49,6 +54,7 @@
   .alert {
     padding-inline-start: 0;
     padding-block-start: var(--nyc-sys-dimension-space-s-m);
+
     &::before {
       top: 0;
       width: 100%;
