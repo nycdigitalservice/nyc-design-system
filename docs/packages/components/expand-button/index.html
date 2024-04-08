@@ -1,0 +1,94 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta author="Michael Mausler - NYC"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><link rel="icon" type="image/png" href="/img/favicon.png"/><link rel="stylesheet" href="https://nycdigitalservice.github.io/nyc-design-system/assets/nycds-docs.css"/><title>Expand Button - NYC</title></head><body class="u-reset"><header class="background-primary"><nav class="p-2 flex"><a href="https://nycdigitalservice.github.io/nyc-design-system" class="mr-auto flex"><img class="logo" height="50" src="https://nycdigitalservice.github.io/nyc-design-system/assets/img/nyc-logo.svg" alt="City of New York logo"/></a><button is="nyc-toggle-button" id="main-menu-control" class="font-bold p-2" aria-controls="main-menu" aria-expanded="false"><i class="i-ri:menu-line mr-2"></i>Menu</button></nav></header><aside id="main-menu" class="background-primary-lightest" aria-labelledby="main-menu-control" hidden=""><div class="center grid p-4"><nav class="flex flex-col"><span class="p-2 border-b-2 border-current border-solid">Packages</span><a class="p-2" href="https://nycdigitalservice.github.io/nyc-design-system/packages/reset/">Reset</a><a class="p-2" href="https://nycdigitalservice.github.io/nyc-design-system/packages/variables/">Variables</a><a class="p-2" href="https://nycdigitalservice.github.io/nyc-design-system/packages/global/">Global</a><a class="p-2" href="https://nycdigitalservice.github.io/nyc-design-system/packages/composition/">Composition</a><a class="p-2" href="https://nycdigitalservice.github.io/nyc-design-system/packages/icons/">Icons</a></nav><nav class="flex flex-col"><span class="p-2 border-b-2 border-current border-solid">Components</span><a class="p-2" href="https://nycdigitalservice.github.io/nyc-design-system/packages/components/accordion/">Accordion</a><a class="p-2" href="https://nycdigitalservice.github.io/nyc-design-system/packages/components/alert/">Alert</a><a class="p-2" href="https://nycdigitalservice.github.io/nyc-design-system/packages/components/button/">Button</a><a class="p-2" href="https://nycdigitalservice.github.io/nyc-design-system/packages/components/card/">Card</a><a class="p-2" href="https://nycdigitalservice.github.io/nyc-design-system/packages/components/tooltip/">Tooltip</a></nav><nav class="flex flex-col"><span class="p-2 border-b-2 border-current border-solid">Guides</span><a class="p-2" href="https://nycdigitalservice.github.io/nyc-design-system/guides/navigation-page.html">Building a Navigation Page</a></nav></div></aside><main class="center"><div class="region flow"><h1 class="site-post-title">Expand Button</h1><div id="content" class="flow"><p>
+The <code>nyc-expand-button</code> is a <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_custom_elements#types_of_custom_element">Customized Built-in Button Element</a> that when
+clicked toggles the visibility of another element.
+</p>
+
+<section class="region flow"><h2><a id="usage" class="anchor" href="#usage"><i class="i-ri:anchor-line"></i></a>Usage</h2><p>
+To use the custom element, add an <code>is="nyc-expand-button"</code> attribute to
+any <code>button</code> element. The element has one requirement, which is an
+<code>aria-controls</code> attribute whose value matches an <code>id</code> attribute of another
+element in the document.
+</p>
+
+<div class="example-wrapper">
+<button
+  aria-controls="my-expand-target"
+  aria-expanded="false"
+  is="nyc-expand-button"
+>
+  Expand target
+</button>
+<div id="my-expand-target" class="flex gap-9 p-9" hidden>
+  <p>Expandable content</p>
+</div>
+</div>
+
+<nyc-accordion class='code-view'><h3>Inspect code</h3><div><pre><code class="language-html">&lt;button
+  aria-controls="my-expand-target"
+  aria-expanded="false"
+  is="nyc-expand-button"
+&gt;
+  Expand target
+&lt;/button&gt;
+&lt;div id="my-expand-target" class="flex gap-9 p-9" hidden&gt;
+  &lt;p&gt;Expandable content&lt;/p&gt;
+&lt;/div&gt;</code></pre></div></nyc-accordion>
+</section>
+
+<section class="region flow"><h2><a id="javascript-class" class="anchor" href="#javascript-class"><i class="i-ri:anchor-line"></i></a>Javascript class</h2><nyc-accordion class='code-view'><h3>Inspect code</h3><div><pre><code class="language-js">export default class NYCExpandButton extends HTMLButtonElement {
+  connectedCallback () {
+    try {
+      if (!this.hasAttribute('aria-controls')) {
+        throw new Error(
+          'No "aria-controls" attribute found. "aria-controls" must be set to the ID of the element you are expanding'
+        )
+      }
+
+      this.target = document.getElementById(this.getAttribute('aria-controls'))
+
+      if (!this.target) {
+        throw new Error('"aria-controls" target ID not found')
+      }
+
+      if (!this.hasAttribute('aria-expanded')) {
+        this.setAttribute('aria-expanded', false)
+      }
+
+      document.addEventListener(
+        'DOMContentLoaded',
+        () => this.toggleTarget()
+      )
+
+      this.addEventListener('click', this.toggleExpand)
+    } catch (e) {
+      console.error(`[ToggleButton] ${e}`, this)
+    }
+  }
+
+  toggleExpand () {
+    this.setAttribute('aria-expanded', !this.isExpanded())
+    this.toggleTarget()
+  }
+
+  toggleTarget () {
+    this.target.toggleAttribute('hidden', !this.isExpanded())
+  }
+
+  isExpanded () {
+    return this.getAttribute('aria-expanded').toLowerCase() === 'true'
+  }
+}</code></pre></div></nyc-accordion>
+</section>
+
+<section class="region flow"><h2><a id="define-custom-element" class="anchor" href="#define-custom-element"><i class="i-ri:anchor-line"></i></a>Define custom element</h2><p>
+To provide the button for use we import the <code>NYCExpandButton</code> class and
+define the <code>nyc-expand-button</code> custom element. Note the use of <code>extends</code>
+here to create a <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_custom_elements#types_of_custom_element">customized built-in element</a>.
+</p>
+
+<nyc-accordion class='code-view'><h3>Inspect code</h3><div><pre><code class="language-js">import NYCExpandButton from './nyc-expand-button'
+if (!customElements.get('nyc-expand-button')) {
+  window.customElements.define('nyc-expand-button', NYCExpandButton, { extends: 'button' })
+}</code></pre></div></nyc-accordion>
+</section>
+</div></div></main><footer class="site-footer"><div class="center"><div class="row"><div class="column"><p>© 2024 City of New York</p></div></div></div></footer><script src="https://nycdigitalservice.github.io/nyc-design-system/assets/nycds-docs.js"></script></body></html>
